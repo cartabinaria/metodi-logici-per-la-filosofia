@@ -46,6 +46,7 @@ Molto meglio della deduzione naturale!
 
 Questo insegnamento parla di logiche modali. Esse aggiungono due nuovi operatori
 proposizionali prefissi unari: $\Box$ e $\Diamond$. Sono duali:
+$\Diamond P \leftrightarrow \neg \Box \neg P$ o, equivalentemente,
 $\Box P \leftrightarrow \neg \Diamond \neg P$. In generale, il loro ruolo è
 rappresentare operazioni logiche non vero-funzionali. Possono avere diverse
 intepretazioni:

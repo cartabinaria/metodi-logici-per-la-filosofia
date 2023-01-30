@@ -1,15 +1,18 @@
 # Metodi logici per la filosofia
 
-Appunti di [Foxy](https://foxyseta.github.io) (Stefano Volpe) per l'a.a. 2022-23
+Appunti di **[Foxy](https://foxyseta.github.io)** (Stefano Volpe) per l'a.a.
+2022-23: se trovi qualcosa di sbagliato, non esitare a **[caricare la
+correzione](https://github.com/csunibo/metodi-logici-per-la-filosofia)**.
 
 ## 01-30. Presentazione del corso
 
 ### Organizzazione
 
 - Libro: il primo titolo in bibliografia funge da manuale del corso. Non serve
-  acquistarlo: il prof invia copie gratuite in PDF a chi lo richiede.
+  acquistarlo: il prof invia copie gratuite in PDF a chi lo richiede. Puoi
+  trovarlo fra i **[libri](/metodi-logici-per-la-filosofia/libri)**.
 - Notazioni: capita che il prof. le usi in modo inconsistente, ma noi dobbiamo
-  consistentemente usare le convenzioni del manuale.
+  consistentemente usare lo stile del manuale.
 - Orari: si comincia ai 15, si finisce ai 45.
 - Capienza aule: se le aule raggiungono la piena capienza e alcune persone
   devono rimanere fuori, il prof. pensa a soluzioni alternative (come le
@@ -24,10 +27,10 @@ Appunti di [Foxy](https://foxyseta.github.io) (Stefano Volpe) per l'a.a. 2022-23
   un seminario ha un orale di molto semplificato.
 - Consigli: se ci si perde una lezione, non si capisce molto di quelle dopo. Si
   studia volta per volta! Storicamente, va meglio all'esame chi lo sostiene
-  appena terminate le lezioni (il prof. non fa preferenze ma le cose sono
-  fresche).
+  appena terminate le lezioni (il prof. non fa preferenze ma avere gli argomenti
+  freschi aiuta).
 - Orale: si parte da una domanda a scelta, e poi il prof. prosegue con domande
-  a sua scelta. Siccome vengono chiesti enunciati e dimostrazioni, all'orale si
+  decise da lui. Siccome vengono chiesti enunciati e dimostrazioni, all'orale si
   usano carta e penna o lavagna e gesso.
 
 ### Le dimostrazioni del corso
@@ -47,14 +50,14 @@ $\Box P \leftrightarrow \neg \Diamond \neg P$. In generale, il loro ruolo è
 rappresentare operazioni logiche non vero-funzionali. Possono avere diverse
 intepretazioni:
 
-- i. aletica: "è necessario che" vs "è possibile che"
+- i. aletica: "è necessario che" vs "è possibile che";
 - i. epistemica: "si sa che" vs "???" (nessuna intepretazione immediata in
-  linguaggio naturale)
+  linguaggio naturale);
 - i. doxastica: "si crede che" vs "???" (nessuna intepretazione immediata in
-  linguaggio naturale)
-- i. deonatica: "è obbligatorio che" vs "è possibile che"
+  linguaggio naturale);
+- i. deontica: "è obbligatorio che" vs "è possibile che".
 
-Tutte queste intepretazioni sono non vero-funzionali. Infatti, se tentassimo di
+Tutte queste interpretazioni sono non vero-funzionali. Infatti, se tentassimo di
 esprimere i concetti di cui sopra tramite tabelle di verità, non riusciremmo a
 decidere come riempire alcune celle. Se una semantica delle tabelle di verità,
 quindi, non basta, ricorriamo a quella di Kripke dei mondi possibili. La

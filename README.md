@@ -1,7 +1,7 @@
 # Metodi logici per la filosofia
 
-Una raccolta di risorse per l'insegnamento di \<Insegnamento\> del Corso di
-Laurea in Informatica.
+Una raccolta di risorse per l'insegnamento di Metodi logici per la filosofia
+del Corso di Laurea in Filosofia.
 
 ## Presentazione
 

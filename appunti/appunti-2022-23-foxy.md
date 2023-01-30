@@ -10,7 +10,7 @@ correzione](https://github.com/csunibo/metodi-logici-per-la-filosofia)**.
 
 - Libro: il primo titolo in bibliografia funge da manuale del corso. Non serve
   acquistarlo: il prof invia copie gratuite in PDF a chi lo richiede. Puoi
-  trovarlo fra i **[libri](/metodi-logici-per-la-filosofia/libri)**.
+  trovarlo fra i **[libri](https://csunibo.github.io/metodi-logici-per-la-filosofia/libri)**.
 - Notazioni: capita che il prof. le usi in modo inconsistente, ma noi dobbiamo
   consistentemente usare lo stile del manuale.
 - Orari: si comincia ai 15, si finisce ai 45.

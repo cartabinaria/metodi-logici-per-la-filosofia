@@ -136,3 +136,17 @@ formula, lo possiamo sottointendere;
 loro volta legano più forte del condizionale materiale;
 1. associatività: la congiunzione e la disgiunzione associano a sinistra (ma
 non fra di loro).
+
+Le definizioni per induzione sono utili: si sposano bene con la struttura con
+cui abbiamo definito le nostre formule, e forniscono un modo algoritmico per
+calcolare gli oggetti di cui parlano. Per esempio, possiamo definire la
+lunghezza $lg$ (o "peso") di una formula o come il numero di occorrenze di connettivi
+logici unari o binari che ne fanno parte o, equivalentemente, per induzione:
+
+$$ lg(p_i) = lg(\bot) = 0 $$
+$$ lg(\neg A) = lg(A) + 1 $$
+$$ lg(A \wedge B) = lg(A \lor B) = lg(A \rightarrow B) = lg(A) + lg(B) + 1 $$
+
+Se siamo familiari con il concetto di dimostrazione per induzione sui numeri
+naturali in teoria dei numeri, possiamo ora effettuare dimostrazioni per
+induzione sulla lunghezza delle formula della logica proposizionale classica.

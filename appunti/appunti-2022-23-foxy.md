@@ -173,6 +173,6 @@ potremmo avere a che fare.
 
 ### Esercizio per casa
 
-$$\\#_((A) = \\#_)(A)$$
+$$\#_((A) = \\#_)(A)$$
 
 dove $\#_a(A)$ significa "il numero di occorrenze di $a$ in $A$".

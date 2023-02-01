@@ -173,4 +173,4 @@ potremmo avere a che fare.
 
 Esercizio per il 02-02: dimostrare
 
-$$\#_((A) = \#_)(A)$$
+$$\\#_((A) = \\#_)(A)$$

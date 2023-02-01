@@ -120,8 +120,19 @@ dal linguaggio della logica classica proposizionale:
 1. nessun altra formula appartiene al linguaggio.
 
 Ci saranno utili alcune definizioni "di comodo", ovvero abbreviazioni
-sintatiche:
+sintattiche:
 
 $$ \top \equiv \bot \rightarrow \bot $$
 
 $$ (A \leftrightarrow B) \equiv ((A \rightarrow B) \wedge (B \rightarrow A)) $$
+
+Siccome dover sempre usare le parentesi tonde per disambiguare la nostra
+grammatica stanca, adottiamo alcune utili convenzioni per non doverle usare
+quando il significato della formula si capisce anche senza:
+
+1. se una coppia di parentesi si trova ai margini sinistro e destro della
+formula, lo possiamo sottointendere;
+1. priorità: la negazione lega più forte di congiunzione e disgiunzione, che a
+loro volta legano più forte del condizionale materiale;
+1. associatività: la congiunzione e la disgiunzione associano a sinistra (ma
+non fra di loro).

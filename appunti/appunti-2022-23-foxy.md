@@ -171,7 +171,7 @@ costruttori) che potrebbero avere tale lunghezza, tedia, spesso dimostriamo per
 induzione direttamente elencando le vaire "tipologie" di formula con le quali
 potremmo avere a che fare.
 
-Esercizio per il 02-02: dimostrare
+### Esercizio per casa
 
 $$\\#_((A) = \\#_)(A)$$
 

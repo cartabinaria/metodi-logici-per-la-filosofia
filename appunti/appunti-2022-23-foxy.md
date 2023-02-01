@@ -105,7 +105,7 @@ $$\Phi := \\{ p_0, p_1, p_2, \dots \\}$$
 alcuni connettivi logici primitivi (fungono da vero-funzioni, ovvero funzioni
 che prendono in ingresso 0, 1 o più proposizioni per formarne una nuova),
 
-$$\bot, \neg, \wedge, \weld, \rightarrow$$
+$$\bot, \neg, \wedge, \lor, \rightarrow$$
 
 e le parentesi tonde $($ e $)$ come simboli ausiliari per disambiguare il nostro
 linguaggio.
@@ -118,3 +118,10 @@ dal linguaggio della logica classica proposizionale:
 1. se $A \in Fm^\Phi$, allora $\neg A \in Fm^\Phi$;
 1. se $A, B \in Fm^\Phi$, allora $(A \wedge B), (A \lor B), (A \rightarrow) B \in Fm^\Phi$;
 1. nessun altra formula appartiene al linguaggio.
+
+Ci saranno utili alcune definizioni "di comodo", ovvero abbreviazioni
+sintatiche:
+
+$$ \top \equiv \bot \rightarrow \bot $$
+
+$$ (A \leftrightarrow B) \equiv ((A \rightarrow B) \wedge (B \rightarrow A)) $$

@@ -152,3 +152,9 @@ $$ lg(A \wedge B) = lg(A \lor B) = lg(A \rightarrow B) = lg(A) + lg(B) + 1 $$
 Se siamo familiari con il concetto di dimostrazione per induzione sui numeri
 naturali in teoria dei numeri, possiamo ora effettuare dimostrazioni per
 induzione sulla lunghezza delle formula della logica proposizionale classica.
+
+Principio di induzione (versione "classica"):
+
+- se $P(0)$;
+- se $\forall m \in \mathbb{N} (P(m) \rightarrow P(m + 1));
+- allora $\forall n \in \mathbb{N} P(n).

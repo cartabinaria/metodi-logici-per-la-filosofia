@@ -143,11 +143,11 @@ calcolare gli oggetti di cui parlano. Per esempio, possiamo definire la
 lunghezza $lg$ (o "peso") di una formula o come il numero di occorrenze di connettivi
 logici unari o binari che ne fanno parte o, equivalentemente, per induzione:
 
-$$ lg(p_i) = lg(\bot) = 0 $$
+$$ lg(p_i) = lg(\bot) = 0 $$ (passo base)
 
-$$ lg(\neg A) = lg(A) + 1 $$
+$$ lg(\neg A) = lg(A) + 1 $$ (passo d'induzione 1)
 
-$$ lg(A \wedge B) = lg(A \lor B) = lg(A \rightarrow B) = lg(A) + lg(B) + 1 $$
+$$ lg(A \wedge B) = lg(A \lor B) = lg(A \rightarrow B) = lg(A) + lg(B) + 1 $$ (passo d'induzione 2)
 
 Se siamo familiari con il concetto di dimostrazione per induzione sui numeri
 naturali in teoria dei numeri, possiamo ora effettuare dimostrazioni per
@@ -155,12 +155,22 @@ induzione sulla lunghezza delle formula della logica proposizionale classica.
 
 Principio di induzione (versione "classica"):
 
+- se $P(0)$ (passo base);
+- se $\forall m \in \mathbb{N} (P(m) \rightarrow P(m + 1))$ (passo di induzione);
+- allora $\forall n \in \mathbb{N} : P(n)$ (tesi).
+
+Talvolta ci conviene usare invece una sua variante, detta "principio di
+induzione forte" (l'ipotesi induttiva viene fortificata):
+
 - se $P(0)$;
-- se $\forall m \in \mathbb{N} (P(m) \rightarrow P(m + 1))$;
+- se $\forall m \in \mathbb{N} : ((\forall n \in \mathbb{N} : (n \leq m \rightarrow P(n))) \rightarrow P(m + 1))$;
 - allora $\forall n \in \mathbb{N} : P(n)$.
 
-Principio di induzione forte:
+Siccome dover risalire dalla lunghezza della formula alle "tipologie" (schemi,
+costruttori) che potrebbero avere tale lunghezza, tedia, spesso dimostriamo per
+induzione direttamente elencando le vaire "tipologie" di formula con le quali
+potremmo avere a che fare.
 
-- se $P(0)$;
-- se $\forall m \in \mathbb{N} ((\forall n \in \mathbb{N} : (n \leq m \rightarrow P(n))) \rightarrow P(m + 1))$;
-- allora $\forall n \in \mathbb{N} : P(n)$.
+Esercizio per il 02-02: dimostrare
+
+$$\#_((A) = \#_)(A)$$

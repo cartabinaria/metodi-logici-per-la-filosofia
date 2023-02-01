@@ -73,3 +73,31 @@ Dopo aver definito in modo rigoroso sintassi e semantica di diversi sistemi
 modali sulla base di queste considerazioni, passeremo a risultati metalogici di
 teoria delle dimostrazioni che ci rivelano proprietà particolari di questi
 sistemi.
+
+## 02-01. Ripasso di logica classica proposizionale (1)
+
+### Cos'è la logica?
+
+Si dice che una proposizione è conseguenza logica di (o "segue logicamente da")
+altre quando, se le ultime sono vere, allora lo deve essere anche la prima.
+
+In particolare, un argomento o ragionamento si dice corretto o valido se la sua
+conclusione è conseguenza logica delle sue premesse.
+
+La logica è la discliplina che studia la conseguenza logica.
+
+### Cos'è la logica proposizionale classica?
+
+Una proposizione (semplicisticamente) è una parte del discorso che potrebbe
+essere vera o falsa.
+
+Una logica si dice proposizionale quando tratta solo proposizioni.
+
+Noi ripasseremo la logica proposizionale classica (e cioè quella comunemente
+usata) prima di vedere quelle modali.
+
+Essa è formata da un insieme infinito di atomi logici (fungono da variabili
+vere o false che rappresentano le proposizioni semplici del linguaggio
+naturale):
+
+$$\Phi := \{ p_0, p_1, p_2, \dots \}$$

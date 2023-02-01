@@ -157,4 +157,10 @@ Principio di induzione (versione "classica"):
 
 - se $P(0)$;
 - se $\forall m \in \mathbb{N} (P(m) \rightarrow P(m + 1))$;
-- allora $\forall n \in \mathbb{N} P(n)$.
+- allora $\forall n \in \mathbb{N} : P(n)$.
+
+Principio di induzione forte:
+
+- se $P(0)$;
+- se $\forall m \in \mathbb{N} ((\forall n \in \mathbb{N} : (n \leq m \rightarrow P(n))) \rightarrow P(m + 1))$;
+- allora $\forall n \in \mathbb{N} : P(n)$.

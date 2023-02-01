@@ -175,4 +175,4 @@ potremmo avere a che fare.
 
 $$\\#_((A) = \\#_)(A)$$
 
-dove $\\#_a(A)$ significa "il numero di occorrenze di $a$ in $A$".
+dove $\#_a(A)$ significa "il numero di occorrenze di $a$ in $A$".

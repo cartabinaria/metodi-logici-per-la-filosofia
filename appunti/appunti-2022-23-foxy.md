@@ -100,4 +100,4 @@ Essa è formata da un insieme infinito di atomi logici (fungono da variabili
 vere o false che rappresentano le proposizioni semplici del linguaggio
 naturale):
 
-$$\Phi := { p_0, p_1, p_2, \dots }$$
+$$\Phi := \\{ p_0, p_1, p_2, \dots \\}$$

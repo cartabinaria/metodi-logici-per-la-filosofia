@@ -175,4 +175,4 @@ Esercizio per il 02-02: dimostrare
 
 $$\\#_((A) = \\#_)(A)$$
 
-dove $_a(A)$ significa "il numero di occorrenze di $a$ in $A$".
+dove $\\#_a(A)$ significa "il numero di occorrenze di $a$ in $A$".

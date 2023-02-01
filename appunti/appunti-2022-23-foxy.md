@@ -144,7 +144,9 @@ lunghezza $lg$ (o "peso") di una formula o come il numero di occorrenze di conne
 logici unari o binari che ne fanno parte o, equivalentemente, per induzione:
 
 $$ lg(p_i) = lg(\bot) = 0 $$
+
 $$ lg(\neg A) = lg(A) + 1 $$
+
 $$ lg(A \wedge B) = lg(A \lor B) = lg(A \rightarrow B) = lg(A) + lg(B) + 1 $$
 
 Se siamo familiari con il concetto di dimostrazione per induzione sui numeri

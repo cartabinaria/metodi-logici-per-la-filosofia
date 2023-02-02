@@ -173,6 +173,15 @@ potremmo avere a che fare.
 
 ### Esercizio per casa
 
-$\char"0023((A) = \char"0023_)(A)$$
+$\char"0023_((A) = \char"0023_)(A)$$
 
 dove $\char"0023_a(A)$ significa "il numero di occorrenze di $a$ in $A$".
+
+## 02-02. Ripasso di logica classica proposizionale (2)
+
+### Esercizio svolto in aula
+
+$\char"0023_{p_i, \bot}(A) \geq \char"0023_{\wedge, \lor, \rightarrow}(A)$$
+
+L'esercizio, volendo, si semplifica dimostrando la disuguaglianza stretta al
+posto di quella lasca.

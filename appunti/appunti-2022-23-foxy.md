@@ -173,7 +173,7 @@ potremmo avere a che fare.
 
 ### Esercizio per casa
 
-$$\char"0023_((A) = \char"0023_)(A)$$
+$\char"0023_((A) = \char"0023_)(A)$
 
 dove $\char"0023_a(A)$ significa "il numero di occorrenze di $a$ in $A$".
 
@@ -181,7 +181,7 @@ dove $\char"0023_a(A)$ significa "il numero di occorrenze di $a$ in $A$".
 
 ### Esercizio svolto in aula
 
-$$\char"0023_{p_i, \bot}(A) \geq \char"0023_{\wedge, \lor, \rightarrow}(A)$$
+$\char"0023_{p_i, \bot}(A) \geq \char"0023_{\wedge, \lor, \rightarrow}(A)$
 
 L'esercizio, volendo, si semplifica dimostrando la disuguaglianza stretta al
 posto di quella lasca.

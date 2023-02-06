@@ -277,7 +277,7 @@ permette di capire che, in virtù della semantica che abbiamo associato ad esso,
 il condizionale materiale $\rightarrow$ all'interno del nostro linguaggio la
 nozione di conseguenza logica:
 
-$$\Gamma, A \models B \quad sse \quad \Gamme \models A \rightarrow B$$
+$$\Gamma, A \models B \quad sse \quad \Gamma \models A \rightarrow B$$
 
 ### Altri esercizi per casa
 

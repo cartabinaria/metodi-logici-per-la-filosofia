@@ -222,8 +222,8 @@ rispetto a una certa interpretazione I (o che "I rende vera A"), scriviamo $I
 \models A$. Siamo ora pronti a definire la semantica della logica proposizionale
 classica:
 
-- $I \models p_i \quad sse \quad p_i \in I (oppure, usando la funzione
-  caratteristica i(p_i) = 1)$
+- $I \models p_i \quad sse \quad p_i \in I$ (oppure, usando la funzione
+  caratteristica $I(p_i) = 1$)
 - $I \not\models \bot$
 - $I \models \neg A \quad sse \quad I \not\models A$
 - $I \models A \wedge B \quad sse \quad I \models A e I \models B$
@@ -248,7 +248,7 @@ la formula o meno.
 > Sia A una formula e siano I e I' due interpretazioni. Se, per ogni atomo logico
 > $p_i$ che occorre almeno una volta in A, $I(p_i) = I'(p_i)$, allora vale che
 >
-> I \models A \quad sse \quad I' \models A
+> $I \models A \quad sse \quad I' \models A$
 
 ### Esercizio per casa
 
@@ -267,7 +267,7 @@ Allora:
 - $\models A$ (si legge "A è valida", "A è una verità logica" o, finché restiamo
   nella logica classica proposizionale, "A è una tautologia") significa $\forall
   I : I \models A$
-- $\Gamma \models A$ (si legge "A è conseguenza logica di \Gamma") significa
+- $\Gamma \models A$ (si legge "A è conseguenza logica di $\Gamma$") significa
   $\forall I : ((\forall B \in \Gamma : I \models B) \rightarrow I \models A)$
 
 ### Il teorema di deduzione

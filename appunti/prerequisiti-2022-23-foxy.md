@@ -1,8 +1,10 @@
-# Metodi logici per la filosofia
+# Prerequisiti per seguire "Metodi logici per la filosofia"
 
 Appunti di **[Foxy](https://foxyseta.github.io)** (Stefano Volpe) per l'a.a.
 2022-23: se trovi qualcosa di sbagliato, non esitare a **[caricare la
-correzione](https://github.com/csunibo/metodi-logici-per-la-filosofia)**.
+correzione](https://github.com/csunibo/metodi-logici-per-la-filosofia)**. Questi
+appunti coprono solo le prime lezioni del prof., pensate per chi non ha mai
+seguito un corso di logica di base.
 
 ## 01-30. Presentazione del corso
 
@@ -177,7 +179,7 @@ $\char"0023_((A) = \char"0023_)(A)$
 
 dove $\char"0023_a(A)$ significa "il numero di occorrenze di $a$ in $A$".
 
-## 02-02. Ripasso di logica classica proposizionale (2)
+## 02-02. Esercizi sulla sintassi della logica classica proposizionale
 
 ### Esercizio svolto in aula
 
@@ -185,3 +187,84 @@ $\char"0023_{p_i, \bot}(A) \geq \char"0023_{\wedge, \lor, \rightarrow}(A)$
 
 L'esercizio, volendo, si semplifica dimostrando la disuguaglianza stretta al
 posto di quella lasca.
+
+## 02-06. Semantica della logica classica proposizionale (1)
+
+### Cos'è la semantica?
+La semantica di un linguaggio formale è il significato che associamo ai suoi
+elementi. Senza semantica, potremmo costruire formule ben formate secondo le
+regole della sintassi, ma senza poterci accordare su cosa rappresentino.
+
+### La semantica della logica proposizionale
+
+La semantica della logica proposizionale si basa sul concetto di
+*interpetazione*. Una possibile interpretazione $I$ relativa al nostro
+linguaggio è un qualsiasi sottoinsieme dell'insieme $\Phi$ degli atomi logici:
+
+$$I \subset \Phi$$
+
+Intuitivamente, l'intepretazione rappresenta l'insieme di tutte e sole le
+proposizioni atomiche che essa rende vere: le proposizioni atomiche lasciate
+fuori dall'intepretazione saranno quindi false secondo essa. Siccome una
+intepretazione è un sottoinsieme di $\Phi$, possiamo definire un'intepretazione
+anche come la funzione caratteristica del suddetto sottoinsieme, e cioè la
+funzione $I : \Phi \rightarrow \\{0, 1\\}$ che associa a ogni proposizione
+atomica che vorremmo fosse resa vera 1, e 0 alle proposizioni atomiche che
+vorremmo fossero rese false.
+
+Questi due modi di concepire le intepretazioni fanno uso di oggetti matematici
+diversi, ma sono entrambi funzionali. Di volta in volta, capiremo quale stiamo
+usando dal contesto. In logica modale, però, spesso è più comoda la prima.
+
+In entrambi i casi, siccome partiamo da un insieme $\Phi$ infinito, avremo un
+numero infinito di possibili intepretazioni. Per dire che una formula A vale
+rispetto a una certa intepretazione I (o che "I rende vera A"), scriviamo $I
+\models A$. Siamo ora pronti a definire la semantica della logica proposizionale
+classica:
+
+- $I \models p_i sse p_i \in I (oppure, usando la funzione caratteristica i(p_i)
+  = 1)$
+- $I \not\models \bot$
+- $I \models \neg A sse I \not\models A$
+- $I \models A \wedge B sse I \models A e I \models B$
+- $I \models A \lor B sse I \models A o I \models B$ (disgiunzione inclusiva)
+- $I \models A \rightarrow B sse I \not\models A o I \models B$ (disgiunzione
+  inclusiva)
+
+### Applicabilità del metodo delle tavole di verità
+
+Un metodo meccanico e concettualmente semplice (anche se potenzialmente lungo)
+per verificare quali interpretazioni soddisfino una data formula A è quello
+delle cosiddette "tavole di verità". Per mostrarne l'applicabilità, però,
+abbiamo prima bisogno di un risultato preliminare. Per sommi capi, questo
+"lemma" ci assicura che, per capire se una formula sia vera o meno rispetto a
+una data interpetazione, è sufficiente sapere come questa interpetazione si
+collochi rispetto agli atomi logici che effettivamente compaiono nella formula.
+In altre parole, se un atomo logico non compare nella formula, non ci interessa
+se sia vero o falso in una data intepretazione per capire se questa renda vera
+la formula o meno.
+
+> Sia A una formula e siano I e I' due intepretazioni. Se, per ogni atomo logico
+> $p_i$ che occorre almeno una volta in A, $I(p_i) = I'(p_i)$, allora vale che
+>
+> I \models A sse I' \models A
+
+### Esercizio per casa
+
+Si dimostri, per induzione strutturale sul numero naturale $k$:
+
+$$I \models A sse I \models \neg{}^{2k}A$$
+
+### Utili definizioni per la semantica
+
+Siano A una formula, I un'intepretazione e $\Gamma$ un insieme di formule.
+Allora:
+
+- "A è soddisfatta da I" significa $I \models A$ (siccome siamo ancora in logica
+  proposizionale)
+- "A è soddisfacibile" significa $\exists I : I \models A$
+- $\models A$ (si legge "A è valida", "A è una verità logica" o, finché restiamo
+  nella logica classica proposizionale, "A è una tautologia") significa $\forall
+  I : I \models A$
+- $\Gamma \models A$ (si legge "A è conseguenza logica di \Gamma") significa
+  $\forall I : ((\forall B \in \Gamma : I \models B) \rightarrow I \models A)$

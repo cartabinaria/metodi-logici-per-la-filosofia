@@ -51,12 +51,12 @@ proposizionali prefissi unari: $\Box$ e $\Diamond$. Sono duali:
 $\Diamond P \leftrightarrow \neg \Box \neg P$ o, equivalentemente,
 $\Box P \leftrightarrow \neg \Diamond \neg P$. In generale, il loro ruolo è
 rappresentare operazioni logiche non vero-funzionali. Possono avere diverse
-intepretazioni:
+interpretazioni:
 
 - i. aletica: "è necessario che" vs "è possibile che";
-- i. epistemica: "si sa che" vs "???" (nessuna intepretazione immediata in
+- i. epistemica: "si sa che" vs "???" (nessuna interpretazione immediata in
   linguaggio naturale);
-- i. doxastica: "si crede che" vs "???" (nessuna intepretazione immediata in
+- i. doxastica: "si crede che" vs "???" (nessuna interpretazione immediata in
   linguaggio naturale);
 - i. deontica: "è obbligatorio che" vs "è possibile che".
 
@@ -201,35 +201,36 @@ La semantica della logica proposizionale si basa sul concetto di
 *interpetazione*. Una possibile interpretazione $I$ relativa al nostro
 linguaggio è un qualsiasi sottoinsieme dell'insieme $\Phi$ degli atomi logici:
 
-$$I \subset \Phi$$
+$$I \subseteq \Phi$$
 
-Intuitivamente, l'intepretazione rappresenta l'insieme di tutte e sole le
+Intuitivamente, l'interpretazione rappresenta l'insieme di tutte e sole le
 proposizioni atomiche che essa rende vere: le proposizioni atomiche lasciate
-fuori dall'intepretazione saranno quindi false secondo essa. Siccome una
-intepretazione è un sottoinsieme di $\Phi$, possiamo definire un'intepretazione
-anche come la funzione caratteristica del suddetto sottoinsieme, e cioè la
-funzione $I : \Phi \rightarrow \\{0, 1\\}$ che associa a ogni proposizione
-atomica che vorremmo fosse resa vera 1, e 0 alle proposizioni atomiche che
-vorremmo fossero rese false.
+fuori dall'interpretazione saranno quindi false secondo essa. Siccome una
+interpretazione è un sottoinsieme di $\Phi$, possiamo sempre definirla anche
+come la funzione caratteristica del suddetto sottoinsieme, e cioè la funzione $I
+: \Phi \rightarrow \\{0, 1\\}$ che associa a ogni proposizione atomica che
+vorremmo fosse resa vera 1, e 0 alle proposizioni atomiche che vorremmo fossero
+rese false.
 
-Questi due modi di concepire le intepretazioni fanno uso di oggetti matematici
+Questi due modi di concepire le interpretazioni fanno uso di oggetti matematici
 diversi, ma sono entrambi funzionali. Di volta in volta, capiremo quale stiamo
 usando dal contesto. In logica modale, però, spesso è più comoda la prima.
 
 In entrambi i casi, siccome partiamo da un insieme $\Phi$ infinito, avremo un
-numero infinito di possibili intepretazioni. Per dire che una formula A vale
-rispetto a una certa intepretazione I (o che "I rende vera A"), scriviamo $I
+numero infinito di possibili interpretazioni. Per dire che una formula A vale
+rispetto a una certa interpretazione I (o che "I rende vera A"), scriviamo $I
 \models A$. Siamo ora pronti a definire la semantica della logica proposizionale
 classica:
 
-- $I \models p_i sse p_i \in I (oppure, usando la funzione caratteristica i(p_i)
-  = 1)$
+- $I \models p_i \quad sse \quad p_i \in I (oppure, usando la funzione
+  caratteristica i(p_i) = 1)$
 - $I \not\models \bot$
-- $I \models \neg A sse I \not\models A$
-- $I \models A \wedge B sse I \models A e I \models B$
-- $I \models A \lor B sse I \models A o I \models B$ (disgiunzione inclusiva)
-- $I \models A \rightarrow B sse I \not\models A o I \models B$ (disgiunzione
+- $I \models \neg A \quad sse \quad I \not\models A$
+- $I \models A \wedge B \quad sse \quad I \models A e I \models B$
+- $I \models A \lor B \quad sse \quad I \models A o I \models B$ (disgiunzione
   inclusiva)
+- $I \models A \rightarrow B \quad sse \quad I \not\models A o I \models B$
+  (disgiunzione inclusiva)
 
 ### Applicabilità del metodo delle tavole di verità
 
@@ -241,23 +242,23 @@ abbiamo prima bisogno di un risultato preliminare. Per sommi capi, questo
 una data interpetazione, è sufficiente sapere come questa interpetazione si
 collochi rispetto agli atomi logici che effettivamente compaiono nella formula.
 In altre parole, se un atomo logico non compare nella formula, non ci interessa
-se sia vero o falso in una data intepretazione per capire se questa renda vera
+se sia vero o falso in una data interpretazione per capire se questa renda vera
 la formula o meno.
 
-> Sia A una formula e siano I e I' due intepretazioni. Se, per ogni atomo logico
+> Sia A una formula e siano I e I' due interpretazioni. Se, per ogni atomo logico
 > $p_i$ che occorre almeno una volta in A, $I(p_i) = I'(p_i)$, allora vale che
 >
-> I \models A sse I' \models A
+> I \models A \quad sse \quad I' \models A
 
 ### Esercizio per casa
 
 Si dimostri, per induzione strutturale sul numero naturale $k$:
 
-$$I \models A sse I \models \neg{}^{2k}A$$
+$$I \models A \quad sse \quad I \models \neg{}^{2k}A$$
 
 ### Utili definizioni per la semantica
 
-Siano A una formula, I un'intepretazione e $\Gamma$ un insieme di formule.
+Siano A una formula, I un'interpretazione e $\Gamma$ un insieme di formule.
 Allora:
 
 - "A è soddisfatta da I" significa $I \models A$ (siccome siamo ancora in logica
@@ -268,3 +269,17 @@ Allora:
   I : I \models A$
 - $\Gamma \models A$ (si legge "A è conseguenza logica di \Gamma") significa
   $\forall I : ((\forall B \in \Gamma : I \models B) \rightarrow I \models A)$
+
+### Il teorema di deduzione
+
+Il teorema di deduzione è un risultato di semantica molto importante, perché ci
+permette di capire che, in virtù della semantica che abbiamo associato ad esso,
+il condizionale materiale $\rightarrow$ all'interno del nostro linguaggio la
+nozione di conseguenza logica:
+
+$$\Gamma, A \models B \quad sse \quad \Gamme \models A \rightarrow B$$
+
+### Altri esercizi per casa
+
+Scegliere alcune tautologie a piacere e dimostrare (senza tavole di verità) che
+esse siano effettivamente tautologie.

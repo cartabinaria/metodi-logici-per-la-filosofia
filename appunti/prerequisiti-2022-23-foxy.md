@@ -301,6 +301,14 @@ Enunciando questo teorema, stiamo implicitamente estendendo la nozione di
 quando i loro elementi lo sono congiuntamente, e insoddisfacibili in caso
 contrario.
 
+### Esercizio per casa
+
+Della doppia implicazione del teorema precedente, dimostrare l'implicazione
+da destra verso sinistra (da sinistra verso destra è già stato fatto in
+aula).
+
+## Conclusione
+
 Qui si conlude la parte di prerequisiti per un corso di logica modale. Gli
 appunti sulla logica modale in sé sono coperti dagli **[appunti di altri
 autori](https://csunibo.github.io/metodi-logici-per-la-filosofia/appunti)**.

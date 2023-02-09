@@ -39,7 +39,7 @@ seguito un corso di logica di base.
 
 Le nostre dimostrazioni formali non useranno la deduzione naturale, ma il
 calcolo dei sequenti (anch'esso introdotto da Gentzen). Il metateorema
-principale (*Hauptsatz*) di Gentzen che riguarga questo sistema ci permette di
+principale (_Hauptsatz_) di Gentzen che riguarga questo sistema ci permette di
 fare a meno della regola del taglio, ottenendo un sistema deduttivo analitico
 e non sintetico. Questo ci garantisce l'esistenza di prove concise e meccaniche.
 Molto meglio della deduzione naturale!
@@ -133,11 +133,11 @@ grammatica stanca, adottiamo alcune utili convenzioni per non doverle usare
 quando il significato della formula si capisce anche senza:
 
 1. se una coppia di parentesi si trova ai margini sinistro e destro della
-formula, lo possiamo sottointendere;
+   formula, lo possiamo sottointendere;
 1. priorità: la negazione lega più forte di congiunzione e disgiunzione, che a
-loro volta legano più forte del condizionale materiale;
+   loro volta legano più forte del condizionale materiale;
 1. associatività: la congiunzione e la disgiunzione associano a sinistra (ma
-non fra di loro).
+   non fra di loro).
 
 Le definizioni per induzione sono utili: si sposano bene con la struttura con
 cui abbiamo definito le nostre formule, e forniscono un modo algoritmico per
@@ -191,6 +191,7 @@ posto di quella lasca.
 ## 02-06. Semantica della logica classica proposizionale (1)
 
 ### Cos'è la semantica?
+
 La semantica di un linguaggio formale è il significato che associamo ai suoi
 elementi. Senza semantica, potremmo costruire formule ben formate secondo le
 regole della sintassi, ma senza poterci accordare su cosa rappresentino.
@@ -198,7 +199,7 @@ regole della sintassi, ma senza poterci accordare su cosa rappresentino.
 ### La semantica della logica proposizionale
 
 La semantica della logica proposizionale si basa sul concetto di
-*interpetazione*. Una possibile interpretazione $I$ relativa al nostro
+_interpetazione_. Una possibile interpretazione $I$ relativa al nostro
 linguaggio è un qualsiasi sottoinsieme dell'insieme $\Phi$ degli atomi logici:
 
 $$I \subseteq \Phi$$
@@ -283,3 +284,20 @@ $$\Gamma, A \models B \quad sse \quad \Gamma \models A \rightarrow B$$
 
 Scegliere alcune tautologie a piacere e dimostrare (senza tavole di verità) che
 esse siano effettivamente tautologie.
+
+## 02/08. Conseguenza logica e soddisfacibilità
+
+Così come il teorema di deduzione ci ha permesso di stabilire un legame fra
+conseguenza logica e condizionale materiale, così il seguente teorema stabilisce
+un legame fra conseguenza logica e soddisfacibilità:
+
+$\Gamma \models A$ sse $Gamma, \neg A$ è insoddisfacibile
+
+Enunciando questo teorema, stiamo implicitamente estendendo la nozione di
+(in)soddisfacibilità agli insiemi di formule, che diciamo essere soddisfacibili
+quando i loro elementi lo sono congiuntamente, e insoddisfacibili in caso
+contrario.
+
+Qui si conlude la parte di prerequisiti per un corso di logica modale. Gli
+appunti sulla logica modale in sé sono coperti dagli **[appunti di altri
+autori](https://csunibo.github.io/metodi-logici-per-la-filosofia/appunti)**.

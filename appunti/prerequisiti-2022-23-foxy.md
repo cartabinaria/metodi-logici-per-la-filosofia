@@ -291,8 +291,10 @@ Così come il teorema di deduzione ci ha permesso di stabilire un legame fra
 conseguenza logica e condizionale materiale, così il seguente teorema stabilisce
 un legame fra conseguenza logica e soddisfacibilità:
 
-$$\Gamma \models A \quad sse \quad $\Gamma, \neg A \quad è \quad
-insoddisfacibile$$
+$$
+\Gamma \models A \quad sse \quad \Gamma, \neg A \quad è \quad
+insoddisfacibile
+$$
 
 Enunciando questo teorema, stiamo implicitamente estendendo la nozione di
 (in)soddisfacibilità agli insiemi di formule, che diciamo essere soddisfacibili

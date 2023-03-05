@@ -23,9 +23,7 @@ può consultare bibliografia da
 - logiche multi-modali;
 - il problema dell'onniscienza logica e i modelli di vicinanza/di
   Scott-Montague/minimali;
-- logica modale quantificata del primo ordine ($\forall,\exists$);
-- uso della logica modale proposizionale per investigare il predicato di
-  dimostrabilità in teorie che estendono Q.
+- logica modale quantificata del primo ordine ($\forall,\exists$).
 
 ## Logica per la filosofia
 
@@ -38,10 +36,18 @@ può consultare bibliografia da
 
 ## Logica per la matematica
 
+- dimostrazione del secondo teorema di incompletezza tramite logiche modali
+  della dimostrabilità;
+- uso della logica modale proposizionale nella fondamente della matematica per
+  investigare il predicato di dimostrabilità in teorie che estendono Q;
+- relazioni fra logiche modali, topologie e algebre;
 - logiche epistemiche come strumento per modellare giochi matematici.
 
 ## Logica per l'informatica
 
 - dimostratore automatico per il calcolo dei sequenti della logica modale
   (**[già implementato in passato](https://github.com/samuelemarro/convergent-sequent-calculator)**);
-- logiche modali per il web semantico.
+- logiche modali per il web semantico;
+- logica della sicurezza (una logica modale per l'ambito della sicurezza
+  informatica);
+- logiche modali per dimostrare invarianti su programmi.

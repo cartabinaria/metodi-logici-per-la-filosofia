@@ -50,4 +50,7 @@ può consultare bibliografia da
 - logiche modali per il web semantico;
 - logica della sicurezza (una logica modale per l'ambito della sicurezza
   informatica);
-- logiche modali per dimostrare invarianti su programmi.
+- logiche modali per dimostrare invarianti su programmi;
+- isomorfismo di Curry-Howard e logica modale;
+- teoria della complessità e della calcolabilità applicate ai problemi della logica;
+- altri spunti si possono trovare [qui](https://cs.stackexchange.com/questions/41099/the-use-of-modal-logic-in-computer-science).

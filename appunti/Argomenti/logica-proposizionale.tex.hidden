@@ -1,0 +1,435 @@
+\chapter{Breve introduzione}
+
+\noindent {\textbf{Precisazioni banali}}:
+\begin{enumerate}[-]
+    \item Questi appunti riguardano esclusivamente la prima metà del corso di Orlandelli dell'anno accademico 2022/23.
+    \item Sfortunatamente non potrò seguire la seconda metà del corso. Se il prossimo anno avrò voglia di seguire anche la seconda parte, questi appunti verranno estesi.
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent {\textbf{Precisazioni utili per la lettura degli appunti:}}
+\begin{enumerate}[-]
+\item Non dovrebbero esserci errori troppo gravi, ma è molto probabile che si trovino imprecisioni.
+\item Se trovi errori, soprattutto se gravi, per favore fammelo presente (giuliano.ricciardi@studio.unibo.it).
+\item Su questi appunti si trova tutto ciò che è stato dimostrato dal professore.\newline Uniche eccezioni:
+\begin{enumerate}[a)]
+\item Alcuni esercizi per casa. (ho riportato il testo, potrebbero essere richiesti per l’esame)
+\item Dimostrazione di convergenza non esprimibile. (ho riportato il testo, sono richiesti per l’esame)
+\item Dimostrazione di connessione non esprimibile. (ho riportato il testo, sono richiesti per l’esame)
+\item Tutte le dimostrazioni nei calcoli assiomatici (non chiesti all’esame).\newline
+\end{enumerate}
+\item Al posto di scrivere "$a$ sse $b$", ho preferito scrivere $b$ sotto ad $a$. Questa è solo una convenzione con la quale mi sono trovato bene, ma \underline{non va fatto all’esame}. Esempio:\newline
+\begin{longtable}{ll}
+Al posto di scrivere: &$\vDash_w \Box A$\quad sse \quad$\forall v \in W \: (wRv \: \: implica \:\: \vDash_v A)$\\
+\\
+Ho scritto: &$\vDash_w \Box A$\\
+&$\forall v \in W \: (wRv \: \: implica \:\: \vDash_v A)$
+\end{longtable}
+\item Buon divertimento :)
+\end{enumerate}
+
+\chapter{Logica proposizionale}
+\vspace{-1cm}
+\minitoc 
+\vspace{0.6cm}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\section{Costruzione linguaggio}
+\noindent\textbf{Elementi costitutivi:}
+\begin{enumerate}
+    \item[$\square$] Variabili enunciative ($\Phi$): P$_0$, P$_1$, P$_2$ ...
+    \item[$\square$] Simboli\footnote{Non hanno sfumature temporali.}: $\neg$, $\perp$, $\wedge$, $\vee$, $\rightarrow$
+    \item[$\square$] Simboli ausiliari: ( )
+\end{enumerate}
+\vspace{0.6cm}
+\noindent\textbf{Definizione dell'insieme delle formule modali proposizionali (Fm$\Phi$\footnote{$\Phi$ è un insieme non vuoto di variabili enunciative.})}
+
+\begin{enumerate} [label=\protect\circled{\arabic*}]
+    \item \hypertarget{BaseUno}{Se $\mathpzc{P}_i$ $\in$ $\Phi$, allora $\mathpzc{P}_i$ $\in$ Fm$\Phi$}
+    \item \hypertarget{BaseDue}{$\perp$ $\in$ Fm$\Phi$}
+    \vspace{0.7cm}
+    \item \hypertarget{BaseTre}{Se A $\in$ Fm$\Phi$, allora $\neg$A $\in$ Fm$\Phi$}
+    \item \hypertarget{BaseQuattro}{Se A,B $\in$ Fm$\Phi$, allora $\begin{Bmatrix}
+        (A \wedge B) \\
+        (A \vee B) \\
+        (A \rightarrow B) \\
+    \end{Bmatrix}$ $\in$ Fm$\Phi$}
+    \vspace{0.7cm}
+    \item Nient'altro appartiene a Fm$\Phi$.
+\end{enumerate}
+\vspace{0.6cm}
+\pagebreak
+\noindent\textbf{Simboli ausiliari (convenzionali)}
+\begin{itemize}
+    \item 
+        \rotatebox[origin=c]{180}{$\perp$} $\equiv$ $\perp$ $\rightarrow$\footnote{Un'implicazione con l'antecedente \textit{sempre} vero, come nel caso di $\perp$, è sempre vera.}$\perp$
+    \item $(A \leftrightarrow B) \equiv (A \rightarrow B) \wedge (B \rightarrow A)$
+\end{itemize}
+\vspace{0.6cm}
+\noindent\textbf{Convenzioni}
+\begin{enumerate} [a)]
+    \item Omettere le parentesi esterne a tutto\footnote{Più precisamente, se una coppia di parentesi si trova ai margini sinistro e destro della formula, lo possiamo sottointendere.}.
+    \item $\neg$ lega più di $\wedge,\vee$, che legano più di $\rightarrow$.\footnote{Ad esempio, la formula $A \wedge B \rightarrow C$ deve essere letta $(A \wedge B) \rightarrow C$.}
+    \item $\wedge, \vee$ associano a sinistra.\footnote{Ad esempio, la formula $A \wedge B \wedge C \wedge D$ deve essere letta $((A \wedge B) \wedge C) \wedge D$}
+\end{enumerate}
+
+\hypertarget{DefinizioneDiLunghezzaDiUnaFormula}{\section{Definizione di lunghezza di una formula A}}
+
+\begin{enumerate} [label=\protect\circled{\arabic*}]
+    \item {$lg(\mathpzc{P}_i) = 0$}
+    \item $lg(\perp) = 0$
+    \vspace{0.4cm}
+    \item $lg(\neg A) = lg(A) + 1$
+    \item $lg(A \wedge B) = lg(A \vee B) = lg(A \rightarrow B) = lg(A) + lg(B) + 1$
+\end{enumerate}
+
+\vspace{0.6cm}
+
+\section{Principio di induzione matematica}
+\begin{spacing}{1.5}
+
+\noindent\textbf{Esempio sui numeri naturali:}
+
+\vspace{0.5cm}
+
+\begin{minipage}{0.45\textwidth}
+\begin{framed}
+\noindent\textbf{Definizione dei numeri naturali}\footnotemark{}
+\begin{enumerate} [label=\protect\circled{\arabic*}]
+    \item $0 \in \mathbb{N}$
+    \item se $n\in\mathbb{N}$, allora $n+1 \in \mathbb{N}$
+    \item Nient'altro $\in \mathbb{N}$
+\end{enumerate}
+\end{framed}
+\end{minipage}
+\footnotetext{Questa definizione è implicita e per ricorsione.}
+
+\vspace{0.8cm}
+\noindent - Versione classica: 
+\vspace{0.1cm}
+\newline Base: $P(0)$ \newline
+Passo induttivo: $\forall m \in \mathbb{N} (P(m)\rightarrow P(m+1))$ \newline
+Conclusione: $\forall n \in \mathbb{N}$ : $ P(n)$
+\vspace{0.3cm}
+\newline - Principio di induzione \underline{forte}:
+\vspace{0.1cm}
+\newline Base: $P(0)$\footnote{Base: la proprietà P vale per 0.} \newline
+Passo induttivo: $\forall m \in \mathbb{N}$ : $ ((\forall n \in \mathbb{N}$ : $ (n \leq m \rightarrow P(n))) \rightarrow P(m+1))$\footnote{Passo induttivo: $\forall$m Se P vale per Fm$\Phi$ di lunghezza $\leq$ m (ossia $\forall n \in \mathbb{N}$ : $ (n \leq m \rightarrow P(n)) $), allora P vale per Fm$\Phi$ di lunghezza m + 1.} \newline
+Conclusione: $\forall n \in \mathbb{N}$ : $P(n)$\footnote{Conclusione: P vale per tutte le formule.}
+\end{spacing}
+\vspace{1cm}
+\noindent\textbf{\large{Dimostrazione per induzione}}
+\vspace{0.5cm}
+\noindent \newline Si deve dimostrare che:
+{\underline{$\forall A \in Fm\Phi (\#_( (A) = \#_) (A))$}}\footnote{Il simbolo $\#$, in questo caso, prende in pasto una variabile e restituisce il numero di parentesi aperte nella formula.}
+\vspace{0.3cm}
+\begin{spacing}{1.5}
+    \noindent Questo viene raggiunto soddisfacendo le condizioni sottostanti:
+\begin{itemize}[\null]
+    \item  \noindent Base: P vale per ogni A di lunghezza 0. \newline
+    IH (ipotesi di induzione): 
+    \begin{itemize}
+        \item [--] Assumo che P valga per le Fm$\Phi$ di $lg\leq m$
+        \item [--] Mostro che P vale per le Fm$\Phi$ di $lg\leq m + 1$
+    \end{itemize}
+\end{itemize}
+    \vspace{0.3cm}
+   \noindent Inizio dimostrando che la proprietà $P$ vale per tutte le formule di lunghezza zero. Nel nostro linguaggio, come è possibile notare dalla  \hyperlink{DefinizioneDiLunghezzaDiUnaFormula}{definizione di lunghezza di una formula} in  {\scriptsize\circled{1}} e {\scriptsize\circled{2}}, ciò che si trova nella clausula di base (def. di $P_i$ e $\perp$) ha lunghezza 0. \newline
+
+   \noindent Dimostrazione delle formule di base:
+   \begin{itemize}
+       \item $(\#_( (P_i) = \#_) (P_i))$ per \hyperlink{BaseUno}{{\scriptsize\circled{1}}}\footnote{Quando è stata definita la formula, non è stato specificato l'uso delle parentesi. Questo vale per la prima e la seconda clausula di base.}
+       \item $(\#_( (\perp) = \#_) (\perp))$ per \hyperlink{BaseDue}{{\scriptsize\circled{2}}}
+   \end{itemize}
+   
+   \noindent In seguito, si dimostra che anche le Fm$\Phi$ derivanti dal passo induttivo hanno la proprietà $P$.\newline
+   Questo richiede che sia vero:
+   \begin{enumerate} [a)]
+       \item $P(B) \rightarrow P(\neg B)$
+       \item {\tiny$\begin{pmatrix}
+        P(B) \wedge P(C) \\
+        P(B) \vee P(C) \\
+        P(B) \rightarrow P(C) \\
+    \end{pmatrix}$} $\rightarrow$
+    {\tiny$\begin{pmatrix}
+        P (B \wedge C) \\
+        P (B \vee C) \\
+        P (B \rightarrow C) \\
+    \end{pmatrix}$}
+   \end{enumerate}
+   \vspace{0.4cm}
+   \noindent Per dimostrare ({\color{red}a}), si assume:
+   \[
+   (\#_( (B) = \#_) (B))
+   \]
+   \vspace{0.3cm}
+   
+   \noindent Dal momento che durante la \hyperlink{BaseTre}{definizione della formula di negazione ($\neg$)} non sono state aggiunte parentesi, è possibile conseguire che:
+   \begin{gather*}
+    (\#_( (B) = \#_( (\neg B)) \\
+    (\#_) (B) = \#_) (\neg B))
+    \end{gather*}
+    Quindi, utilizzando la proprietà commutativa e la proprietà associativa si conclude:
+    \[
+        (\#_( (\neg B) = \#_) (\neg B))
+    \]
+    In questo modo è stato dimostrato che la proprietà $P$, se vale per la formula di lunghezza $m$ ($B$), vale anche per la formula di lunghezza $m + 1$ ($\neg B$) contente il simbolo $\neg$.
+    \vspace{1cm}
+    \newline\noindent Nel caso ({\color{red}b}) la dimostrazione è analoga per $\wedge$, $\vee$ e $\rightarrow$. In questi appunti, per evitare ripetizioni, è riportato solo il caso di $\wedge$. Dunque, per dimostrare (b), si assume:
+    \begin{itemize} [\null]
+        \item IH$_1$: $(\#_( (B) = \#_) (B))$
+        \item IH$_2$: $(\#_( (C) = \#_) (C))$
+    \end{itemize}
+    \vspace{0.3cm}
+    \noindent Partendo da ciò che si vuole dimostrare e andando a ritroso, si arriva ad una uguaglianza "banale".
+    \begin{enumerate}
+        \item Ciò che si vuole dimostrare: $\#_( (B \wedge C) = \#_) (B \wedge C)$
+        \item Per la \hyperlink{DefinizioneDiLunghezzaDiUnaFormula}{{\scriptsize\circled{4}}} definizione di lunghezza della formula, si può riscrivere l'uguaglianza:
+        \[
+            \#_( (B) + \#_( (C) + 1 = \#_) (B) + \#_) (C) + 1
+        \]
+        \item Per IH$_1$ e IH$_2$, è possibile sostituire $\#_) (B)$\footnote{Visto che l'IH$_1$: $\#_( (B) = \#_) (B))$ posso sostituire $\#_( (B)$ a $\#_) (B)$, grazie alle proprietà di sostituzione. Lo stesso vale per $\#_) (C)$.} e $\#_) (C)$, ottenendo l'uguaglianza "ovvia":
+        \[
+            \#_( (B) + \#_( (C) + 1 = \#_( (B) + \#_( (C) + 1
+        \]
+    \end{enumerate}
+
+\noindent\textbf{\large{{Dimostrazione per induzione (2)}}}
+\vspace{0.5cm}
+\noindent \newline Si deve dimostrare che:
+\underline{$\#_{P_i, \perp} (A) > \#_{\wedge,\vee,\rightarrow} (A) $}\newline
+
+\noindent Quindi, parto dimostrando che le Fm$\Phi$ di lunghezza 0 abbiano la proprietà $P$, per poi dimostrare che anche tutte le Fm$\Phi$ di lunghezza $m + 1$ hanno la proprietà $P$.\newline
+
+\noindent Iniziando dalla base (formule di lunghezza zero), è sufficiente sostituire ad 'A' il simbolo $\perp$ e la variabile enunciativa generica $P_i$:
+\begin{itemize}[\null]
+    \item $\#_{P_i, \perp} (P_i) > \#_{\wedge,\vee,\rightarrow} (P_i) $
+    \item $\#_{P_i, \perp} (\perp) > \#_{\wedge,\vee,\rightarrow} (\perp) $
+\end{itemize}
+Sono entrambe vere perché l'occorrenza di $\perp$ e di $P_i$ è sempre maggiore.\newline
+
+\noindent A questo punto, si deve dimostrare come la proprietà $P$ valga per tutte le Fm$\Phi$ di lunghezza $m + 1$ contenenti i simboli $\neg, \wedge, \vee, \rightarrow$.\newline
+\noindent Iniziando da {\color{red}$\neg$}, l'IH\footnote{Per arrivare alla conclusione che tutte le Fm$\Phi$ abbiano la proprietà P, è necessario che $P(B) \rightarrow P(\neg B)$ sia vera. L'ipotesi di induzione (IH) è ciò che dobbiamo supporre per rendere questa implicazione vera.} è:
+\[
+    \#_{P_i, \perp} (B) > \#_{\wedge,\vee,\rightarrow} (B)
+\]
+Ciò che si deve dimostrare è:
+\[
+    \#_{P_i, \perp} (\neg B) > \#_{\wedge,\vee,\rightarrow} (\neg B)
+\]
+La dimostrazione è ovvia per IH. Infatti, negare $B$ non comporta nessun cambiamento sulla verità della formula assunta per IH.
+\vspace{1cm}
+\newline\noindent Per dimostrare {\color{red}$\wedge$} assumo le due ipotesi induttive:
+\begin{itemize} [\null]
+    \item IH$_1$: $\#_{P_i, \perp} (B) > \#_{\wedge,\vee,\rightarrow} (B) $
+    \item IH$_2$: $\#_{P_i, \perp} (C) > \#_{\wedge,\vee,\rightarrow} (C) $
+\end{itemize}
+
+\noindent Ciò che si ha intenzione di dimostrare è: $\boxed{\#_{P_i, \perp} (B \wedge C) > \#_{\wedge,\vee,\rightarrow} (B \wedge C)} $
+
+\noindent In quanto nel \underline{primo membro} della formula non si trovano occorrenze di P$_i$ o $\perp$, è possibile riscriverlo come:
+    \[
+        \#_{P_i, \perp} (B) + \#_{P_i, \perp} (C)
+    \]
+Invece, nel \underline{secondo membro} compare una occorrenza di $\wedge$, quindi:
+    \[
+        \#_{\wedge,\vee,\rightarrow} (B) + \#_{\wedge,\vee,\rightarrow} (C) \;{\color{red} +\; 1}
+    \]
+Di conseguenza, la disequazione può essere riscritta in questo modo:
+    \[
+        {\color{purple}\#_{P_i, \perp} (B)} + \#_{P_i, \perp} (C) > \#_{\wedge,\vee,\rightarrow} (B) + \#_{\wedge,\vee,\rightarrow} (C) + 1
+    \]
+Per IH$_1$ è noto che ${\color{purple}\#_{P_i, \perp} (B)}$ deve essere strettamente maggiore di ${\color{teal}{\#_{\wedge,\vee,\rightarrow} (B) }}$. Dato che il simbolo \# 'conta' partendo da 0 e aumentando sempre di 1 unità, ${\color{purple}\#_{P_i, \perp} (B)}$ deve essere almeno una unità più grande di ${\color{teal}{\#_{\wedge,\vee,\rightarrow} (B) }}$. Quindi, sostituisco ${\color{purple}\#_{P_i, \perp} (B)}$\: con \:$\#_{\wedge,\vee,\rightarrow} (B) $ + 1 + k, dove k $\geq$ 0. La disequazione può essere riscritta così:
+\[
+{\color{purple}\#_{\wedge,\vee,\rightarrow} (B) + 1 + k} \quad+ \#_{P_i, \perp} (C) > \#_{\wedge,\vee,\rightarrow} (B) + \#_{\wedge,\vee,\rightarrow} (C) + 1
+\]
+Mettendo in atto la stessa operazione per $\#_{P_i, \perp} (C)$, quindi utilizzando l'IH$_2$, si ricava:
+\[
+\#_{\wedge,\vee,\rightarrow} (B) + 1 + k \quad+\quad \#_{\wedge,\vee,\rightarrow} (C) + 1 + k \quad>\quad \#_{\wedge,\vee,\rightarrow} (B) + \#_{\wedge,\vee,\rightarrow} (C) + 1
+\]
+Riducendo la formula ai minimi termini, è banale arrivare ad una disequazione sempre vera:
+\[
+1 + k > 0 \quad(\textrm{con}\; k\geq 0)
+\]
+\noindent La soluzione di $\vee$ e $\rightarrow$ è analoga.
+\vfill
+\pagebreak
+\section{Semantica}
+\vspace{0.1cm}
+\hrule
+\vspace{7pt}
+\relax
+\noindent !Assunzioni implicite (perché si lavora in logica classica)
+\begin{itemize}
+    \item Ogni enunciato è vero o falso.
+    \item Ogni enunciato ha esattamente un valore di verità.
+\end{itemize}
+\hrule
+\vspace{1cm}
+\relax
+Fino a questo momento è stato definito il linguaggio formale, che di per sé non ha una interpretazione. Ad esempio, la $\wedge$ non rappresenta una congiunzione, ma un simbolo. \newline
+
+\noindent Per interpretare il linguaggio si ricorre alle funzioni enunciative. Quindi, come prima cosa, si attribuisce un valore alle variabili enunciative:
+\begin{gather*}
+       \boxed{I:\;\Phi\rightarrow \{0,1\}} \quad \textrm{oppure} \quad \boxed{I \subseteq \{\Phi\}}\textrm{\footnotemark{}}
+\end{gather*}
+\footnotetext{La prima funzione interpretativa assegna ad ogni variabile enunciativa il valore di 1 o 0. La seconda è un sottoinsieme delle variabili enunciative vere.}
+\vspace{0.1cm}
+
+\noindent Successivamente si {\color{red}interpretano le Fm$\Phi$}. (Da conoscere: $\blacksquare\quad I\vDash A$\footnote{Significa che la formula A è vera rispetto alla sua interpretazione.})
+\begin{enumerate} [label=\protect\circled{\arabic*}]
+    \item \hypertarget{InterpretazioneFormuleUno}{$I \vDash P_i$ \quad sse \quad $P_i \in I$ \footnote{$I \vDash P_i$ \quad sse \quad $P_i \in I$ si legge come: "l'interpretazione rende vera $P_i$ se e solo se $P_i$ appartiene all'interpretazione".} \quad (oppure $I \vDash P_i$ sse $I(P_i) = 1$)}
+    \item $I \nvDash \perp$\footnote{Non si dà $\vDash$ ma la sua negazione, in quanto la logica classica è bivalente.}
+    \item $I \vDash \neg A$ \quad sse \quad $I \nvDash A$
+    \item $I \vDash A \wedge B$ \quad sse \quad $I \vDash A$ e $I \vDash B$
+    \item $I \vDash A \vee B$ \quad sse \quad $I \vDash A$ oppure $I \vDash B$
+    \item $I \vDash A \rightarrow B$ \quad sse \quad $I \nvDash A$ oppure $I \vDash B$
+\end{enumerate}
+\vspace{1cm}
+\vfill
+\pagebreak
+\boxed{{\large\textbf{Teorema}}}\footnote{Se l'interpretazione di una qualsiasi variabile enunciativa è uguale ad un'altra interpretazione della stessa variabile enunciativa, allora so che la formula avrà lo stesso valore di verità nelle due interpretazioni.}
+\vspace{0.5cm}
+\newline Se: \quad$I(P_i) = I'(P_i) \quad \forall P_i \in A$\newline
+Allora: \quad $I \vDash A$\quad sse\quad$I' \vDash A$
+
+\vspace{0.5cm}
+\noindent $\blacksquare$ Dimostrazione: (per induzione sulla struttura della formula A)
+\begin{itemize}
+\setlength\itemsep{0.7cm}
+    \item \begin{tabbing}
+        Caso $P_i$, si deve dimostrare che:\quad\quad\=$I \vDash P_i \quad sse\quad I' \vDash P_i$\\
+    Per \hyperlink{InterpretazioneFormuleUno}{{\scriptsize\circled{1}}} riscrivo:\>$I(P_i) = 1 \quad sse\quad I'(P_i) = 1$
+    \end{tabbing}
+    \noindent Dimostrazione ovvia per ipotesi.
+    
+    \item Caso $\perp$, si deve dimostrare che:\quad\quad$I \vDash \perp \quad sse\quad I' \vDash \perp$ \newline
+    Sia nel caso di $I$, che in quello di $I'$, $\perp$ sarà sempre falso. Di conseguenza il \textit{sse} è ovvio.
+    
+    \item\begin{tabbing}
+        Caso $\neg$, si deve dimostrare che: \quad\quad\=$I \vDash \neg B \quad sse\quad I' \vDash \neg B$ \\
+    Per \hyperlink{InterpretazioneFormuleUno}{{\scriptsize\circled{3}}}, riscrivo: \>$I \nvDash B \quad sse\quad I' \nvDash B$
+    \end{tabbing}
+    \noindent Il simbolo $\neg$ è di lunghezza $m+1$, quindi l'IH è $m$.
+    \begin{gather*}
+                    IH: \quad I \vDash B \quad sse\quad I' \vDash B
+    \end{gather*}
+    \noindent In quanto la logica classica è bivalente, quindi ha due valori, se l'IH si comporta in un modo in un caso, quando la si nega, si deve comportare nello stesso modo. Quindi, per IH: $I \nvDash B$ sse $I' \nvDash B$
+    
+    \item
+        Caso $\wedge$, si deve dimostrare che:\quad\quad (a)\quad $I \vDash B \wedge C \quad sse\quad I' \vDash B \wedge C$ \newline
+        Si hanno due ipotesi di induzione:
+        \begin{enumerate} [\null]
+            \item IH$_1$: $I \vDash B \quad sse\quad I' \vDash B$
+            \item IH$_2$: $I \vDash C \quad sse\quad I' \vDash C$
+        \end{enumerate}
+    Per \hyperlink{InterpretazioneFormuleUno}{{\scriptsize\circled{4}}}, riscrivo (a):
+    \[
+        I \vDash B\quad \textrm{e}\quad I \vDash C \quad\quad sse \quad\quad I' \vDash B\quad \textrm{e}\quad I' \vDash C
+    \]
+    Per IH$_1$ e IH$_2$:
+    \[
+        I' \vDash B\quad \textrm{e}\quad I' \vDash C \quad\quad sse \quad\quad I' \vDash B\quad \textrm{e}\quad I' \vDash C
+    \]
+    \item Dimostrazione analoga per $\vee$ e $\rightarrow$
+\end{itemize}
+
+\noindent Questo teorema permette di stabilire che, per sapere il valore di verità di una formula, è sufficiente conoscere il valore di verità delle variabili enunciative. Ciò giustifica l'utilizzo delle tavole di verità. \newline
+
+\noindent {\color{red}$\ddagger$} Esercizio: $I \vDash A$ \:sse\: $I \vDash^{2k}A$ \quad (da dimostrare su induzione su $k$. Quindi, si dimostra che la proprietà valga per $k = 0$, e poi anche per $k + 1$.)
+
+\section{Definizioni: validità, conseguenza logica}
+\begin{longtable}{ll}
+    $\blacksquare$ $A$ è soddisfatta da $I$, sse & $I \vDash A$\footnote{A è soddisfatta quando $\vDash$, e non lo è quando $\nvDash$.}\\
+    $\blacksquare$ $A$ è soddisfacibile, sse & $\exists I (I \vDash A)$\footnote{A è soddisfacibile quando esiste almeno una interpretazione che la rende vera.} \\
+    $\blacksquare$ $A$ è \underline{valida} ($\vDash A$), sse & $\forall I (I \vDash A)$\footnote{A è valida quando è vera indipendentemente dall'interpretazione o dal valore di verità della variabile. In logica classica proposizionale è chiamata tautologia.}\\
+    $\blacksquare$ $A$ è \underline{conseguenza logica} ($\Gamma \vDash A$) di $\Gamma$ con $\Gamma \subseteq Fm\Phi$, sse \quad & $\forall I \: (I \vDash \Gamma \:\: allora  \:\: I \vDash A)$\footnote{Se da premesse vere, segue la verità della conclusione, allora è conseguenza logica. Quindi per ogni $I$, tale che $I$ rende veri tutti gli enunciati in $\Gamma$, risulta che $I$ renda vero anche $A$. Questo perché parto dall'insieme $\Gamma$ e arrivo all'insieme $A$.} \\
+\end{longtable}
+\vspace{1cm}
+
+\noindent{\large\textbf{Teorema di deduzione}} \newline
+\vspace{0.5cm}
+$\blacksquare$ \quad $\boxed{\Gamma, A \vDash B \quad sse \quad \Gamma \vDash A \rightarrow B}$
+
+\noindent $\boxed{\rightarrow}$ \newline
+
+    \begin{tabular}{ll}
+        Per ipotesi: & $\Gamma, A \vDash B$ \\
+        Perché congiunzione logica, si può riscrivere: & $\forall I \: (I \vDash \Gamma,A \:\: allora  \:\: I \vDash B)$\\
+        \\
+        Si deve dimostrare: & $\Gamma \vDash A \rightarrow B$\\
+        Perché congiunzione logica, si può riscrivere: & $\forall I \: (I \vDash \Gamma \:\: allora  \:\: I \vDash A \rightarrow B)$
+        \end{tabular}
+        \vspace{0.5cm}
+        \newline \noindent Assunzione: \quad $I' \vDash \Gamma$ \newline
+    \noindent Si danno due casi:\footnote{Un caso in cui $A$ è vera rispetto alla sua interpretazione, e uno in cui $A$ è falsa.} \newline
+    \vspace{0.1cm}
+
+\tikzstyle{level 1}=[level distance=30mm, sibling distance=20mm]
+\tikzstyle{level 2}=[level distance=50mm, sibling distance=15mm]
+\tikzstyle{level 3}=[level distance=20mm]
+\begin{tikzpicture}[grow=right,->,>=angle 45]
+%\begin{scope}[yshift=0]
+  \node {\noindent$I' \vDash \Gamma$}
+    child {node {$I' \nvDash A$}
+      child [-] {node {$I' \vDash A \rightarrow B$ \quad (sempre vera)}}
+    }
+    child {node {$I' \vDash A$}
+      child [-] {node{$I' \vDash A \rightarrow B$ \quad (vera per ipotesi)\footnotemark{}}}
+    };
+%\end{scope}
+\end{tikzpicture}
+\footnotetext{Per ipotesi, se $I$ rende vera $A$, allora rende vera anche $B$. In questo caso $A$ è vera, di conseguenza, per ipotesi, $B$ è vera (sempre rispetto alla sua interpretazione).}
+%\stepcounter{footnote}\footnotetext{L'antecedente dell'implicazione ($A$) è sempre falso, ciò rende l'implicazione vera.}
+   % \begin{tikzpicture} [grow'=right]
+    %\tikzset{level distance=120pt,sibling distance=18pt}
+    %\tikzset{execute at begin node=\strut}
+%\Tree [.{$I' \vDash \Gamma$}] [.{$I' \vDash A$} {$I' \vDash A \rightarrow B$ \quad (vera per ipotesi)}] [.{$I' \nvDash A$} {$I' \vDash A \rightarrow B$ \quad (sempre vera)} ]
+%\end{tikzpicture}
+\vspace{1cm}
+\newline\noindent $\boxed{\leftarrow}$ \newline
+
+\begin{tabular}{ll}
+        Per ipotesi: & $\Gamma \vDash A \rightarrow B$ \\
+        Perché congiunzione logica, si può riscrivere: & $\forall I \: (I \vDash \Gamma \:\: allora  \:\: I \vDash A \rightarrow B)$\\
+        & $\forall I \: (I \vDash \Gamma \:\: allora  \:\: (I \nvDash A \:\: oppure \:\: I \vDash B)$\\
+        \\
+        Si deve dimostrare: & $\Gamma, A \vDash B$\\
+        Perché congiunzione logica, si può riscrivere: & $\forall I \: (I \vDash \Gamma,A \:\: allora  \:\: I \vDash B)$
+    \end{tabular}
+    
+        \vspace{1cm}
+        \noindent($I_1$) Assumo:\footnote{Una implicazione è vera se l'antecedente è falso, o se il conseguente è vero. Di conseguenza, assumiamo che l'antecedente sia vero, visto che in caso contrario l'intera implicazione sarebbe sempre vera.} \quad $I \vDash \Gamma,A$ \newline
+        Per $I_1$, \: $I \vDash \Gamma$. \quad Quindi, per ipotesi: \quad $I \nvDash A$ o $I \vDash B$ \newline
+        \quad Per $I_1$, \: $I \vDash A$. \quad Di conseguenza, $I \vDash B$ \newline
+
+\noindent {\color{red}$\ddagger$} Esercizio: $\vDash (A \wedge B) \to A$ (da provare dimostrazione diretta $+$ per assurdo)\newline
+
+\vspace{0.5cm}
+\noindent\boxed{{\large\textbf{Teorema}}}
+
+\noindent \newline $\blacksquare \quad \Gamma \vDash A \quad sse \quad \Gamma, \neg A $ è insoddisfacibile\newline
+
+\noindent $\boxed{\rightarrow}$
+
+\noindent Ipotesi: \quad$\forall I \: (I \vDash \Gamma \quad allora \quad I \vDash A)$\newline
+Per soddisfare l'ipotesi, o l'antecedente è falso, o il conseguente è vero. Quindi, assumendo entrambi i casi, si mostra che $\Gamma, \neg A$ è insoddisfacibile.\newline
+
+\noindent\begin{tabular}{ll}
+    caso 1: $\exists B \in \Gamma$ t.c. $I \nvDash B$ \quad\quad & ($\underline{\Gamma}, \neg A$ è insoddisfatto da $I$) \\
+    caso 2: $I \vDash A$ & ($\Gamma, \underline{\neg A}$ è insoddisfatto da $I$)\\
+\end{tabular}
+\vspace{0.4cm}
+
+\noindent {\color{red}Potrebbe essere sbagliato. Da rivedere.}
+
+\vspace{0.5cm}
+\noindent $\boxed{\leftarrow}$ \newline
+\noindent Dimostrazione molto simile.\newline
+
+\noindent {\color{red}$\ddagger$} Esercizio: $\vDash (\neg A \vee \neg B)$ sse $\neg (A \wedge B)$
+%\noindent Per ipotesi: \quad$\forall I \: (I \nvDash \Gamma, A)$\newline
+%\noindent Si deve dimostrare: \quad $\forall I \: (I \vDash \Gamma \quad allora \quad I \vDash A)$
+\end{spacing}
+%\`E

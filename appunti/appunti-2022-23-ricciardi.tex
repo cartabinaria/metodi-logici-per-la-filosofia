@@ -1,0 +1,96 @@
+\documentclass[11pt]{report}
+\usepackage[utf8]{inputenc}
+
+\usepackage[margin=2.3cm]{geometry}
+%\headheight13.6pt
+\footnotesep 10pt
+\usepackage{minitoc} %https://youtu.be/7XBchpllhYA (video indianino)
+\mtcsetdepth{minitoc}{1} %Quanti sub metti
+\mtcsettitle{minitoc}{} %Titoletto sezione
+
+%\usepackage[mono=false]{libertine} %font
+\usepackage{amsmath} % for arrow
+\usepackage{xcolor}
+\usepackage{titlesec} % chapter without number
+\usepackage{graphicx} % package to manage images
+\usepackage{subfig} % to put images side by side
+\usepackage{wrapfig} % used to align image to right or left
+\usepackage[shortlabels]{enumitem} % per creare liste di lettere alfabetiche a), b), ...
+\usepackage{mathrsfs} %per fare le letterine piccole tipo P di i
+\usepackage{setspace} % per interlinea
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\usepackage{tikz} % per root tree horizontal
+\usepackage{tikz-qtree}
+\usetikzlibrary{trees,arrows}
+\usepackage{arydshln} %per hdashline
+\usepackage{bussproofs} % per sequenti
+\usepackage{colortbl} % per colore in argomento logico
+\usepackage{array} % per tabular
+\usepackage{nicefrac} % per frazioni oblique
+\usepackage{ragged2e} % per allineare a destra
+\usepackage{blindtext} % per allineare a destra
+
+\usepackage{longtable} %per longtable
+\usepackage{tabularx} %per tabella
+\usepackage{caption} %per immagine a destra
+\usepackage{framed} %per framed
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}} %per xmark e cmark
+
+\usepackage{blindtext}
+\usepackage{imakeidx} % before hyperref
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+    
+\urlstyle{same}
+
+\title{Metodi logici per la filosofia}
+\author{Giuliano Ricciardi}
+\date{Febbraio - Marzo 2023}
+
+\titleformat{\chapter}[display]
+ {\normalfont\bfseries}{}{0pt}{\huge} % tolto numero capitolo
+  
+\setlength{\skip\footins}{2pc plus 5pt minus 2pt} %distanza tra footnote line e pagina
+\usepackage{enumitem} % per creare lista mia
+\usepackage{float} % per non far andare le figure in cima [H]
+%\usepackage{setspace} % per aumentare lo spazio nell'indice - fa buggare i link delle note, bah
+\usepackage{multicol} % multi-colonna nell'indice
+
+\usepackage{mathtools} % per underbrace
+\renewcommand{\contentsname}{Indice} % cambio nome di content in "indice"
+\setcounter{tocdepth}{1} % profondità indice
+
+\usepackage{etoolbox} % spacing index (non bugga nulla)
+\makeatletter
+\pretocmd{\chapter}{\addtocontents{toc}{\protect\addvspace{15\p@}}}{}{}
+\pretocmd{\section}{\addtocontents{toc}{\protect\addvspace{5\p@}}}{}{}
+\makeatother
+
+\usepackage[most]{tcolorbox} % per cerchio su parole \tcbox[enhanced,drop shadow,colback=white]{\Large 1,2,3,4}
+
+\begin{document}
+
+\maketitle
+
+\dominitoc
+\begin{multicols}{2}
+    %\doublespacing
+    \tableofcontents
+    %\singlespacing
+\end{multicols}
+
+\input{Argomenti/logica-proposizionale.tex.hidden}
+\input{Argomenti/logica-modale.tex.hidden}
+
+\end{document}

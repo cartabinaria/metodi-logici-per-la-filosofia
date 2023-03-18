@@ -1,0 +1,1395 @@
+\chapter{Logica modale}
+\vspace{-1cm}
+\minitoc 
+\vspace{0.6cm}
+\newcommand*\mycircled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\section{Costruzione linguaggio}
+\large{!La costruzione del linguaggio è identica a quella della logica proposizionale, con l'aggiunta di {\color{purple}$\lozenge$} e {\color{purple}$\Box$}, che ho deciso di differenziare con {\color{purple}questo colore}!}\newline
+
+\noindent\textbf{Elementi costitutivi:}
+\begin{enumerate}
+    \item[$\square$] Variabili enunciative ($\Phi$): P$_0$, P$_1$, P$_2$ ...
+    \item[$\square$] Simboli: $\neg$, $\perp$, $\wedge$, $\vee$, $\rightarrow$, {\color{purple}$\lozenge$}, {\color{purple}$\Box$}\footnote{Questi due operatori sono chiamati \textit{operatori modali}.} 
+    \item[$\square$] Simboli ausiliari: ( )
+\end{enumerate}
+\vspace{0.6cm}
+\noindent\textbf{Definizione dell'insieme delle formule modali proposizionali (Fm$\Phi$)}
+
+\begin{enumerate} [label=\protect\mycircled{\arabic*}]
+    \item {Se $\mathpzc{P}_i$ $\in$ $\Phi$, allora $\mathpzc{P}_i$ $\in$ Fm$\Phi$}
+    \item {$\perp$ $\in$ Fm$\Phi$}
+    \vspace{0.7cm}
+    \item {Se A $\in$ Fm$\Phi$, allora $\neg$A, {\color{purple}$\lozenge$}, {\color{purple}$\Box$} $\in$ Fm$\Phi$}
+    \item {Se A,B $\in$ Fm$\Phi$, allora $\begin{Bmatrix}
+        (A \wedge B) \\
+        (A \vee B) \\
+        (A \rightarrow B) \\
+    \end{Bmatrix}$ $\in$ Fm$\Phi$}
+    \vspace{0.7cm}
+    \item Nient'altro appartiene a Fm$\Phi$.
+\end{enumerate}
+\vspace{0.6cm}
+\noindent\textbf{Definizione di lunghezza di una formula A}
+\begin{enumerate} [label=\protect\mycircled{\arabic*}]
+    \item $lg(\mathpzc{P}_i) = 0$
+    \item $lg(\perp) = 0$
+    \vspace{0.4cm}
+    \item $lg(\neg A) = {\color{purple}lg(\lozenge)}, {\color{purple}lg(\Box)} = lg(A) + 1$
+    \item $lg(A \wedge B) = lg(A \vee B) = lg(A \rightarrow B) = lg(A) + lg(B) + 1$
+\end{enumerate}
+\begin{spacing} {1.5}
+
+\vspace{1cm}
+
+\noindent{\Large{\textbf{Principio di induzione matematica}}}
+\vspace{0.5cm}
+    
+\noindent Una volta collegata la formula a numeri naturali, è possibile applicare il principio di induzione matematica direttamente alle formule.\newline
+\renewcommand\arraystretch{1.5}
+\vspace{0.3cm}
+
+\noindent Base: P$(\perp)$, P$(P_i)$
+\vspace{0.5cm}
+
+\noindent Passo induttivo:
+\begin{enumerate}[\null]
+    \item $\:\:$Assumo: P$(A)$, P$(B)$
+    \item\begin{tabular}{ll}
+        \noindent Mostro: \quad & P$(\neg A)$ \\
+         & {\tiny$\begin{pmatrix}
+        P( A \wedge B) \\
+        P(A \vee B) \\ 
+        P(A \rightarrow B) \\
+    \end{pmatrix}$} \\
+    & $P({\color{purple}\lozenge})$, $P({\color{purple}\Box})$
+    \end{tabular}
+\end{enumerate}
+\vspace{0.5cm}
+\noindent Conclusione: \quad $\forall A \in Fm\Phi \: (P(A))$\footnote{Per ogni formula A appartenente all'insieme delle formule, vale la proprietà P.}
+\end{spacing}
+
+\section{Semantica}
+\begin{spacing}{1.5}
+\vspace{0.2cm}
+\noindent \begin{longtable}{ll}
+     \underline{Struttura relazionale} (frame) & $\textit{F} = < W, R>$ \\
+     \underline{Modello}: & $M = < W, R, I>$ \\
+
+     \\
+     In cui: & $W$ è un insieme non vuoto di mondi.\\
+     & $R$ è un insieme di coppie di mondi ($R \subseteq W x W$).\\
+     & $I : \Phi \rightarrow \mathit{P}$\footnote{La $\mathit{P}$ (in realtà sarebbe dovuta essere una P in corsivo) esclusivamente in questo è l'operatore di potenza che ad ogni insieme associa l'insieme dei suoi sottoinsiemi.}$(W)$\footnote{La funzione prende in pasto le variabili enunciative e, per ciascuna di esse, restituisce un insieme di mondi. \`E equivalente a $I(P_i) \subseteq W$.}
+     \end{longtable}
+\end{spacing}
+
+\vspace{0.6cm}
+\begin{itemize}
+    \item Si utilizzeranno u,w,v... come metavariabili che rappresentano mondi.
+    \item $wRv$ significa che $v$ è accessibile da $w$ ($w$ vede $v$).
+    \item $M$ è basato su $\textit{F}$, se \quad $M = < W, R, I>$ e $\textit{F} = < W, R>$
+\end{itemize}
+\vspace{1cm}
+\noindent{\large{\textbf{Definizione di verità (${\vDash^{M}_w}$)\footnote{Restituisce la verità di A in un punto $w$ del modello $M$. Quindi, se il mondo $w$ non fa parte dell'interpretazione della variabile enunciativa $P$, allora $P$ è falsa in quel mondo.}}}}\newline
+\begin{spacing} {1.5}
+
+\noindent 
+\begin{tabular}{lll}
+    $\vDash^{M}_w (P_i)$ & sse \quad \quad \quad & $w \in I(P_i)$ \\
+    $\nvDash^{M}_w (\perp)$ \\
+    $\vDash^{M}_w (\neg B)$ & sse & $\nvDash^{M}_w (B)$\\
+    $\vDash^{M}_w (B \wedge C )$ & sse & $\vDash^{M}_w (B)$\: e \:$\vDash^{M}_w (B)$\\    $\vDash^{M}_w (B \vee C )$ & sse & $\vDash^{M}_w (B)$\: o \:$\vDash^{M}_w (B)$\\
+    $\vDash^{M}_w (B \rightarrow C )$ \quad \quad \:& sse & $\nvDash^{M}_w (B)$\: o \:$\vDash^{M}_w (B)$\\
+    $\vDash^{M}_w {\color{purple}\Box} B$ & sse & $\forall v \in W \: (wRv \: \: implica \: \: \vDash^{M}_w B)$\footnotemark{}\\
+    $\vDash^{M}_w {\color{purple}\lozenge} B$ & sse & $\exists v \in W \: (wRv \: \: e \: \: \vDash^{M}_w B)$\\ \\ \cdashline{1-3}
+    $\nvDash^{M}_w \Box B$ & sse & $\exists v \in W \: (wRv \: \: e \: \: \nvDash^{M}_v B)$\\
+    $\nvDash^{M}_w \lozenge B$ & sse & $\forall v \in W \: (wRv \: \: implica \: \: \nvDash^{M}_v B)$\\ \cdashline{1-3}
+\end{tabular}
+\footnotetext{Per ogni oggetto del dominio è vero $B$, a condizione che sia dentro $W$.}
+
+\vspace{0.5cm}
+\noindent\boxed{\textrm{Esempio per capire meglio}}
+\vspace{0.3cm}
+
+\begin{center}
+    \includegraphics[width=0.6\linewidth]{Immagini/EsempioModelli.png}
+\end{center}
+
+\vspace{0.5cm}
+\noindent$F = \big< \overbracket{\{u,{\scriptstyle{V}},w\}}^{W}, \: \overbracket{\{<w,w>, <w,u>, <u,{\scriptstyle{V}}>, <{\scriptstyle{V}},u>\}}^{R} \big>$
+\vspace{0.2cm}
+
+\noindent Per creare un modello, servono anche le interpretazioni. In questo caso si assume di averne due: \newline
+$I (P_0)$\footnote{Dice che la variabile enunciativa $P_0$ è vera nei mondi ${\scriptstyle{V}}$ e $u$.} $= \{{\scriptstyle{V}},u\}$ \newline
+$I (P_1) = \{w,{\scriptstyle{V}}\}$ \newline
+
+\noindent $\vDash_w = \Box (P_0)$ \quad sse \quad $\underbracket{\vDash_w (P_0)}_{Falso\:_{\footnotemark}}$ e $\underbracket{\vDash_u (P_0)}_{Vero}$\newline
+
+\footnotetext{$P_0$ non è vera in $w$ perché $I (P_0)= \{{\scriptstyle{V}},u\}$ non contiene $w$.}
+
+\noindent L'operatore modale $\Box$ richiede che in tutti i mondi 'visti' da $w$ valga $P_0$. In questo caso, quindi, l'intera uguaglianza è falsa.\newline
+
+\section{Dualità nella logica modale} 
+
+\noindent(\underline{dimostrazioni non sipegate nell'anno 2022/23})\newline
+
+\noindent Nella logica classica si ha una dualità tra il quantificatore universale e l'esistenziale. I due sono interdefinibili:
+\begin{enumerate} [(a)]
+    \item $\vDash \forall_x A \leftrightarrow \neg \exists_x \neg A$
+    \item $\vDash \exists_x A \leftrightarrow \neg \forall_x \neg A$
+\end{enumerate}
+\vspace{0.5cm}
+\noindent Anche in logica modale esiste la dualità tra Box ($\Box$) e Diamond ($\lozenge$):
+\begin{enumerate} [label=\protect\mycircled{\arabic*}]
+    \item $\vDash^{M}_w \Box A \leftrightarrow \neg \lozenge \neg A$
+    \item $\vDash^{M}_w \lozenge A \leftrightarrow \neg \Box \neg A$
+\end{enumerate}
+
+\vspace{1cm}
+
+\noindent{\Large{{\textbf{Dimostrazione di {\tiny{\mycircled{1}}}}}}}\newline
+
+\noindent\textbf{Metodi di dimostrazione} \newline
+
+\begin{tabular}{ll}
+     Metodo diretto: \quad & Sia $w,M$ tali che $\vDash^{M}_w \Box A$ \\
+     & Mostro $\vDash^{M}_w\neg \lozenge \neg A$\\
+     \\
+     Metodo per assurdo: & $\exists w,M$ tali che $\vDash^{M}_w \Box A$ \:e \:$\nvDash^{M}_w\neg \lozenge \neg A$\footnotemark{}
+\end{tabular}
+\footnotetext{Una volta mostrato che ciò porta a contraddizione, la dimostrazione è conclusa.}
+
+\vspace{1cm}
+\vspace{0.1cm}
+
+\noindent $\boxed{\rightarrow}$ \newline
+
+\noindent - Dimostrazione tramite metodo diretto:\newline
+
+\begin{tabular}{lll}
+    $\vDash^{M}_w \Box A$ & \quad sse \quad & $\forall v \in W \:(wRv \rightarrow \: \vDash_w A)$ \\
+    \\
+    $\vDash^{M}_w \neg \lozenge \neg A$ & \quad sse \quad & $\nvDash^{M}_w \lozenge \neg A$\\
+    & & $\forall v \in W \: (wRv \rightarrow \nvDash_w \neg A)$\footnotemark{}\\
+    & & $\forall v \in W \: (wRv \rightarrow \vDash_w A)$
+\end{tabular}
+\footnotetext{Dalla definizione di verità del Diamond, si ricava che $\vDash^{M}_w \lozenge A \:$ sse $\:\forall v \in W \: (wRv \rightarrow \nvDash_w A)$.}
+
+\vspace{0.8cm}
+
+\noindent - Dimostrazione per assurdo:\newline
+\begin{tabular}{ll}
+    Si assume che l'implicazione non valga\footnotemark{}: \quad & $\exists w,M$ t.c. $\underbracket{\vDash^{M}_w \Box A}_{(a)} $ \:e\: $\underbracket{\nvDash^{M}_w \neg \lozenge \neg A}_{(b)}$\\
+\end{tabular}
+\footnotetext{L'implicazione non è vera se l'antecedente è vero e il conseguente falso.}
+\vspace{0.5cm}
+
+\begin{tabular}{lll}
+    (a) \:$\vDash^{M}_w \Box A$ & \quad sse \quad & $\forall v \in W \: (wRv \rightarrow \vDash_w A$\\
+    (b) \:$\nvDash^{M}_w \neg \lozenge \neg A$  & \quad sse \quad & $\vDash^{M}_w \lozenge \neg A$\\
+    & & $\exists u \in W \: (wRu \:\: e\: \: \vDash_u \neg A)$
+\end{tabular}
+\vspace{0.3cm}
+
+\begin{tabular}{l}
+Il caso (a) mostra che per tutti i mondi visibili da $w$ vale $A$.\\
+Il caso (b) mostra che esiste un mondo ($u$) visibile da $w$ in cui è vero $\neg A$.\\
+\hline
+Nel mondo $u$, sia una formula che la sua negazione sono vere, e questa è una contraddizione.
+\end{tabular}
+\vspace{0.5cm}
+
+\noindent Quindi, non esiste un punto di un modello che rende falsa questa implicazione. Ciò significa che questa implicazione è vera in ciascun punto di ciascun modello.\newline
+
+\vspace{0.5cm}
+
+\noindent $\boxed{\leftarrow}$ \newline
+
+$\vDash^{M}_w \neg \lozenge \neg A \: \rightarrow \: \Box A$ \newline
+
+\noindent Dim. per assurdo: $\exists w,M\:$ t.c. $\: \nvDash^{M}_w \neg \lozenge \neg A \: \: \to \: \Box A$ \newline
+
+\noindent Per dimostrare l'assurdo, si deve dimostrare che ciò porta a contraddizione. In questo caso l'unico modo per avere una implicazione falsa (causa $\nvDash$) è porre l'antecedente come vero e il conseguente come falso.\newline
+
+\begin{tabular}{lll}
+    $\vDash^{M}_w \neg \lozenge \neg A$ & \quad sse \quad & $\nvDash^{M}_w \lozenge \neg A$  \\
+    && $\forall v \in W \: (wRv \rightarrow \underbrace{\nvDash^{M}_w \neg A}_{\vDash^{M}_w A})$\\
+    \\
+    $\nvDash^{M}_w \Box A$ &\quad sse \quad& $\exists u \in W \: (wRu \:\: e \:\nvDash^{M}_w A)$
+\end{tabular}
+
+\vspace{0.5cm}
+
+\noindent Tutti i mondi visti da $w$ devono rendere vera $A$, ma il generico mondo $u$ (visto da $w$) \underline{non} rende vera $A$. Ciò porta a contraddizione.
+
+\vfill
+\pagebreak
+
+\section{Verità, validità, conseguenza logica}
+
+\renewcommand*{\arraystretch}{1.4}
+\begin{longtable}{ll}
+$\bullet$ \underline{Verità} in un modello ($\vDash^{M} A$):\footnote{Una formula è vera in un modello quando tutti i punti del modello rendono vera la formula.} \quad \quad & $\vDash^{M} A \quad sse \quad \forall w \in W \: (\vDash^{M}_w A)$\\
+$\bullet$ \underline{Validità} di una struttura ($F = <W,R>$): \quad & $F \vDash A \quad sse \quad \forall M$ basato su\footnote{Un modello è basato su una struttura se il modello è stato costruito prendendo una struttura ($F = <W_1,R_1>$) e aggiungendo una funzione di interpretazione ($M = <W_1,R_1,I_\alpha>$).} $F (\vDash^{M} A)$\\
+$\bullet$ Validità ($\vDash A$): \quad \quad & $\vDash A \quad sse \quad \forall F \: (F \vDash A)$\\
+$\bullet$ Validità su una classe ($C$) di strutture: \quad \quad & $C \vDash A \quad sse \quad \forall F \in C \: (F \vDash A)$\\
+$\bullet$ Conseguenza logica (locale):\footnote{Ciò che viene definito è la versione generalizzata. Per la versione più ristretta ($\vDash^{C}$): $A$ è conseguenza logica di $\Gamma$ (insieme di formule) nella classe $C$ di strutture, sse data $C$ classe di strutture, se per ogni punto ($\forall v$) di ogni modello basato su una struttura in $C$ vale che: se quel punto rende vero $B$ ($\vDash^{M}_w B$) per ogni formula $B$ in $\Gamma$, allora rende vere tutte le formule in $\Gamma$ ($\vDash^{M}_w A$).} \quad \quad & $\Gamma \vDash A \quad sse \quad \forall w \: \: di \: ciascun \: \: M \: (se \: \vDash^{M}_w \Gamma \: \: allora \: \: \vDash^{M}_w A)$\\
+$\bullet$ Conseguenza logica (globale):\footnote{La differenza tra la conseguenza logica globale e locale è che: in quella globale se $B$ è vera in tutti i punti del modello, allora $A$ è vera in tutti i punti del modello; mentre in quella locale, in ciascun punto in cui $B$ è vera, anche $A$ è vera.} \quad \quad & $\Gamma \vDash_C A \quad sse \quad \forall \: \: modello \: \: M \: (se \: \vDash^{M} \Gamma \: \: allora \: \: \vDash^{M} A)$
+\end{longtable}
+
+\vspace{1.2cm}
+
+\noindent {\color{red}$\ddagger$} Esercizio: $\vDash \Box(A \wedge B) \leftrightarrow (\Box A \wedge \Box B)$
+
+\vspace{0.3cm}
+
+\noindent {\color{red}$\ddagger$} $K:=$ $\vDash \Box(A \to B) \rightarrow (\Box A \to \Box B)$
+
+\vspace{1.3cm}
+\vfill
+\noindent {\large{\textbf{Regole che preservano la validità}}}\footnote{Si preserva la verità in un generico punto di un generico modello. Da questo segue la preservazione della verità su tutto il modello. Da ciò segue la preservazione della validità su una generica struttura.}
+\vspace{0.4cm}
+
+\noindent $\blacksquare$ \: \: \underline{Modus Ponens}
+
+\end{spacing}
+\boxed{\textrm{\begin{minipage}[b]{0.35\linewidth}
+ \begin{prooftree}
+\AxiomC{$\vDash A$}
+\AxiomC{$\vDash A \to B$}
+\BinaryInfC{$\vDash B$}
+\end{prooftree}
+\end{minipage}}}
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{c@{\,}l@{}} 
+                         & $A$ è una formula valida\\
+\arrayrulecolor{blue}    & $A \to B$ è una formula valida \\\cline{2-2}
+           & $B$ è valida
+\end{tabular}
+\end{minipage}
+
+\vspace{0.5cm}
+\pagebreak
+\begin{spacing} {1.5}
+- Dimostrazione
+\vspace{0.3cm}
+
+\begin{tabular}{ll}
+    $I_1$: \: \: & $\forall M \: \forall w \in M \quad \quad \vDash^{M}_w A $\\
+    $I_2$: & $\forall M \: \forall w \in M \quad \quad \vDash^{M}_w (A \to B)$\\\\
+    Da $I_2$: & (a) $\nvDash^{M}_w A$ \quad oppure \quad (b) $\vDash^{M}_w B$ \\
+\end{tabular}
+
+\vspace{0.5cm}
+
+\begin{tabular}{ll}
+     (a) è un caso impossibile per ipotesi. Quindi, (b) deve essere vero (causa disgiunzione). & 
+\end{tabular}
+
+\vspace{1cm}
+
+\noindent $\blacksquare$ \: \: \underline{Necessitazione}
+
+\end{spacing}
+\boxed{\textrm{\begin{minipage}[b]{0.35\linewidth}
+\centering
+\AxiomC{$\vDash A$}
+\UnaryInfC{$\vDash \Box A$}
+\DisplayProof
+\end{minipage}}}
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{c@{\,}l@{}} 
+   \arrayrulecolor{blue} & $A$ è una una formula valida\\ \cline{2-2}
+   & $\Box A$ è una formula valida \\
+\end{tabular}
+\end{minipage}
+
+\begin{spacing} {1.5}
+\vspace{1cm}
+- \underline{Dimostrazione}
+\vspace{0.5cm}
+
+\begin{tabular}{l}
+    Assumo: $M$ tale che $\vDash^{M} A$ \quad (A è vera in tutti i punti di M)\\ [0.4cm]
+    Se $A$ è vera in ogni punto di ogni modello,\\
+    Allora in ciascun modello t.c. $A$, anche in ogni punto accessibile sarà vero $A$.\\ \hline
+    Quindi, anche $\Box A$ è vero in tutti i punti di quel modello.\\
+    \\
+    Dal fatto che si preserva la verità su un modello,\\
+    Segue che se ne preserva la validità (ma non la validità in un punto di un modello).\\
+\end{tabular}
+
+\vspace{1cm}
+
+\noindent $\blacksquare$ \: \: \underline{Regola} (non spiegata nell'anno 2022/23)
+
+\end{spacing}
+\boxed{\textrm{\begin{minipage}[b]{0.35\linewidth}
+\centering
+\AxiomC{$\vDash A \to B$}
+\UnaryInfC{$\vDash \Box A \to \Box B$}
+\DisplayProof
+\end{minipage}}}
+
+\begin{spacing} {1.5}
+\vspace{1cm}
+- \underline{Dimostrazione diretta}
+\vspace{0.5cm}
+
+\begin{tabular}{ll}
+    Ip$_1$: \quad \quad & $\forall w \in W \:(\vDash_w A \to B)$ \\ [0.5em]
+    Ip$_2$: \quad \quad & $\forall w \in W \:(\vDash_w \Box A)$ \\ 
+    & $\forall v \: (wRv \to \: \vDash_v A)$\\
+\\
+  Allora: \quad & $\forall v \: (wRv \to \: \vDash_v A \: \: e \: \: \vDash_v A \to B)$ \\
+  & $\forall v\:(wRv \to \: \vDash_v B)$\\
+  & $\vDash_w \Box B$
+\end{tabular}
+
+\vspace{0.5cm}
+\noindent\boxed{{\large\textbf{Teorema}}} (non spiegato nell'anno 2022/23)
+
+\noindent \newline $\blacksquare \quad \Gamma \vDash A \quad sse \quad \vDash \Gamma \to A$ \newline
+
+\noindent $\Gamma$ è un insieme definito $B_1, B_2, ..., B_n$.
+
+\vspace{1cm}
+\noindent $\boxed{\rightarrow}$ \underline{Dimostrazione diretta} \quad $\longrightarrow$ \quad \underline{$B \vDash A \quad sse \quad \vDash B \to A$}
+\vspace{0.5cm}
+
+\begin{tabular}{ll}
+    Ip: \quad & $B \vDash A$\\
+    & $\forall w \: \: di \: ciascun \: M \: (se \vDash_w B \:\: allora \:\: \vDash_w A)$\\
+    \\
+    $\vDash B \to \: A$ \quad & sse \quad \quad se \: $\vDash B$ \: allora \:$\vDash A$ \\ [0.5em]
+    Da dimostrare: \quad & $\vDash_w B \to A$\\
+    & $\forall w \: \: di \: ciascun \: M \: (se \vDash_w B \:\: allora \:\: \vDash_w A)$
+\end{tabular}
+
+\vspace{0.7cm}
+\noindent $\boxed{\leftarrow}$ dimostrazione analoga.
+
+\vspace{1cm}
+
+\noindent Se $B \vDash_C A \: \: allora \: \: \vDash B \to A$ non vero - non ho ben capito perché)
+
+\vspace{0.8cm}
+
+\section{Regola di sostituzione uniforme}
+
+\noindent Definizione: $A [\nicefrac{B}{P}]$ \quad \quad ($A$ con $B$ al posto di $P$)\newline
+
+\noindent Questa formula è ottenuta rimpiazzando in $A$ ciascuna occorrenza di $P$ (atomo), con una occorrenza di $B$.\newline
+
+\noindent \textbf{Definizione induttiva}
+
+\begin{itemize} [\null]
+    \item $q [\nicefrac{B}{P}] \:\equiv \:$
+    $\begin{cases}
+      q \: \:\:\:se \:\:\: q\not\equiv P\\
+      B \: \:\:se \:\:\: q\equiv P
+    \end{cases}$
+    \item $\perp [\nicefrac{B}{P}] \equiv \: \perp$
+    \item $(*A)\:[\nicefrac{B}{P}] \equiv * \: (A [\nicefrac{B}{P}])$ \: dove \: $* \in \{\neg , \Box , \lozenge \}$
+    \item $(A \circ C) \: [\nicefrac{B}{P}] \equiv A [\nicefrac{B}{P}] \: \circ \: C [\nicefrac{B}{P}]$ \: dove \: $\circ \in \{\wedge, \vee , \to \}$
+\end{itemize}
+
+\vspace{0.8cm}
+
+\noindent{\textbf{Regola di sostituzione uniforme (SU)}}\newline
+
+\AxiomC{$\vDash A$}
+\UnaryInfC{$\vDash A[\nicefrac{B}{P}]$}
+\DisplayProof
+
+\vspace{0.5cm}
+
+\noindent (SU) non preserva la verità sul modello (è possibile $M \vDash A$ e $M \nvDash A[\nicefrac{B}{P}]$).\newline
+(SU) preserva la \underline{validità} su una qualsiasi \underline{struttura}.\newline
+
+\vspace{0.3cm}
+
+\noindent \underline{Dimostrazione per contrapposizione}
+
+\setlength{\LTleft}{20pt}
+\begin{longtable}{ll}
+    Assumo: & $F \nvDash A[\nicefrac{B}{P}]$\\
+    Mostro: & $F \nvDash A$
+\end{longtable}
+
+\begin{quote}
+    \noindent Per assunzione, esiste un modello $M = \:< W,R,I >$\newline
+    \noindent e un punto $w$ di $M$ t.c. $\nvDash^{M}_w A [\nicefrac{B}{P}]$.\footnote{Questo perché basta un punto di un modello basato su $F$ che renda falsa la formula.}
+\end{quote}
+
+\begin{longtable}{ll}
+    Definisco l'insieme: & $H_B = \{{\scriptstyle{V}} \in W \: : \:\: \vDash^{M}_{\scriptstyle{V}} B\}$\footnote{$H_B$ è l'insieme che contiene tutti i mondi in cui $B$ è vera.}\\
+    Definisco il modello: & $M^{*} \: = \: < W,R,I^{*} >$\\\\
+    & $I^{*}(q) \:$
+    $\begin{cases}
+      I(q) \: \:\:se \:\:\: q\not\equiv P \quad \quad (a) \\
+      H_B \: \:\:se \:\:\:\: q\equiv P \quad \quad (b)
+    \end{cases}$\\
+\end{longtable}
+
+
+\begin{quote}
+    \noindent $(a)$ Se $P$ non occorre, il modello si comporta come quello di partenza su tutte le formule in cui non occorre $P$.\newline
+    \noindent $(b)$ Se $P$ occorre, $P$ lo interpreto su quello che nel modello originale era l'interpretazione di $B$.\newline
+
+    \noindent $\longrightarrow$ L'interpretazione nei due modelli sarà la medesima.\newline   
+    Quindi, \textbf{Lemma}, per ogni formula ben formata (fbf) $D$ e per ogni $u\in V$:
+    \begin{center}
+        $\vDash^{M}_u D[\nicefrac{B}{P}]$ \: sse \: ${{\vDash_u^M}^*} D[\nicefrac{B}{P}]$
+    \end{center}
+    Ciò che si ha intenzione di mostrare è che il modello originale e quello modificato si comportano allo stesso modo sulla formula sostituita e su quella non sostituita.\newline
+\end{quote}
+
+\noindent\underline{Dimostrazione per induzione sulla costruzione di D}\newline 
+
+\begin{longtable} {ll}
+    Caso $D \equiv \perp$ & $\nvDash^{M}_u \perp [\nicefrac{B}{P}]$ \quad \quad ${{\nvDash_u^M}^*} \perp [\nicefrac{B}{P}]$\footnote{$\perp $ è sempre falso in ogni punto di ogni modello.}\\
+\\
+    Caso $D \equiv q$ &$\begin{cases}
+      (a)\: q\not\equiv P\\
+      (b)\: q\equiv P 
+    \end{cases}$\\
+    \\ %le soluzioni quelle belle
+    &$ (a)\: q\not\equiv P$ \quad\quad\quad\quad $\vDash^{M}_u q[\nicefrac{B}{P}]$\\
+    & \quad\quad\quad\quad\quad\quad\quad\quad\: $\vDash^{M}_u q$\\
+    & \quad\quad\quad\quad\quad\quad\quad\quad\:$u \in I (q)$\\
+    & \quad\quad\quad\quad\quad\quad\quad\quad\:$u \in I^{*} (q)$\footnote{Per costruzione di $I^{*}(q)$ so che $I^{*}(q) \: = \: I (q)$.}\\
+    & \quad\quad\quad\quad\quad\quad\quad\quad\:${{\vDash_u^M}^*} q$\\
+    \\
+    & $(b)\: q\equiv P $ \quad\quad\quad\quad $\vDash^{M}_u q[\nicefrac{B}{P}]$\\
+    & \quad\quad\quad\quad\quad\quad\quad\quad\:$\vDash^{M}_u B$\\
+    & \quad\quad\quad\quad\quad\quad\quad\quad\:${{\vDash_u^M}^*} P$ \footnote{Questo perché per costruzione di $I(q)$ so che $I^{*}(q) = H_B$ e $H_B$ è l'insieme di tutti i mondi che rendono vera $B$.}\\
+\\
+Caso $D \equiv (\neg C)$\\
+IH: & $\vDash^{M}_u C[\nicefrac{B}{P}] \quad sse \quad {{\vDash_u^M}^*} (C)$\\
+\\
+Assumo: &$\vDash^{M}_u (\neg C)\:[\nicefrac{B}{P}]$\\
+& $\vDash^{M}_u \neg( C\:[\nicefrac{B}{P}])$\\
+Per IH: & ${{\vDash_u^M}^*} \neg (C)$\\
+\\
+Caso $D \equiv (D \wedge E)$ & $\vDash^{M}_u (D \wedge E) \:[\nicefrac{B}{P}]$\\
+& $\vDash^{M}_u D \:[\nicefrac{B}{P}]\:\: \wedge \:\:\vDash^{M}_u E \:[\nicefrac{B}{P}]$\footnote{Per definizione di sostituzione.}\\
+& $\vDash^{M}_u D \:[\nicefrac{B}{P}]\:\: e \:\:\vDash^{M}_u E \:[\nicefrac{B}{P}]$\footnote{Per definizione di congiunzione devono essere vere entrambe.}\\
+Per $IH_1$ e $IH_2$: & ${{\vDash_u^M}^*} D \:[\nicefrac{B}{P}]\:\: e \:\:{{\vDash_u^M}^*} E \:[\nicefrac{B}{P}]$\\
+& ${{\vDash_u^M}^*} D \:[\nicefrac{B}{P}]\:\: \wedge \:\:{{\vDash_u^M}^*} E \:[\nicefrac{B}{P}]$\\
+& ${{\vDash_u^M}^*} D \wedge E$\\
+\\
+Casi $\vee, \:\to$: analoghi.\\
+\\
+Caso: $ D \equiv \Box C$ &$\vDash^{M}_u (\Box C)\:[\nicefrac{B}{P}]$\\
+& $\vDash^{M}_u \Box( C\:[\nicefrac{B}{P}])$\\
+& $\forall t \in W \:(uRt \to \: \vDash^{M}_t C [\nicefrac{B}{P}])$\footnote{$t$ rappresenta un punto generico.}\\
+Per IH: & $\forall t \in W \: (uRt \to \: {{\vDash_t^M}^*} C)$\\
+& ${{\vDash_u^M}^*} \Box C$\\
+\\
+Caso $\lozenge$ analogo.
+\end{longtable}
+\vspace{0.8cm}
+
+\noindent Grazie a questa dimostrazione, è stato dimostrato il lemma: \quad \quad $\vDash^{M}_u D[\nicefrac{B}{P}] \:\: sse \:\: {{\vDash_u^M}^*} D$\newline 
+
+\noindent Per il lemma: \quad \quad $\exists M \exists w$ t.c. $\nvDash^{M}_w A[\nicefrac{B}{P}]$\: allora \: ${{\nvDash_u^M}^*} A$ \newline
+
+\noindent Dunque $F \nvDash A$
+
+\vspace{1cm}
+    
+%{{\vDash_u^M}^*}
+%[\nicefrac{B}{P}]
+
+\section{Teoria della corrispondenza}
+
+\noindent Affermiamo che $A$ corrisponde a $P$ \quad sse \quad $\forall F \: (F \vDash A \: \: sse \: \: F \rhd\footnotemark{} P) $\footnotetext{Il simbolo $\rhd$ rappresenta 'soddisfa' o 'gode di'. In questo caso, quindi, è vero se la formula $P$ è valida sulla struttura $F$.}
+
+\begin{itemize}
+    \item $A \in Fm$ 
+    \item $P$ è una formula del primo ordine definita da:
+    \begin{enumerate} [(a)]
+        \item $R$: Un predicato binario (interpretato come relazione di accessibilità).
+        \item = \:: Predicato d'identità.
+    \end{enumerate}
+\end{itemize}
+
+\noindent Infatti, è possibile mostrare come certe formule modali siano valide su una struttura \: sse \: la relazione di accessibilità di quella struttura soddisfa certe proprietà del 1° ordine.
+
+\vspace{1cm}
+
+\noindent\boxed{{\large\textbf{Schema T}}}
+
+\noindent \newline $\blacksquare \quad T:= \Box A \to A$\newline
+
+\noindent $\forall F \: (F \vDash \Box A \footnotemark{} \to A \:\: sse \:\: \underbracket{F\rhd \forall w \: (wRw)}_{F \textrm{ è riflessiva}})$
+\footnotetext{In questo caso $A$ è una formula arbitraria.}
+
+\vspace{1cm}
+\noindent $\boxed{\rightarrow}$ \underline{Dimostrazione diretta} \quad $\longrightarrow$ \quad \underline{$F \vDash \Box A\to A$ \:$\to$ \:$F$ è riflessiva}
+
+\vspace{0.5cm}
+
+\setlength{\LTleft}{1cm}
+\begin{longtable}{ll}
+\noindent Assumo: \quad & Sia $F$ t.c. $F \vDash \Box A \to A$\footnote{Si considera una struttura ($F$), in cui si assume che la formula $F \vDash \Box A \to A$ sia valida, ossia vera in ogni punto di ciascun modello.)} \\
+IP$_1$ & Sia $M$ un $F$-modello t.c. $I (P)\: = \:\{v: \: wRv\}$ \footnote{L'interpretazione del particolare atomo $P$ è uguale all'insieme di punti del modello tale che siano visti dal mondo generico $w$.}\\
+& $\vDash^{M}_w \Box P$\\
+    \\
+IP$_2$ & $\vDash^{M}_w \Box P \to \: P$\\
+\\
+MP & $\vDash^{M}_w P$\\
+& $w\in I (P)$\\
+\\
+Da IP$_1$: & $wRw$ \footnote{In quanto $w$ appartiene all’interpretazione di $P$, uno dei mondi visti da $w$, è proprio $w$.} \\
+&$\forall v \: (vRv)$\footnote{$w$ è stato scelto come un mondo generico, quindi, se la proprietà vale per $w$, allora vale per tutti i mondi.}
+
+\end{longtable}
+
+\vspace{0.7cm}
+
+\noindent $\boxed{\rightarrow}$ \underline{Dimostrazione per contrapposizione} \quad $\longrightarrow$ \quad \underline{$F \vDash \Box A\to A$ \:$\to$ \:$F$ è riflessiva}\newline
+
+\noindent $\bullet$\: Funzionamento dimostrazione per contrapposizione: \newline
+\noindent Contrapposizione: \: \: $\vDash A \to \: B \: \: \leftrightarrow \: \:  (\neg B \to \: \neg A)$\newline
+
+\begin{longtable}{ll}
+(a) Assumo ($\neg B$): & $F$ non riflessiva\\
+& $w$\:\: t.c. \:\:$\neg (wRw)$\\ [0.5em]
+Mostro ($\neg A$): & $F \nvDash \Box A \to \: A$\\
+& $\nvDash_w \Box P \to \: P$\:\footnote{Per mostrare la falsità di una implicazione, è necessario far vedere che, dato l’antecedente, ne risulti la negazione del conseguente.}\\ [0.5em]
+\\
+(b) IP: & $\vDash^{M}_w \Box P$\\
+& $\forall v \: (wRv \to \: \vDash^{M}_v P)$\\
+\\
+$I_P$: Interpretazione più piccola di (b): & $\forall v \in W \: (v \in I (P) \: \: sse \: \: wRv)$\footnote{Questa è la più piccola interpretazione che soddisfa (b), infatti, comprende esclusivamente i mondi visti da $w$ che hanno $P$.}\\
+Per (a) e (b): & $w \notin I (P)$\footnote{Sappiamo: (I) Per costruzione, che nessun mondo vede sé stesso ($\neg (wRw)$); e (II) secondo $I_P$, che solo i mondi visti da $w$ hanno $P$. Di conseguenza, se $w$ non vede $w$ (a), allora non fa parte dell'interpretazione di $P$.}\\
+& $\nvDash^{M}_w P $
+\end{longtable}
+
+\vspace{1cm}
+\noindent $\boxed{\leftarrow}$ \underline{Dimostrazione diretta} \quad $\longrightarrow$ \quad \underline{$F$ è riflessiva  \:$\to$ \:$F\vDash \Box A\to A$ }
+
+\begin{longtable}{ll}
+    Assumo: &$\forall w \: (wRw)$\\
+    Mostro: &$F\vDash \Box A\to A$\\
+    \\
+    Assumo: & $\vDash_w \Box P$\\
+    & $\forall v \in W \: (wRv \: \textrm{implica} \: \vDash_v P)$ \:($v$ generico mondo)\\
+    \\
+     M.P.   & \noindent\mbox{
+  \AxiomC{$wRv \to \: \vDash_v A$}
+  \AxiomC{$wRw$}
+  \BinaryInfC{$\vDash_w A$}
+  \DisplayProof
+}
+\end{longtable}
+
+\vspace{1cm}
+
+\noindent\boxed{{\large\textbf{Schema 4}}}
+
+\noindent \newline $\blacksquare \quad 4:= \Box A \to \Box \Box A$\newline
+
+\noindent $\forall F \: (F \vDash \Box A \to \Box \Box A \:\: sse \:\: \underbracket{F\rhd \forall w,{\scriptstyle{V}},u\: \footnotemark{}\: (wR{\scriptstyle{V}} \: e \: {\scriptstyle{V}}Ru \: \to \: wRu)}_{F \textrm{ è transitiva}})$
+\footnotetext{Si può sostituire $F\rhd \forall w,{\scriptstyle{V}},u$ con $\forall w,{\scriptstyle{V}},u \in F$.}
+
+\vspace{1cm}
+\noindent $\boxed{\rightarrow}$ \underline{Dimostrazione diretta} \quad $\longrightarrow$ \quad \underline{$F \vDash \Box A \to \Box \Box A \: \: \to \: \: F$ è transitiva}
+
+\vspace{0.5cm}
+
+\begin{longtable}{ll}
+Assumo: & $F$ t.c. $F \vDash \Box \to \: \Box \Box A$\\
+($I_1$) Costruisco $I$ t.c. & $\vDash_w \Box P$\\
+& $I(P) \:= \: \{{\scriptstyle{V}} \in W \: : \: wR{\scriptstyle{V}}\}$\\
+($I_2$) MP: $\vDash_w \Box \Box P$\\
+\\
+Assumo: & $wR{\scriptstyle{V}} \: e \: {\scriptstyle{V}}Ru$\footnote{Nella transitività, simmetria, ecc. si può assumere l'antecedente del conseguente solo quando transitività, simmetria, ecc. si trovano dalla parte del conseguente.}
+\end{longtable}
+\begin{center}
+    \includegraphics[scale=0.3]{ImmaginiSchemini/a.png}
+\end{center}
+
+\vspace{0.3cm}
+\begin{quote}
+\noindent Per $I_1$,$I_2$: $w$ rende vere $\Box P$\: e \: $\Box \Box P$.
+\end{quote}
+\vspace{0.3cm}
+
+\begin{center}
+    \includegraphics[scale=0.3]{ImmaginiSchemini/b.png}
+\end{center}
+
+\vspace{0.3cm}
+\begin{quote}
+    \noindent Di conseguenza, tutti i mondi 'distanti' da $w$ di un passo, rendono vera $\Box P$. Mentre, quelli distanti due passi rendono vera $P$.
+\end{quote}
+\vspace{0.3cm}
+
+\begin{center}
+    \includegraphics[scale=0.3]{ImmaginiSchemini/c.png}
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{quote}
+    \noindent Quindi, dato che $u \in I (P)$, per la definizione di interpretazione, $wRu$.\footnote{Questo perché, per l'interpretazione di $P$, tutti i mondi in cui $P$ è vera, sono visti da $w$.}
+\end{quote}
+
+\vspace{0.7cm}
+
+\noindent $\boxed{\leftarrow}$ \quad \quad \underline{$F$ è transitiva $\: \: \to \: \: F \vDash\Box A \to \Box \Box A$}
+
+\vspace{0.5cm}
+
+\begin{longtable}{ll}
+    "tengo a mente"\footnote{Uso l'espressione "tengo a mente" per dire che la proprietà (in questo caso la proprietà transitiva) è valida nella struttura. Probabilmente non è la soluzione più elegante, accetto consigli :(}: & $\forall w,{\scriptstyle{V}},u \: (wR{\scriptstyle{V}} \: e \: {\scriptstyle{V}}Ru \: \to \: wRu)$\\
+    Assumo: & $\vDash^{M}_w \Box P$\\
+    \\
+    Ragionamento per casi: &\\
+    (a) $w$ non vede niente: & $\vDash_w \Box \Box P$\\
+    (b) Assumo che esista: & ${\scriptstyle{V}}$ visto da $w$
+\end{longtable}
+
+\begin{center}
+    \includegraphics[scale=0.3]{ImmaginiSchemini/d.png}
+\end{center}
+
+\vspace{0.3cm}
+\begin{quote}
+    Con lo stesso ragionamento sui casi, si costruisce una freccia tra ${\scriptstyle{V}}$ e un altro generico mondo $u$.\footnote{Se il generico mondo ${\scriptstyle{V}}$ non vedesse nessun altro mondo, $\Box \Box P$ sarebbe vera, e la corrispondenza sarebbe dimostrata. In caso contrario, si assume che ${\scriptstyle{V}}$ veda un generico mondo $u$.} Per ragionamento analogo a quello su $w$, anche $\vDash_{\scriptstyle{V}} \Box P$\: e \:$\vDash_u P$ 
+\end{quote}
+\vspace{0.3cm}
+
+\begin{center}
+    \includegraphics[scale=0.3]{ImmaginiSchemini/e.png}
+\end{center}
+
+\vspace{0.3cm}
+\begin{quote}
+    Di conseguenza, se $u$ si trova a due punti di distanza da $w$, e la proprietà $P$ è vera in $u$, allora $\vDash_w \Box \Box P$.
+\end{quote}
+\vspace{0.3cm}
+
+\begin{center}
+    \includegraphics[scale=0.3]{ImmaginiSchemini/f.png}
+\end{center}
+
+\vspace{1cm}
+
+\noindent\boxed{{\large\textbf{Schema D}}}
+
+\noindent \newline $\blacksquare \quad D:= \Box A \to \lozenge A$\newline
+
+\noindent $\forall F \: (F \vDash D \:\: sse \:\: \underbracket{\forall w, \exists{\scriptstyle{V}} \: (wR{\scriptstyle{V}})}_{F \textrm{ è seriale$\:_{\footnotemark{}}$}})$
+\footnotetext{Una struttura è seriale se ogni mondo ne vede almeno un altro.}
+\vspace{0.5cm}
+
+\noindent $\boxed{\rightarrow}$ \underline{Dimostrazione diretta} \quad $\longrightarrow$ \quad \underline{$F \vDash \Box A \to \lozenge A \: \: \to \: \: F$ è seriale}
+
+\vspace{0.5cm}
+
+\begin{longtable}{ll}
+    Assumo: & $F$ t.c. $F \vDash \Box P \to \lozenge P$\\
+    Costruisco un generico $F$-modello: & $I(P)\: = \: \{{\scriptstyle{V}} \: : \: wRv\}$\\
+    \\
+    Quindi: & $\vDash^{M}_w \Box P$\\
+    So che: & $\vDash^{M}_w \Box P \to \lozenge P$\\   
+    \\
+    MP: & $ \vDash^{M}_w \lozenge P$\\
+    & $\exists{\scriptstyle{V}} \in W \: (wR{\scriptstyle{V}} \: \: e \:\: \vDash_{\scriptstyle{V}} P)$\\\\
+    Conclusione (visto che $w$ è generico): & $\forall w \: (\exists {\scriptstyle{V}} (wR{\scriptstyle{V}}))$
+\end{longtable}
+
+\vspace{0.5cm}
+
+\noindent $\boxed{\leftarrow}$ \underline{Dimostrazione diretta} \quad $\longrightarrow$ \quad \underline{$ F$ è seriale $\: \: \to \: \: F \vDash \Box A \to \lozenge A $}
+
+\vspace{0.5cm}
+
+\begin{longtable}{ll}
+    Assumo: & $F$ è seriale\\
+    Mostro: & $\Box A \to \lozenge A$\\
+    \\
+    Assumo: & $\vDash_w \Box A$\\
+    & $\forall {\scriptstyle{V}} \in W \: (wR{\scriptstyle{V}} \to \: \vDash_{\scriptstyle{V}} A)$\\
+    
+    Quindi:& $\exists u \in W \: (wRu \: \: e \: \: \vDash_u A)$\footnote{In quanto la struttura è seriale (ogni mondo ne vede almeno un altro), $w$ vede almeno un mondo. Inoltre, tutti i mondi visti  da $w$ rendono vera $A$. Quindi almeno un mondo visto da $w$ rende vera $A$, ossia $\vDash_w \Diamond A$.}\\
+    & $\vDash_w \lozenge A$
+\end{longtable}
+
+\vspace{1cm}
+
+\noindent\boxed{{\large\textbf{Schema 5}}}
+
+\noindent \newline $\blacksquare \quad 5:= \lozenge A \to \Box\lozenge A$\newline
+
+\noindent $\forall F \: (F \vDash 5 \:\: sse \:\: \underbracket{\forall w,{\scriptstyle{V}},u \:(wR{\scriptstyle{V}} \wedge wRu \to \exists u ({\scriptstyle{V}}Ru))}_{F \textrm{ è Euclidea}})$
+\begin{center}
+    \includegraphics[width=0.2\linewidth]{ImmaginiSchemini/euclidea.png}\end{center}
+\vspace{0.5cm}
+
+\noindent $\boxed{\rightarrow}$ \underline{Dimostrazione diretta} \quad $\longrightarrow$ \quad \underline{$F \vDash \lozenge A \to \Box\lozenge A \: \: \to \: \: F$ è Euclidea}
+
+\vspace{0.5cm}
+
+\begin{longtable}{ll}
+    Assumo: & $F \vDash \lozenge A \to \Box\Diamond A$\\
+    Assumo: & $wRu$ e $wRv$\\
+\\
+    Costruisco $F$-modello: & $I(P) = \{x \in W \: : \: x = {\scriptstyle{V}}\}$\footnote{Per semplificare, il prof. scrive $I (P) = \{{\scriptstyle{V}}\}$.}\\
+
+    Quindi: & $\vDash_w \Diamond P$\\
+    M.P. & $\vDash_w \Box \Diamond P$
+\end{longtable}
+\begin{quote}
+    \noindent Per $\vDash_u \Diamond P$, $u$ deve vedere almeno un mondo che rende vero $P$.
+    
+    \noindent Per $I (P)$, solo ${\scriptstyle{V}}$ rende vero $P$.\newline
+    Di conseguenza, $uR{\scriptstyle{V}}$.
+\end{quote} 
+
+\vspace{0.5cm}
+
+\noindent $\boxed{\leftarrow}$ \underline{Dimostrazione diretta} \quad $\longrightarrow$ \quad \underline{$ F$ è Euclidea $\: \: \to \: \: F \vDash \lozenge A \to \Box\lozenge A $}
+
+\vspace{0.5cm}
+
+\begin{longtable}{ll}
+    "tengo a mente": & $F$ è Euclidea\\
+    Assumo: &$\vDash_w \Diamond P$\\
+    Per mondo generico ${\scriptstyle{V}}$: & $\vDash_{\scriptstyle{V}} P$\\
+    \\
+    Trick (perché Euclidea): & $wR{\scriptstyle{V}} \wedge wR{\scriptstyle{V}} \to \:{\scriptstyle{V}}R{\scriptstyle{V}}$\\
+    & $\vDash_{\scriptstyle{V}} \Diamond A$\footnote{Questo perché ${\scriptstyle{V}}$ rende vero $P$ e vede sé stesso.}
+\end{longtable}
+
+\begin{quote}
+    \noindent Allora, in quanto:
+    \begin{itemize}
+        \item $wR{\scriptstyle{V}}$,
+        \item ${\scriptstyle{V}}$ è un mondo generico,
+        \item $\vDash_{\scriptstyle{V}} \Diamond P$,
+    \end{itemize}
+    tutti i mondi visti da $w$ rendono vero $\Diamond P$.\newline
+
+    \noindent Quindi, $\vDash_w \Box \Diamond P$
+\end{quote}
+
+\vspace{1cm}
+
+\noindent\boxed{{\large\textbf{Schema B}}}
+
+\noindent \newline $\blacksquare \quad B:=  A \to \Box\lozenge A$\newline
+
+\begin{minipage}{0.45\linewidth}
+    \noindent $\forall F \: (F \vDash B \:\: sse \:\: \underbracket{\forall w,u \:(wRu \to \: uRw)}_{F \textrm{ è simmetrica}})$
+\end{minipage}
+\begin{minipage}{0.2\linewidth}
+    \begin{center}
+    \includegraphics[width=0.9\linewidth]{ImmaginiSchemini/simmetrica.png}\end{center}
+\end{minipage}
+
+\vspace{1cm}
+
+\noindent $\boxed{\rightarrow}$ \underline{Dimostrazione diretta} \quad $\longrightarrow$ \quad \underline{$F \vDash A \to \Box\lozenge A \: \: \to \: \: F$ è simmetrica}
+
+\vspace{0.5cm}
+
+\begin{longtable}{ll}
+    Assumo: &$F \vDash P \to \: \Box \Diamond P$\\
+    Assumo: &$wRu$ \footnote{Se non lo assumessi, la simmetria sarebbe sempre vera (perché l'antecedente è falso).}\\
+    Costruisco $I$ minimale: & $I(P) = \{w\}$\\
+    \\
+    Quindi: & $\vDash_w P$\\
+    M.P. & $\vDash_w \Box \Diamond P$\\
+\end{longtable}
+
+\vspace{0.7cm}
+
+\begin{minipage}{0.5\linewidth}
+    \begin{center}
+    \includegraphics[width=0.6\linewidth]{ImmaginiSchemini/simmetricaPerScemi.png}
+    \end{center}
+\end{minipage}
+    
+\vspace{0.7cm}
+
+\begin{quote}
+    \noindent Dato che \underline{solamente} $w$ rende vero $P$ (per $I(P)$),\newline
+    Allora: $uRw$
+\end{quote}
+
+\vspace{0.5cm}
+
+\noindent $\boxed{\leftarrow}$ \underline{Dimostrazione diretta} \quad $\longrightarrow$ \quad \underline{$ F$ è simmetrica $\: \: \to \: \: F \vDash A \to \Box\lozenge A $}
+
+\vspace{0.5cm}
+\begin{longtable}{ll}
+    "tengo a mente": & $F$ è simmetrica\\
+    Assumo: & $\vDash_w P$\\
+    Costruisco $I$ minimale: & $I (P) = \{w\}$\\
+    \\
+    - Caso $\neg(wRu$\footnote{Come al solito, $u$ mondo generico.}$)$: & $\vDash_w \Box \Diamond P$ \: sempre vera.\\
+    - Caso $wRu$: & $uRw$ per ipotesi.\\
+    Per $I(P)$: & $\exists w (uRw \:\: e \:\: \vDash_w P)$\\
+    & $\vDash_u \Diamond P$\\
+\end{longtable}
+\begin{quote}
+    \noindent Essendo $u$ generico, lo stesso ragionamento si può estendere per tutti i mondi visti da $w$, i quali renderanno vero $\Diamond P$.\newline
+    
+    \noindent Allora: $\vDash_w \Box \Diamond P$
+\end{quote}
+
+\vspace{1cm}
+
+\vfill
+\pagebreak
+\noindent\boxed{{\large\textbf{Schema di Lemmon}}} \newline
+
+\noindent $\forall F \: (F \vDash \Diamond^{m} \Box^{n} A \to \Box^{k} \Diamond^{j} A \:\:\quad sse \:\:\quad \forall w,{\scriptstyle{V}},u \:(wR^{m}{\scriptstyle{V}} \:\: e \:\: wR^{k}u \to \: \exists t ({\scriptstyle{V}}R^{n}t \: \: e \: \: uR^{j}t)))$
+
+\vspace{0.5cm}
+
+\noindent $\boxed{\rightarrow}$ \underline{Dimostrazione diretta}
+
+\vspace{0.5cm}
+
+\begin{minipage}{0.65\linewidth}
+    \begin{longtable} {ll}
+    Assumo: &$F \vDash \Diamond^{m} \Box^{n} A \to \Box^{k} \Diamond^{j} A$\\
+    Assumo: & $wR^{m}{\scriptstyle{V}}$\: e\: $wR^{k}u$\\
+    Costruisco $F$-modello: & $I(P) = \{z \: : \: {\scriptstyle{V}}R^{n}z\}$\\
+    \\\\\\\\
+    Quindi: & $\vDash_w \Diamond^{m} \Box^{n} P$\\
+    M.P. & $\vDash_w  \Box^{k}  \Diamond^{j}P$\\
+    \\\\\\\\\\\\
+    Per $\vDash_u \Diamond^{j} P$ & $\exists t (uR^{j}t \: \: e \:\: \underline{\vDash_t P})$\\
+    & $t \in I(P)$\\
+    & ${\scriptstyle{V}}R^{n}t$
+\end{longtable}
+\end{minipage}
+\begin{minipage}{0.2\linewidth}
+    \noindent \includegraphics[width=1.2\linewidth]{ImmaginiSchemini/Lemmon1.png}\newline
+
+\vspace{0.5cm}
+    
+    \noindent \includegraphics[width=1.4\linewidth]{ImmaginiSchemini/Lemmon2.png}\newline
+
+\vspace{0.5cm}
+    
+    \noindent \includegraphics[width=1.4\linewidth]{ImmaginiSchemini/Lemmon3.png}
+\end{minipage}
+
+\vspace{0.5cm}
+\vfill
+\pagebreak
+
+\noindent $\boxed{\leftarrow}$ \underline{Dimostrazione per assurdo}
+
+\vspace{0.5cm}
+
+\begin{longtable}{ll}
+    "tengo in mente": &$\forall w,{\scriptstyle{V}},u \:(wR^{m}{\scriptstyle{V}} \:\: e \:\: wR^{k}u \to \: \exists t ({\scriptstyle{V}}R^{n}t \: \: e \: \: uR^{j}t))$\\
+    \\
+    Assumo: &$\vDash_w \Diamond^{m} \Box^{n} P$\\
+    &$\exists {\scriptstyle{V}} \: (wR^{m} {\scriptstyle{V}} \: \: e \: \: \underline{\vDash_{\scriptstyle{V}} \Box^{n}P}) $\\
+    &$\exists {\scriptstyle{V}} \: (wR^{m} {\scriptstyle{V}} \: \: e \: \:\underline{\forall t_1 \in W \: ({\scriptstyle{V}}R^{n}t_1\quad implica \quad\nvDash_{t_1} P)})$\\
+    \\
+    Assumo: &$\nvDash_w \Box^{k} \Diamond^{j} P$\\
+    &$\exists u \:(wR^{k}u \: \: e \: \: \nvDash_u \Diamond^{j}P)$\\
+    &$\exists u \:(wR^{k}u \: \: e \: \: \underline{\forall t_2 \in W \: (uR^{j}t_2\:\: implica \:\:\nvDash_{t_2} P)})$\\
+    \\
+    Per Lemmon:\footnote{Grazie alla dimostrazione per assurdo, abbiamo assunto l'antecedente dell'implicazione da "tenere a mente", che è valida nella struttura. Quindi, possiamo assumere il conseguente.} & $\exists t \in W \:({\scriptstyle{V}}R^{n}t \: \: e \: \: uR^{j}t)$\\
+    \\
+    Quindi: & $\exists t \in W \: (({\scriptstyle{V}}R^{n}t \: \: e \: \: uR^{j}t) \quad implica \quad \vDash_t P \:\: e\:\: \nvDash_t P)$
+    \\
+    $\longrightarrow$ & $\perp$
+    \end{longtable}
+    
+    \vspace{0.5cm}
+    
+\begin{quote}
+    \noindent  Il ragionamento è stato strutturato così:
+    \begin{itemize}[\null]
+        \item Ragionando per assurdo posso assumere che:
+        \begin{itemize}
+            \item $w$ veda ${\scriptstyle{V}}$ (in $m$ numero di passi)
+            \item $w$ veda $u$ (in $k$ numero di passi)
+        \end{itemize}
+        \item
+        \item Ciò permette di garantire le premesse per l'implicazione da "tenere a mente" che, per ipotesi, è valida nella struttura. $\forall w,{\scriptstyle{V}},u \:(\underline{wR^{m}{\scriptstyle{V}} \:\: e \:\: wR^{k}u} \to \: \exists t ({\scriptstyle{V}}R^{n}t \quad  e \quad uR^{j}t))$
+        \item
+        \item Per modus ponens\footnote{Ho assunto $wR^{m}{\scriptstyle{V}} \:\: e \:\: wR^{k}u$. Inoltre, so che \:$wR^{m}{\scriptstyle{V}} \:\: e \:\: wR^{k}u \to \: \exists t ({\scriptstyle{V}}R^{n}t \quad  e \quad uR^{j}t)$. Quindi: $\exists t ({\scriptstyle{V}}R^{n}t \quad  e \quad uR^{j}t)$.}: ${\scriptstyle{V}}$ e $u$ vedranno un punto $t$, rispettivamente a $n$ e $j$ passi di distanza.
+        \item Sapendo che:
+        \begin{itemize}
+            \item Tutti i punti visti da ${\scriptstyle{V}}$ rendono vera $P$ (perché $\vDash_{\scriptstyle{V}} \Box P$)
+            \item Tutti i punti visti da $u$ rendono falsa $P$ (perché $\nvDash_u \Diamond P$)
+        \end{itemize}
+        \item Allora, il mondo $t$ visto sia da $u$ che da ${\scriptstyle{V}}$ renderà $P$ sia vero che falso.
+        \item\item $\rightarrow$ $\perp$
+    \end{itemize}
+\end{quote}
+
+\vspace{1cm}
+
+\noindent\boxed{{\large\textbf{Schema 2}}}
+
+\noindent \newline $\blacksquare \quad 2:= \Diamond \Box A \to \Box\lozenge A$\newline
+
+\noindent $\forall F \: (F \vDash 2 \:\: sse \:\: \underbracket{\forall w,{\scriptstyle{V}},u \:(wR{\scriptstyle{V}} \:\: e \:\: wRu \to \: \exists t ({\scriptstyle{V}}Rt \: \: e \: \: uRt))}_{F \textrm{ è debolmente convergente}})$
+\begin{center}
+    \includegraphics[width=0.2\linewidth]{ImmaginiSchemini/deb convergente.png}\end{center}
+\vspace{0.5cm}
+
+\noindent $\uparrow$ Dimostrazione analoga a quella dello Schema di Lemmon.\newline
+
+\vfill
+\pagebreak
+\section{Sotto-modello generato}
+
+\noindent\underline{Notazione aggiuntiva}: $wR^{*}v$ sse $\exists n \:(wR^{n}v)$ \quad \quad \quad $n\in \mathbb{N}$\newline
+
+\noindent {$\boxed{\textrm{DEF.}}$}\newline
+
+\noindent Sia dato $M = < W,R,I >$\newline
+
+\noindent Il sottomodello generato da un punto $x\subset W$: \quad $M^{x} = < W^{x},R^{x},I^{x} >$
+\begin{enumerate}[\null]
+    \item $W^{x} = \{y \: : \: xR^{*}y\}$\footnote{Insieme dei mondi (del modello $M$) visti in un qualche numero di passi da $x$.}
+    \item $R^{x} = R\cap \:(W^{x} \times W^{x})$\footnote{Quindi, nel modello generato si mantiene la relazione di accessibilità originale. A cambiare è solo l'insieme dei punti che, nel caso di $W^{x}$, sono esclusivamente i punti visti in $*$ passi da $x$.}
+    \item $I^{x} (P) = I(P) \cap W^{x}$ \footnote{Anche nel caso della interpretazione, come in quello della relazione di accessibilità, l'interpretazione rimane identica, solo che "agisce" su un insieme di mondi ristretto a quelli visti in $*$ passi da $w$.}
+\end{enumerate}
+
+\vspace{1cm}
+
+\noindent\boxed{{\large\textbf{Lemma del sottomodello generato}}}\newline
+
+\noindent $\forall M, \forall x \in W^{y \in W}, \: \forall A \in Fm^{\Phi} \:\: \: \:(\vDash^{M}_x A \: \: \: sse\: \: \: {{\vDash_x^M}^y} A)$\footnote{Definizione informale: (in ogni modello) Ogni mondo ($x$) che fa parte dell'insieme dei mondi del sottomodello generato ($W^{y}$) rende vera ogni formula ($\forall A$) sse la rende vera anche nel modello originale ($M$).}\newline
+
+Fisso $M$ t.c. $M=<W,R,I>$\newline
+
+\noindent \underline{Dimostrazione per induzione sulla struttura di A}\newline
+
+\begin{longtable}{ll}
+    Sia $A \equiv P$: & $\vDash^{M}_x P$\\
+    & $x \in I (P)$\\
+    Per \:$I^{y} (P)$ \:e\: $x \in W^{y}$: \quad& $x \in I^{y} (P)$ \footnote{Questo perché l'interpretazione del sottomodello è costruita dall'intersezione tra l'interpretazione del modello originale $I(P)$, e l'insieme di mondi del sottomodello generato ($W^{y} = \{k:y\}$). $x$ fa parte sia di $I(P)$ (per costruzione) che di $W^{y}$ (per definizione).}\\
+    & ${{\vDash_x^M}^y} P$\\
+    \\
+        \hline
+    Sia $A \equiv \perp$: & ovvio\\
+        \hline
+\\
+  Sia $A \equiv \neg B$: &$\vDash^{M}_w \neg B$\\
+  & $\nvDash^{M}_w B$\\
+  Per IH: &${{\nvDash_x^M}^y} B$\\
+  &${{\vDash_x^M}^y} \neg B$\\
+    \\
+      \hline
+    Sia $A \equiv B \wedge C$: & $\vDash^{M}_x B \wedge C$\\
+    & $\vDash^{M}_x B$ \:\: e \:\: $\vDash^{M}_x C$ \footnote{Per costruzione, $\vDash^{M}_x B \wedge C$ si può dividere in $\vDash^{M}_x B \: \: \boxed{\wedge} \: \: \vDash^{M}_x C$. Per la clausula di verità della congiunzione: $\vDash^{M}_x B \: \: \boxed{e} \: \: \vDash^{M}_x C$ (per rendere vera la congiunzione, tutti i membri devono essere veri).}\\
+    Per IH\footnote{Da qui in poi non espliciterò sempre il/gli IH. Comunque in questo caso IH$_1$: $\vDash^{M}_x B$ sse ${{\vDash_x^M}^y} B$,\: IH$_2$: $\vDash^{M}_x C$ sse ${{\vDash_x^M}^y} C$}: & ${{\vDash_x^M}^y} B$ \:\: e \:\: ${{\vDash_x^M}^y} C$\\
+    & ${{\vDash_x^M}^y} B\wedge C$\\
+    \\
+    $\vee$, $\to$: dim. analoga.\\
+    \hline
+\end{longtable}
+\begin{longtable}{ll}
+    \textbf{Casi modali:}\\
+    Sia $A \equiv \Box B$\\
+    Devo dimostrare: & $\forall x \in W^{y}\: (\vDash^{M} \Box B$\: sse \:${{\vDash_x^M}^y} \Box B)$\\
+    ($I_1$) Fisso $x$ t.c. $x \in W^{y}$\\
+    \\
+    \mycircled{$\longrightarrow$}\\
+    ($I_2$) Assumo: &$\vDash^{M}_x \Box B$\\
+    & $\forall z \in W \: (xRz\: \: implica \:\:\vDash^{M}_z B)$\\
+    \\
+    Devo dimostrare: &${{\vDash_g^M}^y} \Box B$\\
+    &$\forall g \in W^{y} \: (xR^{y}g\:\: implica\:\: {{\vDash_g^M}^y} B)$\\
+    ($I_3$) Fisso $g$ \:t.c. \:$g \in W^{y}$\\
+    ($I_4$) Assumo: & $xR^{y}g$\\
+    \\
+    Devo dimostrare: & ${{\vDash_g^M}^y} B$\\
+    Per IH: & $\vDash^{M}_g B$\\
+    \\
+    ($I_5$) Per $I_3$: & $g \in W$ \footnote{Dopo aver assunto che $g$ fa parte dell'insieme sottogenerato da $y$, $g$ deve far parte anche dell'insieme di mondi originario (perché $W^{y}\subseteq W$).}\\
+    ($I_6$) Per $I_4$: & $xRg$\\
+    Per $I_2$,$I_5$,$I_6$: & $\vDash^{M}_g B$ \footnote{Per $I_2$, $z$ è un generico mondo visto da $x$ in $W$, per questo rende vero $B$ (quindi tutti i mondi visti da $x$ in $W$, renderanno vero $B$). Essendo anche $g$ un generico mondo visto da $x$ (in $W$), anche $g$ renderà vero $B$.}\\
+    \\
+    \mycircled{$\longleftarrow$}\\
+    ($I_2$) Assumo: &${{\vDash_x^M}^y} \Box B$\\
+    & $\forall z \in W^{y} \: (xR^{y}z\:\: implica\:\: {{\vDash_z^M}^y} B)$\\
+    \\
+    Devo dimostrare: &$\vDash^{M}_x \Box B$ \\
+    &$\forall g \in W \: (xRg\: \: implica \:\:\vDash^{M}_g B)$\\
+    ($I_3$) Fisso $g$ \:t.c. \:$g \in W$ \quad &\\
+    ($I_4$) Assumo: & $xRg$\\
+    \\
+    Devo dimostrare: & $\vDash^{M}_g B$ \\
+    Per IH: & ${{\vDash_g^M}^y} B$\\
+    \\
+    ($I_5$) Per $I_4$ & $xR^{*}g$ \footnote{Per $I_4$ sappiamo che $x$ vede $g$ ($xRg$). Ciò è equivalente a $xR^{1}g$, che si può riscrivere come $xR^{*}g$ (con $n = 1$).}\\\\
+    Ricordo che: $W^{y} = \{j\: :\: yR^{*}j\}$\\
+    ($I_6$) Per $I_1$, $I_5$: & $g \in W^{y}$ \footnote{Per $I_1$ sappiamo che $x$ appartiene all'insieme dei mondi del modello sotto-generato, quindi è visto in $n$-passi da $y$. Inoltre, sappiamo che $g$ è visto in $m$-passi da $x$. Di conseguenza, $g$ è visto in $n+m$-passi da $y$. Allora, $yR^{*}g$, ossia $g$ fa parte dell'insieme dei mondi $W^{y}$.}\\
+    Ricordo che: $R{y} = R \cap W^{y}$\\
+    ($I_7$) Per ($I_6$): &$xR^{y}g$\\
+    \\
+    Per $I_2$, $I_6$, $I_7$,: & ${{\vDash_g^M}^y} B$\\
+    \\
+    Caso $\Diamond$, dim. quasi analoga.& (se ho tempo lo faccio)
+\end{longtable}
+
+\vspace{1cm}
+
+\noindent\boxed{{\large\textbf{Convergenza non è esprimibile}}} \newline
+
+\noindent Convergenza: $\forall x,y \:\exists z \: (xRz \: \:  e \: \:  yRz)$\footnote{Presi due punti a caso, esiste un punto visto da entrambi.} \newline
+
+\noindent Si vuole dimostrare che non esiste una formula modale per esprimere la convergenza: \newline
+
+\noindent $\not\exists A \in Fm\Phi$ t.c. $\forall F(\underbracket{F\vDash A}_{\textrm{$A$ è valido su $F$}} \quad sse \quad \quad \underbracket{\forall x,y \exists z \: (xRz \: \:  e \: \:  yRz)}_{\textrm{$F$ è convergente}})$ \newline
+
+\noindent Dimostrazione su quaderno (per assurdo), pagina \mycircled{1}. Viene presa una struttura che non è convergente, ma con i sottomodelli generati che sono convergenti. Grazie al lemma precedente, si dimostra per assurdo.\newline
+
+\vspace{1cm}
+
+\noindent\boxed{{\large\textbf{Connessione non è esprimibile}}} \newline
+
+\noindent Connessione: $\forall x,y\: (xRy \: \:  oppure \: \:  yRx)$\footnote{Presi due punti a caso, c'è almeno una freccia tra i due.} \newline
+
+\noindent Si vuole dimostrare che non esiste una formula modale per esprimere la convergenza: \newline
+
+\noindent $\not\exists A \in Fm\Phi$ t.c. $\forall F(F\vDash A \quad \quad sse \quad \quad \underbracket{\forall x,y\: (xRy \: \:  oppure \: \:  yRx)}_{\textrm{$F$ è connessa}})$ \newline
+
+\noindent Dimostrazione su quaderno (per assurdo), pagina \mycircled{2}. Viene presa una struttura che non gode della proprietà di connessione, ma con i sotto-modelli generati che godono di quella proprietà. Grazie al lemma precedente, si dimostra per assurdo.
+
+\vspace{1cm}
+
+\section{P-Morfismo}
+
+{\boxed{\textrm{DEF}}}
+\begin{itemize}[\null]
+\item P-morfismo tra \textbf{strutture}:
+    \item $F_1 = < W_1, R_1>$
+    \item $F_2 = < W_2, R_2>$
+    \item $f: \: W_1 \longrightarrow W_2$ \footnote{Relazione binaria in cui $\forall x \in W_1, \exists y \in W_2 \: (<x \in W_1, y \in W_2>)$. In pratica è una funzione (x,y) in cui il primo elemento (x) viene da $F_1$, e il secondo elemento (y) viene da $F_2$.}
+    \item \underline{Deve soddisfare:}
+    \begin{enumerate}
+        \item Forth condition: $\forall w,v \in W_1 \: (wR_1 v \quad implica \quad f(w)R_2 f(v))$
+           \begin{center}
+               \includegraphics[width=0.3\linewidth]{ImmaginiSchemini/forth condition.png}
+           \end{center} 
+        \item Back condition: $\forall w \in W_1, \forall y \in W_2 \: (f(w)R_2 y \:\: implica \:\: \exists u \in W_1 (wR_1 u \:\: e \:\: f(u) = y)$
+        \begin{center}
+             \includegraphics[width=0.3\linewidth]{ImmaginiSchemini/back condition.png}
+        \end{center}
+    \end{enumerate}
+\item P-morfismo tra \textbf{modelli}:
+\item $M_1 = < W_1, R_1, I_1>$
+    \item $M_2 = < W_2, R_2, I_2>$
+    \item $f: \: W_1 \longrightarrow W_2$
+    \item \underline{Deve soddisfare:}
+\begin{enumerate}
+    \item Forth condition.
+    \item Back condition.
+    \item $\forall w \in W_1 \: (w \in I_1 (P) \: \: sse \: \: f(w) \in I_2 (P))$\footnote{I due modelli si comportano allo stesso modo rispetto alla verità degli atomi.}
+\end{enumerate}
+\end{itemize}
+
+\vspace{1cm}
+
+\noindent\boxed{{\large\textbf{Lemma del P-morfismo tra modelli}}} \footnote{Ricordo che questo lemma, come quello del sotto-modello generato, ha la funzione di prendere la definizione di costruzione ed estenderla ad ogni punto, quindi ad ogni formula arbitraria.}\newline
+
+\noindent Dato $f$ P-morfismo tra $M_1$ e $M_2$: \quad $\forall x \in W_1 \:(\vDash^{M_1}_x A \: \: sse \: \: \vDash^{M_2}_{f(x)} A)$\newline
+
+\noindent $\blacksquare$ \:Dimostrazione per induzione sulla struttura A \newline
+
+\noindent Casi non modali ($P$, $\perp$, $\neg$, $\wedge$, $\vee$, $\rightarrow$): dimostrazione analoga alle dimostrazioni precedenti. \newline
+
+\begin{longtable}{ll}
+    Sia $A \equiv \Box B$: & $(\vDash^{M_1}_x \Box B \: \: sse \: \: \vDash^{M_2}_{f(x)} \Box B)$\\
+    \\
+    \mycircled{$\longrightarrow$}\\
+    \\
+    ($I_1$) Assumo: & $\vDash^{M_1}_x \Box B$\\
+    & $\forall y \in W_1 \: (x R_1 y \:\: implica \:\: \vDash^{M_1}_y B)$\\
+    \\
+    Mostro: & $\vDash^{M_2}_{f(x)} \Box B$\\
+    & $\forall z \in W_2 \: (f(x) R_2 z \:\: implica\:\: \vDash^{M_2}_z B)$\\
+    Fisso $z$ t.c. $z \in W_2$\\
+    ($I_2$) Assumo: & $f(x) R_2 z$\\\\
+    &\includegraphics[width=0.3\linewidth]{ImmaginiSchemini/P1.png}\\\\
+    ($I_3$) Per P-morfismo: & $x \longrightarrow f(x)$\\\\
+     &\includegraphics[width=0.3\linewidth]{ImmaginiSchemini/P2.png}\\\\
+    ($I_4$) Da $I_2$, $I_3$, Back condition: & $\exists s \in W_1 (wR_1 s \:\: e \:\: f(s) = z)$\\\\
+    &\includegraphics[width=0.3\linewidth]{ImmaginiSchemini/P3.png}\\\\
+    Devo mostrare: & $\vDash^{M_2}_{z} B$\\
+    \\
+    Per IH: & $\vDash^{M_1}_{z_1} B$\\
+    Da $I_4$: & $z_1 = s$\\
+    Da $I_1$: & $\vDash^{M_1}_s B$\\
+    \\
+    Caso \mycircled{$\longleftarrow$} analogo. & (si utilizza la forth condition)\\[0.5em]
+    Caso $\Diamond B$ analogo. & (in $\rightarrow$ si usa forth condition)\\ %Pag. \mycircled{3}
+    & (in $\leftarrow$ si usa back condition)
+\end{longtable}
+
+\vspace{1cm}
+
+\noindent\boxed{{\large\textbf{Lemma del P-morfismo suriettivo tra modelli}}}\newline
+
+\noindent $f\: : \:W_1 \longrightarrow W_2$ suriettiva: \quad $\forall y \in W_2 \: \exists x \in W_1 \: (y = f(x))$\footnote{Per ogni punto di $W_2$ esiste almeno un punto di $W_1$ tale che ogni punto $y$ di $W_2$ è immagine P-morfa di almeno un punto $x$ di $W_1$.}\newline
+
+\noindent Se $f\: : \:W_1 \longrightarrow W_2$ è un P-morfismo suriettivo, \newline
+Allora\quad $\vDash^{M_1} A $ \: sse\: $\vDash^{M_2} A$\newline
+
+\noindent \underline{Dimostrazione diretta}\newline
+
+\noindent \mycircled{$\rightarrow$} \: $\vDash^{M_1} A $ \: implica \: $\vDash^{M_2} A$
+\begin{longtable} {ll}
+    ($I_1$) Assumo: & $\vDash^{M_1} A $\\
+    & $\forall x \in W_1 \: (\vDash^{M_1}_x A)$\\
+    \\
+    ($I_2$) Per lemma del P-morfismo:& $\forall z \in W_1 \: (\vDash^{M_1}_z A \: \: sse \: \: \vDash^{M_2}_{f(z)} A)$\\
+    ($I_3$) Per $F$ suriettiva: & $\forall y \in W_2 \: \exists y \in W_1 (y = f(x))$\\
+    Da $I_1$, $I_2$, $I_3$ : &$\forall x \in W_2 \: (\vDash^{M_2}_{f(x)} A)$\\
+    & $\vDash^{M_2} A$
+\end{longtable}
+\begin{quote}
+    \noindent Spiegato a parole:
+    \begin{itemize}[-]
+        \item     Da $I_2$, per ogni punto, se quel punto rende vera A nell'insieme di mondi $W_1$, allora anche l'immagine di quel punto rende vera A nell'insieme $W_2$.
+        \item Da $I_1$ sappiamo che ogni punto rende vera A nell'insieme $W_1$.
+        \item Da $I_3$ sappiamo che ogni punto di $W_2$ è immagine p-morfa di almeno un punto di $W_1$.
+        \item Quindi, l'immagine di ogni punto rende vera A nell'insieme $W_2$, ossia la definizione di verità in un modello.
+    \end{itemize}
+\end{quote}
+
+\vspace{0.6cm}
+
+\noindent \mycircled{$\leftarrow$} \: $\vDash^{M_2} A$ \: implica \: $\vDash^{M_1} A $ \quad \quad \quad Dimostrazione analoga (al contrario)
+%\begin{longtable} {ll}
+    %($I_1$) Assumo: & $\vDash^{M_2} A $\\
+    %& $\forall y \in W_2 \: (\vDash^{M_2}_y A)$\\
+    %\\
+    %($I_2$) Per $f$ suriettiva: & $W_2 = f(W_1)$\footnote{Ad ogni punto dell'insieme %$W_2$ ne corrisponde almeno uno dell'insieme $W_1$.}\\
+    %\\
+    %!! non l'ho capita benissimo. Da rivedere.
+%\end{longtable}
+
+\vspace{1cm}
+
+\noindent\boxed{{\large\textbf{\hypertarget{lemmaModelloInterpretazioni}Lemma}}}\newline
+
+\noindent Dato $f$: P-morfismo tra strutture $F_1$ e $F_2$,\newline
+Per ogni $F_2$-modello $M_2$, esiste un $F_1$-modello $M_1$ t.c. $f$ è $P$-morfismo tra i modelli $M_1$ e $M_2$. ({\color{red}!} il contrario non vale)\newline
+
+\noindent Caso in cui abbiamo $M_1$: non si può costruire il p-morfismo tra modelli, visto che potrebbe accadere che solo $w \in I_1(P)$. Quindi l'immagine ($y$) di $w$ e di $v$ dovrebbe rendere vera sia $P$ che $\neg P$.
+\begin{center}
+               \includegraphics[width=0.3\linewidth]{ImmaginiSchemini/LEMMA M2.png}
+           \end{center} 
+
+\noindent Caso in cui abbiamo $M_2$: si può costruire il p-morfismo tra modelli.
+\begin{center}
+               \includegraphics[width=0.3\linewidth]{ImmaginiSchemini/LEMMA M1.png}
+           \end{center} 
+
+\noindent Quindi: \quad $I_1(P) = \{x \in W_1 \: : \: f(x) \in I_2 (P)\}$\footnote{Il punto di $W_1$ appartiene a $I_1 (P)$ solo se l'immagine di quel punto appartiene a $I_2(P)$.}
+
+\vspace{1cm}
+
+\noindent\boxed{{\large\textbf{Lemma del P-morfismo suriettivo tra strutture}}}\newline
+
+\noindent Dato $f$ P-morfismo suriettivo tra strutture $F_1$ e $F_2$,\\
+$F_1 \vDash A \to \: F_2 \vDash A$\newline
+
+\noindent \underline{Dimostrazione per contrapposizione}
+
+\begin{longtable}{ll}
+    ($I_1$) Assumo: & $F_2 \nvDash A$\\
+    ($I_2$) Da $I_1$: & $\exists M_2$ basato su $F_2$\: t.c. \:$\nvDash^{M_2} A$\\
+    & $\exists y \in W_2 \: (\nvDash^{M_2}_y A)$\\
+    \\
+    Per \hyperlink{lemmaModelloInterpretazioni}{lemma}: & $\exists M_1$ basato su $F_1$ t.c. $f$ è $P$-morfismo tra $M_1$ e $M_2$.\\
+    Per $f$ suriettivo (lemma): & $\exists x \in W_1 \:(\nvDash^{M_1}_x A)$\\
+    & $\nvDash^{M_1} A$\\
+    & $F_1 \nvDash A$
+\end{longtable}
+
+\vspace{1cm}
+
+\noindent\boxed{{\large\textbf{Irriflessività non è esprimibile}}} \newline
+
+\noindent Irriflessività: $\forall w\: \neg(wRw)$\footnote{"Irriflessività" significa che nessun punto vede sé stesso. "Essere non riflessivo" significa che un punto specifico non vede sé stesso.} \newline
+
+\noindent \underline{Dimostrazione per assurdo}\newline
+
+\noindent Assumo: $A$ corrisponde a $\forall w\: \neg(wRw)$\newline
+
+\noindent Costruisco struttura (irriflessiva) $F_1 = \big<\mathbb{N}, < \big>$\newline
+Costruisco struttura (riflessiva) $F_2 = \big<0, \{<w,w>\}\big>$\newline
+$F_2$ è immagine $P$-morfa di $F_1$, secondo la funzione $f(n) = 0$, $\forall n \in \mathbb{N}$\newline
+
+\begin{center}
+    \includegraphics[width=0.6\linewidth]{ImmaginiSchemini/irriflessibilita.png}\footnote{Per semplicità vengono omesse le freccie di transitività (es. $1 \to 3$, $1 \to 4$, ecc.).}
+\end{center}
+
+\hrule
+\vspace{5pt}
+
+\noindent Devo mostrare che $f$ è un $P$-morfismo, quindi la back condition e la forth condition devono essere rispettate.\newline
+
+\noindent $\bullet$ Forth condition: \quad $\forall n,k \in W_1 \: (nR_1 k \quad implica \quad f(n)R_2 f(k))$
+
+\begin{longtable}{ll}
+    Scelgo $n$ e $k$ t.c. & $ n,k \in W_1$, $n<k$\\
+    Devo mostrare: & $f(n)R\:f(k)$\\\\
+    Per costruzione &$0\:R_2\: 0 $\\
+    & $f(n) = f(k) = 0$\\
+    & $f(n)R\:f(k)$
+\end{longtable}
+
+\noindent $\bullet$ Back condition: \quad $\forall n \in W_1, \forall 0 \in W_2 \: (f(n)R_2 0 \:\: implica \:\: \exists u \in W_1 (nR_1 u \:\: e \:\: f(u) = 0)$\newline
+\noindent Non dimostrata formalmente dal prof, ma semplice da capire intuitivamente. (per dim. formale vedi p.23)\newline
+
+\noindent Inoltre, per costruzione della funzione, questo P-morfismo è suriettivo, in quanto: \newline 
+$\forall f(n) \in W_2 \: \exists n \in W_1 \: (n = f(n))$.
+
+\vspace{5pt}
+
+\hrule
+
+\vspace{1cm}
+
+\noindent Per costruzione $F_1$ è irriflessiva: $F_1 \vDash A$\newline
+\noindent Per costruzione $F_2$ è riflessiva: $F_2 \nvDash A$ \newline
+
+\noindent Da lemma del P-morfismo suriettivo tra strutture: $F_2 \vDash A$\newline
+
+\vspace{1cm}
+
+\noindent\boxed{{\large\textbf{Antisimmetria non è esprimibile}}} \newline
+
+\noindent $\blacksquare$ \: Antisimmetria: \:\:$\forall w,v\:(wRv\:\: e\:\: vRw \:\: implica \:\: w=v)$\footnote{L'unico caso di freccia simmetrica è quando la relazione è riflessiva.} \newline
+
+\noindent $\not\exists A \in Fm\Phi$ t.c. $\forall F\:(F\vDash A\quad sse \quad F \rhd \textrm{antisimmetria})$\newline
+
+\noindent \underline{Dimostrazione per assurdo}\newline
+
+\noindent Dimostrazione chiarissima sul libro, pagina 24.
+
+\section{Calcoli assiomatici}
+
+\vspace{0.5cm}
+
+\noindent $\blacksquare$ \: \underline{Logica K}\newline
+
+\noindent - Assiomi:
+\begin{longtable}{ll}
+    (taut) & Tutte le tautologie classiche\\
+    (k) & $\Box (A \to B) \to (\Box A \to \Box B)$\\
+    (def$\Diamond$) & $\Diamond A \leftrightarrow \neg \box \neg A$
+\end{longtable}
+
+\noindent - Regole:
+
+\begin{minipage}[b]{0.12\linewidth}
+\centering
+MP
+\end{minipage}
+\begin{minipage}[b]{0.1\linewidth}
+\begin{prooftree}
+\AxiomC{$\Gamma \vdash \footnotemark{} A$}
+\AxiomC{$\Gamma \vdash A \to B$}
+\BinaryInfC{$\Gamma \vdash B$}
+\end{prooftree}
+\end{minipage}
+\footnotetext{Il simbolo $\vdash$ sta per "è derivabile da".}
+
+\vspace{1cm}
+
+\begin{minipage}[b]{0.12\linewidth}
+\centering
+N
+\end{minipage}
+\begin{minipage}[b]{0.1\linewidth}
+\centering
+\AxiomC{$\vdash A$}
+\UnaryInfC{$\vdash \Box A$}
+\DisplayProof
+\end{minipage}
+
+\vspace{1.4cm}
+
+\noindent\textbf{Cubo delle logiche assiomatizzabili}\newline
+
+\noindent I seguenti assiomi vengono aggiunti a quelli della logica $K$, per costruire altre logiche. \newline
+(es. logica $D :=$ logica $K +$ assioma $D$)\newline
+
+\noindent Assiomi:
+\begin{longtable}{llll}
+    $D$&$:=$ & $\Box A \to \Diamond A$ \quad\quad\quad\quad& (seriale) \\
+    $T$&$:=$ & $\Box A \to \: A$& (riflessivo)\\
+    $4$&$:=$ & $\Box A \to \Box \Box A$& (transitivo)\\
+    $5$&$:=$ & $\Diamond A \to \Box \Diamond A$& (Euclideo)\\
+    $B$&$:=$ & $A \to \:\Box \Diamond A$& (simmetrico)\\
+\end{longtable}
+\vfill
+\pagebreak
+\noindent \underline{Cubo delle logiche assiomatizzabili}
+
+\vspace{0.5cm}
+
+\begin{center}
+        \includegraphics[width=0.4\linewidth]{ImmaginiSchemini/cubo bello.png}
+\end{center}
+
+\noindent \underline{Cubo semplificato}
+\begin{center}
+    \includegraphics[width=0.4\linewidth]{ImmaginiSchemini/cubo brutto.png}
+\end{center}    
+
+Il professore richiede di conoscere solo le logiche $K$, $D$, $T$, S$4$, S$5$, $B$.
+\begin{itemize} [-]
+    \item S$4 = K.T.4$
+\item S$5 = K.T.5$ (sarebbe uguale a $K.T.4.B$)
+\end{itemize}
+
+\vfill
+\pagebreak
+\vspace{1cm}
+
+\noindent $\bullet$\: Storiella che ho (inutilmente) inventato per ricordare i cinque schemi:\newline
+
+\noindent Dante ({\color{red}$D$}), tutto serio ({\color{red}$seriale$}), esige di entrare in casa tua. In qualche modo è già riuscito ad addentrarsi nel tuo giardino, che, da bravo perfezionista, hai fatto costruire in perfetta forma quadrata ({\color{red}$\Box$}). Continua a suonare il campanello, ma tu, non capendone il motivo, rifiuti di aprire la porta. Al che, Dante (che ragazzo brillante!), gironzola intorno alla casa cercando un'entrata alternativa. "Idea!" esclama. Pochi secondi dopo è già sbucato magicamente dallo specchio di camera tua, che, per risparmiare in vetro, avevi comprato a forma di diamante ({\color{red}$\Diamond$}).\newline
+
+Ciò non ti destabilizza minimamente, in quanto, come prevenzione a situazioni simili, avevi comprato lo specchio dal cartomante Totti ({\color{red}$T$}). Totti è una persona abbastanza riflessiva (o almeno così mi aveva detto) e, dopo aver riflettuto ({\color{red}$riflessivo$}) molti mesi e molti fallimenti, è riuscito ad aprire un business di successo. Ora è famoso e acclamato, ma in realtà, come tutti, anche lui aveva iniziato dalla strada. La sua prima startup era scaturita da una passione; la passione dell'urlo contro altri. Per provare a soddisfarla senza finire in galera, Totti aveva deciso di comprare una stanza insonorizzata con un grosso diamante al centro ({\color{red}$\Diamond$}). In cambio di denaro, una persona qualsiasi, doveva mettersi sulla punta del cubo e farsi urlare da Totti. Sfortunatamente, il business, causa "difficoltà riperimento clienti" e "spese esagerate in diamanti" aveva chiuso. Tuttavia, Totti non si era dato per vinto, e dopo quel fallimento ha ideato, e realizzato, un business degno di un geniale imprenditore. Funzionamento del business: il venditore (Totti), forniva uno specchio magico al compratore (tu), il quale, era obbligato a farsi urlare contro "Aaaaaaaaaaaaaaaa!" ({\color{red}$A$}) per 60 secondi \footnote{Ormai, visto il picco di vendite dell'azienda, Totti riusciva a non respirare per i primi 45 secondi.}.\newline
+
+Oltre all'urlo, il cliente, doveva pagare 4 ({\color{red}4}) euro. Ripensando nuovamente all'accaduto, noti qualcosa che non va. C'è stata un ingiustizia, non avresti dovuto pagare! Dopo un minuto di mormorii tra te e te, capisci di essere stato fregato! Riesci a recuperare dalla memoria un ricordo importante: il tanto proclamato "Totti" in realtà era femmina! Allora, in quanto hai una mente logica, per risolvere il problema, inizi scomponendolo in due "scatoline" ({\color{red}$\Box\Box$}):
+\begin{itemize} [\null]
+    \item 1) Totti: maschio.
+    \item 2) Totti: femmina.
+\end{itemize}
+Però, sentendoti in colpa per non aver incluso altri generi, dopo una accurata scelta, decidi di \underline{anteporre} alle prime due scatoline, una "scatolina"({\color{red}$\Box$}) zero.
+\begin{itemize}[0)]
+    \item Totti: transessuale ({\color{red}$transitivo$}).
+\end{itemize}
+Adesso davanti a te hai tre "scatoline" e sei indeciso. Che problema!\newline
+
+Quando arrivi finalmente a considerare i sistemi interconnessi, Dante ha già setacciato tutta la casa in cerca del suo oggetto del piacere. Tuttavia, in quanto sei un logico, la tua casa ha solo 5 ({\color{red}$5$}) stanze, con 5 statue di Euclide ({\color{red}$Euclidea$}) in ognuna di esse (Tot: 25). Quindi, Dante, amareggiato (stava cercando una donna, mica Euclide!) esce di casa dallo specchio a forma di diamante ({\color{red}$\Diamond$}). Lancia un'occhiata al giardino del vicino, che, oltre ad avere l'erba più verde, ha anche una scatola ({\color{red}$\Box$}) in più di te. Dante, che astutamente aveva ascoltato i tuoi mormorii, era rimasto affascinato dal problema delle scatole. Perciò, decide di dirigersi verso il giardino del vicino, con l'intenzione di controllare il contenuto della scatola. Arrivato a pochi passi dalla famigerata scatola, sente un rumore acuto, e un dito spunta prepotentemente dal centro della scatola. Dante, tutto spaventato, corre a gambe levate verso lo specchio a forma di diamante ({\color{red}$\Diamond$}) e ci si tuffa dentro.\newline
+
+Sfortunatamente, per l'emozione, Dante non riesce a gestire bene la magia e non riesce ad entrare in casa. Deluso e ancora sconcertato dall'accaduto, si adagia a terra. Pensa tra sé e sé: "Bleah, quella brutta mano, quel brutto dito, quel brutto smalto...", ma al proferire di queste ultime parole, Dante, si ricorda di aver già visto quello smalto rosa! \`E lo stesso che viene utilizzato dal suo oggetto del piacere. "Beatrice!" esclama l'uomo con gli occhi lucidi. Intanto, sente un "Aaaaaaaaaa!" ({\color{red}$A$}) provenire dalla scatola. Con determinazione, Dante esclama: "Non ti preoccupare ammor mij, arrivo!" (Dante era napoletano). Corre immediatamente verso la scatola luccicante ({\color{red}$\Box$}), ed entusiasta la apre. Al suo interno trova qualcosa che non si sarebbe mai aspettato, ma finalmente capisce TUTTO. Tale realizzazione lo destabilizza e, anche se molto agitato, cambia obiettivo, decidendo di venire ad aiutarti. Corre ancora verso lo specchio-Diamante ({\color{red}$\Diamond$}), ma questa volta, grazie alla sua forte determinazione, riesce ad entrare in casa. Arriva vicino a te, ancora intento a cercare una simmetria ({\color{red}$simmetria$}) tra le tre assi (maschi, femmina, transessuale) e urla "Ho trovato la prima simmetria! Totti non è né maschio né femmina!". \newline
+\begin{FlushRight}
+The end.
+\end{FlushRight}
+
+\end{spacing}
+%{\scriptstyle{V}}
+%{{\vDash_x^M}^y}

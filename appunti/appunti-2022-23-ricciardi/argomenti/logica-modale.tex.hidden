@@ -112,7 +112,7 @@
 \vspace{0.3cm}
 
 \begin{center}
-    \includegraphics[width=0.6\linewidth]{Immagini/EsempioModelli.png}
+    \includegraphics[width=0.6\linewidth]{appunti-2022-23-ricciardi/immagini/esempio-modelli.png}
 \end{center}
 
 \vspace{0.5cm}
@@ -613,7 +613,7 @@ Assumo: & $F$ t.c. $F \vDash \Box \to \: \Box \Box A$\\
 Assumo: & $wR{\scriptstyle{V}} \: e \: {\scriptstyle{V}}Ru$\footnote{Nella transitività, simmetria, ecc. si può assumere l'antecedente del conseguente solo quando transitività, simmetria, ecc. si trovano dalla parte del conseguente.}
 \end{longtable}
 \begin{center}
-    \includegraphics[scale=0.3]{ImmaginiSchemini/a.png}
+    \includegraphics[scale=0.3]{appunti-2022-23-ricciardi/immagini-schemini/a.png}
 \end{center}
 
 \vspace{0.3cm}
@@ -623,7 +623,7 @@ Assumo: & $wR{\scriptstyle{V}} \: e \: {\scriptstyle{V}}Ru$\footnote{Nella trans
 \vspace{0.3cm}
 
 \begin{center}
-    \includegraphics[scale=0.3]{ImmaginiSchemini/b.png}
+    \includegraphics[scale=0.3]{appunti-2022-23-ricciardi/immagini-schemini/b.png}
 \end{center}
 
 \vspace{0.3cm}
@@ -633,7 +633,7 @@ Assumo: & $wR{\scriptstyle{V}} \: e \: {\scriptstyle{V}}Ru$\footnote{Nella trans
 \vspace{0.3cm}
 
 \begin{center}
-    \includegraphics[scale=0.3]{ImmaginiSchemini/c.png}
+    \includegraphics[scale=0.3]{appunti-2022-23-ricciardi/immagini-schemini/c.png}
 \end{center}
 
 \vspace{0.5cm}
@@ -658,7 +658,7 @@ Assumo: & $wR{\scriptstyle{V}} \: e \: {\scriptstyle{V}}Ru$\footnote{Nella trans
 \end{longtable}
 
 \begin{center}
-    \includegraphics[scale=0.3]{ImmaginiSchemini/d.png}
+    \includegraphics[scale=0.3]{appunti-2022-23-ricciardi/immagini-schemini/d.png}
 \end{center}
 
 \vspace{0.3cm}
@@ -668,7 +668,7 @@ Assumo: & $wR{\scriptstyle{V}} \: e \: {\scriptstyle{V}}Ru$\footnote{Nella trans
 \vspace{0.3cm}
 
 \begin{center}
-    \includegraphics[scale=0.3]{ImmaginiSchemini/e.png}
+    \includegraphics[scale=0.3]{appunti-2022-23-ricciardi/immagini-schemini/e.png}
 \end{center}
 
 \vspace{0.3cm}
@@ -678,7 +678,7 @@ Assumo: & $wR{\scriptstyle{V}} \: e \: {\scriptstyle{V}}Ru$\footnote{Nella trans
 \vspace{0.3cm}
 
 \begin{center}
-    \includegraphics[scale=0.3]{ImmaginiSchemini/f.png}
+    \includegraphics[scale=0.3]{appunti-2022-23-ricciardi/immagini-schemini/f.png}
 \end{center}
 
 \vspace{1cm}
@@ -732,7 +732,7 @@ Assumo: & $wR{\scriptstyle{V}} \: e \: {\scriptstyle{V}}Ru$\footnote{Nella trans
 
 \noindent $\forall F \: (F \vDash 5 \:\: sse \:\: \underbracket{\forall w,{\scriptstyle{V}},u \:(wR{\scriptstyle{V}} \wedge wRu \to \exists u ({\scriptstyle{V}}Ru))}_{F \textrm{ è Euclidea}})$
 \begin{center}
-    \includegraphics[width=0.2\linewidth]{ImmaginiSchemini/euclidea.png}\end{center}
+    \includegraphics[width=0.2\linewidth]{appunti-2022-23-ricciardi/immagini-schemini/euclidea.png}\end{center}
 \vspace{0.5cm}
 
 \noindent $\boxed{\rightarrow}$ \underline{Dimostrazione diretta} \quad $\longrightarrow$ \quad \underline{$F \vDash \lozenge A \to \Box\lozenge A \: \: \to \: \: F$ è Euclidea}
@@ -793,7 +793,7 @@ Assumo: & $wR{\scriptstyle{V}} \: e \: {\scriptstyle{V}}Ru$\footnote{Nella trans
 \end{minipage}
 \begin{minipage}{0.2\linewidth}
     \begin{center}
-    \includegraphics[width=0.9\linewidth]{ImmaginiSchemini/simmetrica.png}\end{center}
+    \includegraphics[width=0.9\linewidth]{appunti-2022-23-ricciardi/immagini-schemini/simmetrica.png}\end{center}
 \end{minipage}
 
 \vspace{1cm}
@@ -815,7 +815,7 @@ Assumo: & $wR{\scriptstyle{V}} \: e \: {\scriptstyle{V}}Ru$\footnote{Nella trans
 
 \begin{minipage}{0.5\linewidth}
     \begin{center}
-    \includegraphics[width=0.6\linewidth]{ImmaginiSchemini/simmetricaPerScemi.png}
+    \includegraphics[width=0.6\linewidth]{appunti-2022-23-ricciardi/immagini-schemini/simmetrica-per-scemi.png}
     \end{center}
 \end{minipage}
     
@@ -876,15 +876,15 @@ Assumo: & $wR{\scriptstyle{V}} \: e \: {\scriptstyle{V}}Ru$\footnote{Nella trans
 \end{longtable}
 \end{minipage}
 \begin{minipage}{0.2\linewidth}
-    \noindent \includegraphics[width=1.2\linewidth]{ImmaginiSchemini/Lemmon1.png}\newline
+    \noindent \includegraphics[width=1.2\linewidth]{appunti-2022-23-ricciardi/immagini-schemini/lemmon-1.png}\newline
 
 \vspace{0.5cm}
     
-    \noindent \includegraphics[width=1.4\linewidth]{ImmaginiSchemini/Lemmon2.png}\newline
+    \noindent \includegraphics[width=1.4\linewidth]{appunti-2022-23-ricciardi/immagini-schemini/lemmon-2.png}\newline
 
 \vspace{0.5cm}
     
-    \noindent \includegraphics[width=1.4\linewidth]{ImmaginiSchemini/Lemmon3.png}
+    \noindent \includegraphics[width=1.4\linewidth]{appunti-2022-23-ricciardi/immagini-schemini/lemmon-3.png}
 \end{minipage}
 
 \vspace{0.5cm}
@@ -945,7 +945,7 @@ Assumo: & $wR{\scriptstyle{V}} \: e \: {\scriptstyle{V}}Ru$\footnote{Nella trans
 
 \noindent $\forall F \: (F \vDash 2 \:\: sse \:\: \underbracket{\forall w,{\scriptstyle{V}},u \:(wR{\scriptstyle{V}} \:\: e \:\: wRu \to \: \exists t ({\scriptstyle{V}}Rt \: \: e \: \: uRt))}_{F \textrm{ è debolmente convergente}})$
 \begin{center}
-    \includegraphics[width=0.2\linewidth]{ImmaginiSchemini/deb convergente.png}\end{center}
+    \includegraphics[width=0.2\linewidth]{appunti-2022-23-ricciardi/immagini-schemini/deb-convergente.png}\end{center}
 \vspace{0.5cm}
 
 \noindent $\uparrow$ Dimostrazione analoga a quella dello Schema di Lemmon.\newline
@@ -1084,11 +1084,11 @@ Fisso $M$ t.c. $M=<W,R,I>$\newline
     \begin{enumerate}
         \item Forth condition: $\forall w,v \in W_1 \: (wR_1 v \quad implica \quad f(w)R_2 f(v))$
            \begin{center}
-               \includegraphics[width=0.3\linewidth]{ImmaginiSchemini/forth condition.png}
+               \includegraphics[width=0.3\linewidth]{appunti-2022-23-ricciardi/immagini-schemini/forth-condition.png}
            \end{center} 
         \item Back condition: $\forall w \in W_1, \forall y \in W_2 \: (f(w)R_2 y \:\: implica \:\: \exists u \in W_1 (wR_1 u \:\: e \:\: f(u) = y)$
         \begin{center}
-             \includegraphics[width=0.3\linewidth]{ImmaginiSchemini/back condition.png}
+             \includegraphics[width=0.3\linewidth]{appunti-2022-23-ricciardi/immagini-schemini/back-condition.png}
         \end{center}
     \end{enumerate}
 \item P-morfismo tra \textbf{modelli}:
@@ -1125,11 +1125,11 @@ Fisso $M$ t.c. $M=<W,R,I>$\newline
     & $\forall z \in W_2 \: (f(x) R_2 z \:\: implica\:\: \vDash^{M_2}_z B)$\\
     Fisso $z$ t.c. $z \in W_2$\\
     ($I_2$) Assumo: & $f(x) R_2 z$\\\\
-    &\includegraphics[width=0.3\linewidth]{ImmaginiSchemini/P1.png}\\\\
+    &\includegraphics[width=0.3\linewidth]{appunti-2022-23-ricciardi/immagini-schemini/p1.png}\\\\
     ($I_3$) Per P-morfismo: & $x \longrightarrow f(x)$\\\\
-     &\includegraphics[width=0.3\linewidth]{ImmaginiSchemini/P2.png}\\\\
+     &\includegraphics[width=0.3\linewidth]{appunti-2022-23-ricciardi/immagini-schemini/p2.png}\\\\
     ($I_4$) Da $I_2$, $I_3$, Back condition: & $\exists s \in W_1 (wR_1 s \:\: e \:\: f(s) = z)$\\\\
-    &\includegraphics[width=0.3\linewidth]{ImmaginiSchemini/P3.png}\\\\
+    &\includegraphics[width=0.3\linewidth]{appunti-2022-23-ricciardi/immagini-schemini/p3.png}\\\\
     Devo mostrare: & $\vDash^{M_2}_{z} B$\\
     \\
     Per IH: & $\vDash^{M_1}_{z_1} B$\\
@@ -1193,12 +1193,12 @@ Per ogni $F_2$-modello $M_2$, esiste un $F_1$-modello $M_1$ t.c. $f$ è $P$-morf
 
 \noindent Caso in cui abbiamo $M_1$: non si può costruire il p-morfismo tra modelli, visto che potrebbe accadere che solo $w \in I_1(P)$. Quindi l'immagine ($y$) di $w$ e di $v$ dovrebbe rendere vera sia $P$ che $\neg P$.
 \begin{center}
-               \includegraphics[width=0.3\linewidth]{ImmaginiSchemini/LEMMA M2.png}
+               \includegraphics[width=0.3\linewidth]{appunti-2022-23-ricciardi/immagini-schemini/lemma-m2.png}
            \end{center} 
 
 \noindent Caso in cui abbiamo $M_2$: si può costruire il p-morfismo tra modelli.
 \begin{center}
-               \includegraphics[width=0.3\linewidth]{ImmaginiSchemini/LEMMA M1.png}
+               \includegraphics[width=0.3\linewidth]{appunti-2022-23-ricciardi/immagini-schemini/lemma-m1.png}
            \end{center} 
 
 \noindent Quindi: \quad $I_1(P) = \{x \in W_1 \: : \: f(x) \in I_2 (P)\}$\footnote{Il punto di $W_1$ appartiene a $I_1 (P)$ solo se l'immagine di quel punto appartiene a $I_2(P)$.}
@@ -1238,7 +1238,7 @@ Costruisco struttura (riflessiva) $F_2 = \big<0, \{<w,w>\}\big>$\newline
 $F_2$ è immagine $P$-morfa di $F_1$, secondo la funzione $f(n) = 0$, $\forall n \in \mathbb{N}$\newline
 
 \begin{center}
-    \includegraphics[width=0.6\linewidth]{ImmaginiSchemini/irriflessibilita.png}\footnote{Per semplicità vengono omesse le freccie di transitività (es. $1 \to 3$, $1 \to 4$, ecc.).}
+    \includegraphics[width=0.6\linewidth]{appunti-2022-23-ricciardi/immagini-schemini/irriflessibilita.png}\footnote{Per semplicità vengono omesse le freccie di transitività (es. $1 \to 3$, $1 \to 4$, ecc.).}
 \end{center}
 
 \hrule
@@ -1348,12 +1348,12 @@ N
 \vspace{0.5cm}
 
 \begin{center}
-        \includegraphics[width=0.4\linewidth]{ImmaginiSchemini/cubo bello.png}
+        \includegraphics[width=0.4\linewidth]{appunti-2022-23-ricciardi/immagini-schemini/cubo-bello.png}
 \end{center}
 
 \noindent \underline{Cubo semplificato}
 \begin{center}
-    \includegraphics[width=0.4\linewidth]{ImmaginiSchemini/cubo brutto.png}
+    \includegraphics[width=0.4\linewidth]{appunti-2022-23-ricciardi/immagini-schemini/cubo-brutto.png}
 \end{center}    
 
 Il professore richiede di conoscere solo le logiche $K$, $D$, $T$, S$4$, S$5$, $B$.

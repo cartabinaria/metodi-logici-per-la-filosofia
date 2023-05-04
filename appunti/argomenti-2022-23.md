@@ -35,7 +35,7 @@
 - def. 1.8: $\models A$, $A$ è valida (pag. 5);
 - def. 1.9: $\mathcal{C} \models A$, $A$ è valida su una classe di strutture
   $\mathcal{C}$ (pag. 5);
-- def. 1.10: $\Gamma \models_\mathcal{C} A$, $A$ è conseguenza semantica di
+- def. 1.10: $\Gamma \models_{\mathcal{C}} A$, $A$ è conseguenza semantica di
   $\Gamma$ rispetto a una classe di strutture $\mathcal{C}$ (pag. 5);
 - def.: schema (pag. 5).
 

@@ -62,10 +62,10 @@
 - def. 1.13: $\mathcal{R}*$, chiusura riflessiva e transitiva di $\mathcal{R}$
   (pag. 10);
 - lem. 1.14: sia $S$ una relazione riflessiva e transitiva tale che
-  $R \subset S$. Allora $R* \subset S$ (pag. 10);
-- oss. 1: il lemma 1.14 ci dice che $R*$ è la più piccola relazione riflessiva e
-  transitiva che estende $R$;
-- lem. 1.15: $\Box^n$ ($\Diamond^n$) e $R^n$ (pag. 11).
+  $\mathcal{R} \subset S$. Allora $\mathcal{R}* \subset S$ (pag. 10);
+- oss. 1: il lemma 1.14 ci dice che $\mathcal{R}*$ è la più piccola relazione riflessiva e
+  transitiva che estende $\mathcal{R}$;
+- lem. 1.15: $\Box^n$ ($\Diamond^n$) e $\mathcal{R}^n$ (pag. 11).
 
 ## 2 Corrispondenza e non esprimibilità
 

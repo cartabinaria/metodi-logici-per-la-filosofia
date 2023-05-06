@@ -79,8 +79,8 @@
 ### 2.2 Proprietà non esprimibili
 
 - 2.2.1 Sottomodelli generati
-- def. 2.15: sottomodello generato (pag. 19);
-- lem. 2.16: sottomodello generato $\mathcal{M^v} \models_{\mathcal{z}} A$ sse $\mathcal{M} \models_{\mathcal{z}}A$ (pag. 19).
+  - def. 2.15: sottomodello generato (pag. 19);
+  - lem. 2.16: sottomodello generato $\mathcal{M^v} \models_{\mathcal{z}} A$ sse $\mathcal{M} \models_{\mathcal{z}}A$ (pag. 19).
 - 2.2.2 P-morfismi
   - def. 2.17: p-morfismo tra strutture (pag. 20);
   - def. 2.18: p-morfismo tra modelli (pag. 20);
@@ -123,7 +123,6 @@
 ### 9.5 Validità e completezza
 
 - 9.5.1 Validità
-
 - 9.5.2 Completezza
 
 ### 9.6 Proprietà strutturali
@@ -133,5 +132,4 @@
 ### 9.8 Identità e proprietà inesprimibili
 
 - 9.8.1 Identità
-
 - 9.8.2 Proprietà inesprimibili

@@ -91,6 +91,9 @@
 - def. 2.17: p-morfismo tra strutture (pag. 20);
 - def. 2.18: p-morfismo tra modelli (pag. 20);
 - lem. 2.19: $\mathcal{M_1} \models_{\mathcal{w}} A$ sse $\mathcal{M_2} \models_{\mathcal{f(w)}}A$ (pag. 21);
+- def. 2.20: p-morfismo suriettivo (pag. 21);
+- def. 2.21: immagine p-morfa (pag. 21);
+- lem. 2.22: p-morfismo suriettivo fra modelli $\mathcal{M_1} \models A$ sse $\mathcal{M_2} \models A$ (pag. 21);
 
 2.2.3 Proprietà non esprimibili
 

@@ -100,15 +100,25 @@
 
 ### 3.1 La logica K
 
+- def.: $K$, logica modale normale minimale (pag. 25);
+- def.: $L$, logica modale normale (pag. 25);
+- def. 3.1: dimostrazione in $L$, profondità, teorema (pag. 25).
+
 ### 3.2 Alcune estensioni di K
+
+- fig.: cubo delle logiche modali normali (pag. 31).
 
 ### 3.3 Validità
 
+- def.: $\matchal{F} \models L$, $\mathcal{F}$ è una struttura per $L$ (pag.33);
+- def.: $\mathcal{C}^L$, classe delle strutture per $L$ (pag. 33);
+- def.: $\mathcal{C} \subset \mathcal{C}^L$, $L$ è valida rispetto a
+  $\mathcal{C}$ (pag. 33);
+- th. 3.8: validita di $K$ (completezza forte enunciata in classe) (pag. 34).
+
 ### 3.4 Modalità
 
-- 3.4.1 Modalità nelle estensioni di K
-- 3.4.2 Modalità in S4
-- 3.4.3 Modalità in S5
+- def. 3.11: modalità (pag. 35).
 
 ## 9 Sequenti etichettati
 

@@ -16,28 +16,23 @@
 
 ### 1.2 Semantica per $L^\Phi$
 
-1.2.1 Strutture relazionali
-
-- def. 1.4: $\mathcal{F}$, struttura relazionale (pag. 3).
-
-  1.2.2 Modelli
-
-- def.: $\mathcal{M}$, ($\mathcal{F}$-)modello (pag. 4).
-
-  1.2.3 Verità e validità
-
-- def. 1.5: $\mathcal{M} \models_w A$, $A$ è vera in un mondo $w$ di
-  $\mathcal{M}$ (pag. 4);
-- def. 1.6: $\mathcal{M} \models A$, $A$ è vera in un modello $\mathcal{M}$
-  (pag. 4);
-- def. 1.7: $\mathcal{F} \models A$, $A$ è valida su una struttura $\mathcal{F}$
-  (pag. 4);
-- def. 1.8: $\models A$, $A$ è valida (pag. 5);
-- def. 1.9: $\mathcal{C} \models A$, $A$ è valida su una classe di strutture
-  $\mathcal{C}$ (pag. 5);
-- def. 1.10: $\Gamma \models_{\mathcal{C}} A$, $A$ è conseguenza semantica di
-  $\Gamma$ rispetto a una classe di strutture $\mathcal{C}$ (pag. 5);
-- def.: schema (pag. 5).
+- 1.2.1 Strutture relazionali
+  - def. 1.4: $\mathcal{F}$, struttura relazionale (pag. 3).
+- 1.2.2 Modelli
+  - def.: $\mathcal{M}$, ($\mathcal{F}$-)modello (pag. 4).
+- 1.2.3 Verità e validità
+  - def. 1.5: $\mathcal{M} \models_w A$, $A$ è vera in un mondo $w$ di
+    $\mathcal{M}$ (pag. 4);
+  - def. 1.6: $\mathcal{M} \models A$, $A$ è vera in un modello $\mathcal{M}$
+    (pag. 4);
+  - def. 1.7: $\mathcal{F} \models A$, $A$ è valida su una struttura $\mathcal{F}$
+    (pag. 4);
+  - def. 1.8: $\models A$, $A$ è valida (pag. 5);
+  - def. 1.9: $\mathcal{C} \models A$, $A$ è valida su una classe di strutture
+    $\mathcal{C}$ (pag. 5);
+  - def. 1.10: $\Gamma \models_{\mathcal{C}} A$, $A$ è conseguenza semantica di
+    $\Gamma$ rispetto a una classe di strutture $\mathcal{C}$ (pag. 5);
+  - def.: schema (pag. 5).
 
 ### 1.3 Schemi validi e non validi
 
@@ -83,28 +78,23 @@
 
 ### 2.2 Proprietà non esprimibili
 
-2.2.1 Sottomodelli generati
-
+- 2.2.1 Sottomodelli generati
 - def. 2.15: sottomodello generato (pag. 19);
-- lem. 2.16: sottomodello generato $\mathcal{M^v} \models_{\mathcal{z}} A$ sse $\mathcal{M} \models_{\mathcal{z}}A$ (pag. 19);
-
-  2.2.2 P-morfismi
-
-- def. 2.17: p-morfismo tra strutture (pag. 20);
-- def. 2.18: p-morfismo tra modelli (pag. 20);
-- lem. 2.19: p-morfismo fra modelli $\mathcal{M_1} \models_{\mathcal{w}} A$ sse $\mathcal{M_2} \models_{\mathcal{f(w)}}A$ (pag. 21);
-- def. 2.20: p-morfismo suriettivo (pag. 21);
-- def. 2.21: immagine p-morfa (pag. 21);
-- lem. 2.22: p-morfismo suriettivo fra modelli $\mathcal{M_1} \models A$ sse $\mathcal{M_2} \models A$ (pag. 21);
-- lem. 2.23: p-morfismo tra strutture implica p-morfismo fra modelli (p. 22);
-- lem. 2.24: p-morfismo suriettivo fra strutture (p. 22).
-
-  2.2.3 Proprietà non esprimibili
-
-- th. 2.25: la convergenza non è esprimibile (p. 23);
-- th. 2.26: la connessione non è esprimibile (p. 23);
-- th. 2.27: l'irriflessività non è esprimibile (p. 23);
-- th. 2.28: l'antisimmetria non è esprimibile (p. 23).
+- lem. 2.16: sottomodello generato $\mathcal{M^v} \models_{\mathcal{z}} A$ sse $\mathcal{M} \models_{\mathcal{z}}A$ (pag. 19).
+- 2.2.2 P-morfismi
+  - def. 2.17: p-morfismo tra strutture (pag. 20);
+  - def. 2.18: p-morfismo tra modelli (pag. 20);
+  - lem. 2.19: p-morfismo fra modelli $\mathcal{M_1} \models_{\mathcal{w}} A$ sse $\mathcal{M_2} \models_{\mathcal{f(w)}}A$ (pag. 21);
+  - def. 2.20: p-morfismo suriettivo (pag. 21);
+  - def. 2.21: immagine p-morfa (pag. 21);
+  - lem. 2.22: p-morfismo suriettivo fra modelli $\mathcal{M_1} \models A$ sse $\mathcal{M_2} \models A$ (pag. 21);
+  - lem. 2.23: p-morfismo tra strutture implica p-morfismo fra modelli (p. 22);
+  - lem. 2.24: p-morfismo suriettivo fra strutture (p. 22).
+- 2.2.3 Proprietà non esprimibili
+  - th. 2.25: la convergenza non è esprimibile (p. 23);
+  - th. 2.26: la connessione non è esprimibile (p. 23);
+  - th. 2.27: l'irriflessività non è esprimibile (p. 23);
+  - th. 2.28: l'antisimmetria non è esprimibile (p. 23).
 
 ## 3 Logiche modali normali
 
@@ -116,11 +106,9 @@
 
 ### 3.4 Modalità
 
-3.4.1 Modalità nelle estensioni di K
-
-3.4.2 Modalità in S4
-
-3.4.3 Modalità in S5
+- 3.4.1 Modalità nelle estensioni di K
+- 3.4.2 Modalità in S4
+- 3.4.3 Modalità in S5
 
 ## 9 Sequenti etichettati
 
@@ -134,9 +122,9 @@
 
 ### 9.5 Validità e completezza
 
-9.5.1 Validità
+- 9.5.1 Validità
 
-9.5.2 Completezza
+- 9.5.2 Completezza
 
 ### 9.6 Proprietà strutturali
 
@@ -144,6 +132,6 @@
 
 ### 9.8 Identità e proprietà inesprimibili
 
-9.8.1 Identità
+- 9.8.1 Identità
 
-9.8.2 Proprietà inesprimibili
+- 9.8.2 Proprietà inesprimibili

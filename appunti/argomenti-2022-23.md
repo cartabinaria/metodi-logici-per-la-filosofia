@@ -84,10 +84,24 @@
 ### 2.2 Proprietà non esprimibili
 
 2.2.1 Sottomodelli generati
+- def. 2.15: sottomodello generato (pag. 19);
+- lem. 2.16: sottomodello generato $\mathcal{M^v} \models_{\mathcal{z}} A$ sse $\mathcal{M} \models_{\mathcal{z}}A$ (pag. 19);
 
 2.2.2 P-morfismi
+- def. 2.17: p-morfismo tra strutture (pag. 20);
+- def. 2.18: p-morfismo tra modelli (pag. 20);
+- lem. 2.19: p-morfismo fra modelli $\mathcal{M_1} \models_{\mathcal{w}} A$ sse $\mathcal{M_2} \models_{\mathcal{f(w)}}A$ (pag. 21);
+- def. 2.20: p-morfismo suriettivo (pag. 21);
+- def. 2.21: immagine p-morfa (pag. 21);
+- lem. 2.22: p-morfismo suriettivo fra modelli $\mathcal{M_1} \models A$ sse $\mathcal{M_2} \models A$ (pag. 21);
+- lem. 2.23: p-morfismo tra strutture implica p-morfismo fra modelli (p. 22)
+- lem. 2.24: p-morfismo suriettivo fra strutture (p. 22)
 
 2.2.3 Proprietà non esprimibili
+- th. 2.25: la convergenza non è esprimibile (p.23)
+- th. 2.26: la connessione non è esprimibile (p.23)
+- th. 2.27: l'irriflessività non è esprimibile(p.23)
+- th. 2.28: l'antisimmetria non è esprimibile(p.23)
 
 ## 3 Logiche modali normali
 

@@ -85,7 +85,7 @@
 
 2.2.1 Sottomodelli generati
 - def. 2.15: sottomodello generato (pag. 19);
-- lem. 2.16: $\mathcal{M}^\mathcal{v}$\models_{\mathcal{z}} sse $\mathcal{M}\models_{\mathcal{z}}
+- lem. 2.16: $\mathcal{M}^\mathcal{v} \models_{\mathcal{z}} sse $\mathcal{M}\models_{\mathcal{z}}
 
 2.2.2 P-morfismi
 

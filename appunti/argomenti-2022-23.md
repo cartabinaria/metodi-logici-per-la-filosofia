@@ -77,7 +77,7 @@
 - th. 2.3: 4 corrisponde alla transitività (pag. 15);
 - th. 2.4: D corrisponde alla serialità (pag. 15);
 - th. 2.6: B corrisponde alla simmetria (pag. 16);
-- th. 2.7: 5 corrisponde alla densità euclidea (pag. 16);
+- th. 2.7: 5 corrisponde alla proprietà euclidea (pag. 16);
 - th. 2.8: 2 corrisponde alla convergenza debole (pag. 16);
 - th. 2.14: mnkj-Lemmon corrisponde alla proprietà mnkj-Lemmon (pag. 18).
 

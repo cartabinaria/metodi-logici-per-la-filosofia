@@ -141,7 +141,7 @@
 
 - def. 9.4: contesti, formule principali e formule principali (pag. 112)
 - def. 9.5: lunghezza. profondità, n-derivabilità, ammissibilità e pp-ammissibilità (pag. 112)
-- lem. 9.6: $\mathcal{G3.L}\models \mathcal{w:A} ,\Gamma \Longrightarrow \Delta , \mathcal{w:A}$
+- lem. 9.6: $G3.L \models w:A ,\Gamma \Longrightarrow \Delta , w:A$
 - 
 ### 9.5 Validità e completezza
 

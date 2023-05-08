@@ -124,6 +124,9 @@
 
 ### 9.1 Nozioni introduttive
 
+- def. 9.1: linguaggio etichettato (pag. 104)
+- def. 9.2: sequente (pag. 105)
+- def. 9.3: derivazione $\Gamma \Longrightarrow \Delta$ (pag. 105)
 ### 9.2 Il calcolo G3.K
 
 ### 9.3 Alcune estensioni di G3.K

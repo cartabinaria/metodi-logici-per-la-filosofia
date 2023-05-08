@@ -149,7 +149,7 @@
 
 - 9.5.1 Validità
   - def. 9.9: $\mathcal{M}$-realizzazione, verità di una formula, sequente verificato da $\mathcal{M}$-realizzazione, sequente $L$-valido (pag. 114)
-  - th. 9.10: $G3.L \vdash \Gamma \Longrightarrow \Delta implica \mathcal{C^L} \models \Gamma \Longrigtharrow \Delta$
+  - th. 9.10: $G3.L \vdash \Gamma \Longrightarrow \Delta$ \t implica\t $\mathcal{C^L} \models \Gamma \Longrightarrow \Delta$
   - 
 - 9.5.2 Completezza
 

@@ -148,12 +148,24 @@
 ### 9.5 Validità e completezza
 
 - 9.5.1 Validità
-  - def. 9.9: $\mathcal{M}$-realizzazione, verità di una formula, sequente verificato da $\mathcal{M}$-realizzazione, sequente $L$-valido (pag. 114)
-  - th. 9.10: $G3.L \vdash \Gamma \Longrightarrow \Delta$  $implica$  $\mathcal{C^L} \models \Gamma \Longrightarrow \Delta$
-  - 
-- 9.5.2 Completezza
 
+  - def. 9.9: $\mathcal{M}$-realizzazione, verità di una formula, sequente verificato da $\mathcal{M}$-realizzazione, sequente $L$-valido (pag. 114)
+  - th. 9.10: $G3.L \vdash \Gamma \Longrightarrow \Delta$  $implica$  $\mathcal{C^L} \models \Gamma \Longrightarrow \Delta$ (pag. 114)
+  
+- 9.5.2 Completezza
+ 
+  - def. 9.11: ramo $L$-saturo (pag. 117)
+  - def. 9.12: costruzione $L$-albero (pag. 118)
+  - def. 9.13: modello da un ramo $L$-saturo (pag. 119)
+  - lem. 9.14: chiamato in classe truth lemma (pag. 119)
+  
 ### 9.6 Proprietà strutturali
+
+- lem. 9.16: pp-ammissibilità di $LW$ e $RW$ (pag. 121)
+- cor. 9.17: ammissibilità necessitazione in $G3.L$ (pag. 122)
+- lem. 9.18: pp-invertibilità di tutte le regole di $G3.L$ (pag. 122)
+- th. 9.19: pp-ammissibilità di $LC_R$, $LC$ e $RC$ (pag. 123)
+- th. 9.20: ammissibilità regola cesura/taglio/cut (pag. 124)
 
 ### 9.7 Decidibilità
 

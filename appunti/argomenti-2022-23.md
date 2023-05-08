@@ -169,6 +169,11 @@
 
 ### 9.7 Decidibilità
 
+- def. 9.23: derivazione minimale (pag. 127)
+- prop. 9.24: etichette di una derivazione minimale (pag. 127)
+- lem. 9.25: permutazione delle regole (pag. 128)
+- cor. 9.26: $L\Box$ in una derivazione minimale (pag. 129)
+
 ### 9.8 Identità e proprietà inesprimibili
 
 - 9.8.1 Identità

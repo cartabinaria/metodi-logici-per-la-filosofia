@@ -114,7 +114,7 @@
 - def.: $\mathcal{C}^L$, classe delle strutture per $L$ (pag. 33);
 - def.: $\mathcal{C} \subset \mathcal{C}^L$, $L$ è valida rispetto a
   $\mathcal{C}$ (pag. 33);
-- th. 3.8: validita di $K$ (completezza forte enunciata in classe) (pag. 34).
+- th. 3.8: validita di $K$ (senza dimostrazione) (pag. 34).
 
 ### 3.4 Modalità
 

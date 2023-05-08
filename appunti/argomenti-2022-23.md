@@ -110,7 +110,7 @@
 
 ### 3.3 Validità
 
-- def.: $\matchal{F} \models L$, $\mathcal{F}$ è una struttura per $L$ (pag.33);
+- def.: $\mathcal{F} \models L$, $\mathcal{F}$ è una struttura per $L$ (pag.33);
 - def.: $\mathcal{C}^L$, classe delle strutture per $L$ (pag. 33);
 - def.: $\mathcal{C} \subset \mathcal{C}^L$, $L$ è valida rispetto a
   $\mathcal{C}$ (pag. 33);

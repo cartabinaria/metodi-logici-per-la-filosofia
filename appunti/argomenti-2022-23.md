@@ -127,9 +127,15 @@
 - def. 9.1: linguaggio etichettato (pag. 104)
 - def. 9.2: sequente (pag. 105)
 - def. 9.3: derivazione $\Gamma \Longrightarrow \Delta$ (pag. 105)
+
 ### 9.2 Il calcolo G3.K
 
+- tab. 9.1: regole logiche e sequenti iniziali (pag. 106)
+
 ### 9.3 Alcune estensioni di G3.K
+
+- G3.T, G3.K4, G3.B, G3.K5 (pag. 108-109)
+- G3.D, G3.K2 (pag. 109,110)
 
 ### 9.4 Elementi basi di metateoria
 

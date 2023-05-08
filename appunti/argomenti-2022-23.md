@@ -141,11 +141,16 @@
 
 - def. 9.4: contesti, formule principali e formule principali (pag. 112)
 - def. 9.5: lunghezza. profondità, n-derivabilità, ammissibilità e pp-ammissibilità (pag. 112)
-- lem. 9.6: $G3.L \vdash w:A ,\Gamma \Longrightarrow \Delta , w:A$
-- 
+- lem. 9.6: $G3.L \vdash w:A ,\Gamma \Longrightarrow \Delta , w:A$ (pag.112)
+- def. 9.7: sostituzionne etichette (pag.112)
+- lem. 9.8: ammissibilità regola sostituzione etichette (pag. 113)
+
 ### 9.5 Validità e completezza
 
 - 9.5.1 Validità
+  - def. 9.9: $\mathcal{M}$-realizzazione, verità di una formula, sequente verificato da $\mathcal{M}$-realizzazione, sequente $L$-valido (pag. 114)
+  - th. 9.10: $G3.L \vdash \Gamma \Longrightarrow \Delta implica \mathcal{C^L} \models \Gamma \Longrigtharrow \Delta$
+  - 
 - 9.5.2 Completezza
 
 ### 9.6 Proprietà strutturali

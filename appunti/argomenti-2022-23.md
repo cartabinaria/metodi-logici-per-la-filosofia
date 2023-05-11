@@ -114,7 +114,7 @@
 - def.: $\mathcal{C}^L$, classe delle strutture per $L$ (pag. 33);
 - def.: $\mathcal{C} \subset \mathcal{C}^L$, $L$ è valida rispetto a
   $\mathcal{C}$ (pag. 33);
-- th. 3.8: validita di $K$ (senza dimostrazione) (pag. 34).
+- th. 3.8: validità di $K$ (senza dimostrazione) (pag. 34).
 
 ### 3.4 Modalità
 
@@ -142,7 +142,7 @@
 - def. 9.4: contesti, formule principali e formule principali (pag. 112)
 - def. 9.5: lunghezza. profondità, n-derivabilità, ammissibilità e pp-ammissibilità (pag. 112)
 - lem. 9.6: $G3.L \vdash w:A ,\Gamma \Longrightarrow \Delta , w:A$ (pag.112)
-- def. 9.7: sostituzionne etichette (pag.112)
+- def. 9.7: sostituzione etichette (pag.112)
 - lem. 9.8: ammissibilità regola sostituzione etichette (pag. 113)
 
 ### 9.5 Validità e completezza
@@ -150,7 +150,7 @@
 - 9.5.1 Validità
 
   - def. 9.9: $\mathcal{M}$-realizzazione, verità di una formula, sequente verificato da $\mathcal{M}$-realizzazione, sequente $L$-valido (pag. 114)
-  - th. 9.10: $G3.L \vdash \Gamma \Longrightarrow \Delta$  $implica$  $\mathcal{C^L} \models \Gamma \Longrightarrow \Delta$ (pag. 114)
+  - th. 9.10: validità ($G3.L \vdash \Gamma \Longrightarrow \Delta$  $implica$  $\mathcal{C^L} \models \Gamma \Longrightarrow \Delta$) (pag. 114)
   
 - 9.5.2 Completezza
  
@@ -158,6 +158,7 @@
   - def. 9.12: costruzione $L$-albero (pag. 118)
   - def. 9.13: modello da un ramo $L$-saturo (pag. 119)
   - lem. 9.14: chiamato in classe truth lemma (pag. 119)
+  - th. 9.15: completezza ($\mathcal{C^L} \models \Gamma \Longrightarrow \Delta$ $implica$ $G3.L \vdash \Gamma \Longrightarrow \Delta$) (pag. 120)
   
 ### 9.6 Proprietà strutturali
 

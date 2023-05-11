@@ -120,7 +120,8 @@ della versione PDF, e differiscono da quelli della versione cartacea.
 - def.: $\mathcal{C}^L$, classe delle strutture per $L$ (pag. 33);
 - def.: $\mathcal{C} \subset \mathcal{C}^L$, $L$ è valida rispetto a
   $\mathcal{C}$ (pag. 33);
-- th. 3.8: validità di $K$ (senza dimostrazione) (pag. 34).
+- th. 3.8: validità di $K$ (e completezza forte a lezione, entrambe senza
+  dimostrazione) (pag. 34).
 
 ### 3.4 Modalità
 
@@ -145,7 +146,7 @@ della versione PDF, e differiscono da quelli della versione cartacea.
 
 ### 9.4 Elementi basi di metateoria
 
-- def. 9.4: contesti, formule principali e formule principali (pag. 112);
+- def. 9.4: contesti, formule principali e formule attive (pag. 112);
 - def. 9.5: lunghezza. profondità, n-derivabilità, ammissibilità e
   pp-ammissibilità (pag. 112);
 - lem. 9.6: $G3.L \vdash w:A ,\Gamma \Longrightarrow \Delta , w:A$ (pag.112);

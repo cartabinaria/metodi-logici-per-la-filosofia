@@ -1,5 +1,8 @@
 # Argomenti di esame (a.a. 2022-23)
 
+I numeri di pagina fanno riferimento alla numerazione riportata sulla pagine
+della versione PDF, e differiscono da quelli della versione cartacea.
+
 ## 1 Linguaggio modale e semantica
 
 ### 1.1 Linguaggio
@@ -25,8 +28,8 @@
     $\mathcal{M}$ (pag. 4);
   - def. 1.6: $\mathcal{M} \models A$, $A$ è vera in un modello $\mathcal{M}$
     (pag. 4);
-  - def. 1.7: $\mathcal{F} \models A$, $A$ è valida su una struttura $\mathcal{F}$
-    (pag. 4);
+  - def. 1.7: $\mathcal{F} \models A$, $A$ è valida su una struttura
+    $\mathcal{F}$ (pag. 4);
   - def. 1.8: $\models A$, $A$ è valida (pag. 5);
   - def. 1.9: $\mathcal{C} \models A$, $A$ è valida su una classe di strutture
     $\mathcal{C}$ (pag. 5);
@@ -58,8 +61,8 @@
   (pag. 10);
 - lem. 1.14: sia $S$ una relazione riflessiva e transitiva tale che
   $\mathcal{R} \subset S$. Allora $\mathcal{R}* \subset S$ (pag. 10);
-- oss. 1: il lemma 1.14 ci dice che $\mathcal{R}*$ è la più piccola relazione riflessiva e
-  transitiva che estende $\mathcal{R}$;
+- oss. 1: il lemma 1.14 ci dice che $\mathcal{R}*$ è la più piccola relazione
+  riflessiva e transitiva che estende $\mathcal{R}$;
 - lem. 1.15: $\Box^n$ ($\Diamond^n$) e $\mathcal{R}^n$ (pag. 11).
 
 ## 2 Corrispondenza e non esprimibilità
@@ -80,14 +83,17 @@
 
 - 2.2.1 Sottomodelli generati
   - def. 2.15: sottomodello generato (pag. 19);
-  - lem. 2.16: sottomodello generato $\mathcal{M^v} \models_{\mathcal{z}} A$ sse $\mathcal{M} \models_{\mathcal{z}}A$ (pag. 19).
+  - lem. 2.16: sottomodello generato $\mathcal{M^v} \models_{\mathcal{z}} A$ sse
+    $\mathcal{M} \models_{\mathcal{z}}A$ (pag. 19).
 - 2.2.2 P-morfismi
   - def. 2.17: p-morfismo tra strutture (pag. 20);
   - def. 2.18: p-morfismo tra modelli (pag. 20);
-  - lem. 2.19: p-morfismo fra modelli $\mathcal{M_1} \models_{\mathcal{w}} A$ sse $\mathcal{M_2} \models_{\mathcal{f(w)}}A$ (pag. 21);
+  - lem. 2.19: p-morfismo fra modelli $\mathcal{M_1} \models_{\mathcal{w}} A$
+    sse $\mathcal{M_2} \models_{\mathcal{f(w)}}A$ (pag. 21);
   - def. 2.20: p-morfismo suriettivo (pag. 21);
   - def. 2.21: immagine p-morfa (pag. 21);
-  - lem. 2.22: p-morfismo suriettivo fra modelli $\mathcal{M_1} \models A$ sse $\mathcal{M_2} \models A$ (pag. 21);
+  - lem. 2.22: p-morfismo suriettivo fra modelli $\mathcal{M_1} \models A$ sse
+    $\mathcal{M_2} \models A$ (pag. 21);
   - lem. 2.23: p-morfismo tra strutture implica p-morfismo fra modelli (p. 22);
   - lem. 2.24: p-morfismo suriettivo fra strutture (p. 22).
 - 2.2.3 Proprietà non esprimibili
@@ -124,58 +130,54 @@
 
 ### 9.1 Nozioni introduttive
 
-- def. 9.1: linguaggio etichettato (pag. 104)
-- def. 9.2: sequente (pag. 105)
-- def. 9.3: derivazione $\Gamma \Longrightarrow \Delta$ (pag. 105)
+- def. 9.1: linguaggio etichettato (pag. 104);
+- def. 9.2: sequente (pag. 105);
+- def. 9.3: derivazione $\Gamma \Longrightarrow \Delta$ (pag. 105).
 
 ### 9.2 Il calcolo G3.K
 
-- tab. 9.1: regole logiche e sequenti iniziali (pag. 106)
+- tab. 9.1: regole logiche e sequenti iniziali (pag. 106);
 
 ### 9.3 Alcune estensioni di G3.K
 
-- G3.T, G3.K4, G3.B, G3.K5 (pag. 108-109)
-- G3.D, G3.K2 (pag. 109,110)
+- G3.T, G3.K4, G3.B, G3.K5 (pag. 108-109);
+- G3.D, G3.K2 (pag. 109,110).
 
 ### 9.4 Elementi basi di metateoria
 
-- def. 9.4: contesti, formule principali e formule principali (pag. 112)
-- def. 9.5: lunghezza. profondità, n-derivabilità, ammissibilità e pp-ammissibilità (pag. 112)
-- lem. 9.6: $G3.L \vdash w:A ,\Gamma \Longrightarrow \Delta , w:A$ (pag.112)
-- def. 9.7: sostituzione etichette (pag.112)
-- lem. 9.8: ammissibilità regola sostituzione etichette (pag. 113)
+- def. 9.4: contesti, formule principali e formule principali (pag. 112);
+- def. 9.5: lunghezza. profondità, n-derivabilità, ammissibilità e
+  pp-ammissibilità (pag. 112);
+- lem. 9.6: $G3.L \vdash w:A ,\Gamma \Longrightarrow \Delta , w:A$ (pag.112);
+- def. 9.7: sostituzione etichette (pag.112);
+- lem. 9.8: pp-ammissibilità regola sostituzione etichette (pag. 113).
 
 ### 9.5 Validità e completezza
 
 - 9.5.1 Validità
-
-  - def. 9.9: $\mathcal{M}$-realizzazione, verità di una formula, sequente verificato da $\mathcal{M}$-realizzazione, sequente $L$-valido (pag. 114)
-  - th. 9.10: validità ($G3.L \vdash \Gamma \Longrightarrow \Delta$  $implica$  $\mathcal{C^L} \models \Gamma \Longrightarrow \Delta$) (pag. 114)
-  
+  - def. 9.9: $\mathcal{M}$-realizzazione, verità di una formula, sequente
+    verificato da $\mathcal{M}$-realizzazione, sequente $L$-valido (pag. 114);
+  - th. 9.10: validità ($G3.L \vdash \Gamma \Longrightarrow \Delta$ $implica$
+    $\mathcal{C^L} \models \Gamma \Longrightarrow \Delta$) (pag. 114).
 - 9.5.2 Completezza
- 
-  - def. 9.11: ramo $L$-saturo (pag. 117)
-  - def. 9.12: costruzione $L$-albero (pag. 118)
-  - def. 9.13: modello da un ramo $L$-saturo (pag. 119)
-  - lem. 9.14: chiamato in classe truth lemma (pag. 119)
-  - th. 9.15: completezza ($\mathcal{C^L} \models \Gamma \Longrightarrow \Delta$ $implica$ $G3.L \vdash \Gamma \Longrightarrow \Delta$) (pag. 120)
-  
+  - def. 9.11: ramo $L$-saturo (pag. 117);
+  - def. 9.12: costruzione $L$-albero (pag. 118);
+  - def. 9.13: modello da un ramo $L$-saturo (pag. 119);
+  - lem. 9.14: chiamato in classe truth lemma (pag. 119);
+  - th. 9.15: completezza ($\mathcal{C^L} \models \Gamma \Longrightarrow \Delta$
+    $implica$ $G3.L \vdash \Gamma \Longrightarrow \Delta$) (pag. 120).
+
 ### 9.6 Proprietà strutturali
 
-- lem. 9.16: pp-ammissibilità di $LW$ e $RW$ (pag. 121)
-- cor. 9.17: ammissibilità necessitazione in $G3.L$ (pag. 122)
-- lem. 9.18: pp-invertibilità di tutte le regole di $G3.L$ (pag. 122)
-- th. 9.19: pp-ammissibilità di $LC_R$, $LC$ e $RC$ (pag. 123)
-- th. 9.20: ammissibilità regola cesura/taglio/cut (pag. 124)
+- lem. 9.16: pp-ammissibilità di $LW$ e $RW$ (pag. 121);
+- cor. 9.17: ammissibilità necessitazione in $G3.L$ (pag. 122);
+- lem. 9.18: pp-invertibilità di tutte le regole di $G3.L$ (pag. 122);
+- th. 9.19: pp-ammissibilità di $LC_R$, $LC$ e $RC$ (pag. 123);
+- th. 9.20: ammissibilità regola cesura/taglio/cut (pag. 124).
 
 ### 9.7 Decidibilità
 
-- def. 9.23: derivazione minimale (pag. 127)
-- prop. 9.24: etichette di una derivazione minimale (pag. 127)
-- lem. 9.25: permutazione delle regole (pag. 128)
-- cor. 9.26: $L\Box$ in una derivazione minimale (pag. 129)
-
-### 9.8 Identità e proprietà inesprimibili
-
-- 9.8.1 Identità
-- 9.8.2 Proprietà inesprimibili
+- def. 9.23: derivazione minimale (pag. 127);
+- prop. 9.24: etichette di una derivazione minimale (pag. 127);
+- lem. 9.25: permutazione delle regole (pag. 128);
+- cor. 9.26: $L\Box$ in una derivazione minimale (pag. 129).

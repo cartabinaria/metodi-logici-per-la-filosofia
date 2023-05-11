@@ -158,7 +158,7 @@
   - def. 9.12: costruzione $L$-albero (pag. 118)
   - def. 9.13: modello da un ramo $L$-saturo (pag. 119)
   - lem. 9.14: chiamato in classe truth lemma (pag. 119)
-  - th. 9.15: completezza ($$\mathcal{C^L} \models \Gamma \Longrightarrow \Delta$ $implica$ $G3.L \vdash \Gamma \Longrightarrow \Delta$) (pag. 120)
+  - th. 9.15: completezza ($\mathcal{C^L} \models \Gamma \Longrightarrow \Delta$ $implica$ $G3.L \vdash \Gamma \Longrightarrow \Delta$) (pag. 120)
   
 ### 9.6 Proprietà strutturali
 

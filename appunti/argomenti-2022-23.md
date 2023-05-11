@@ -9,7 +9,7 @@ della versione PDF, e differiscono da quelli della versione cartacea.
 
 - def. 1.1: $\mathcal{L}^\Phi$, alfabeto del linguaggio modale enunciativo
   (pag. 1);
-- def. 1.2: $Fm^\Phi$$, insieme delle formule ben formate di $\mathcal{L}^\Phi$
+- def. 1.2: $Fm^\Phi$, insieme delle formule ben formate di $\mathcal{L}^\Phi$
   (pag. 1);
 - def. 1.3: simboli logici ausiliari (pag. 2);
 - def.: $lg(A)$, lunghezza della formula $A$ (pag. 2);
@@ -53,8 +53,8 @@ della versione PDF, e differiscono da quelli della versione cartacea.
 
 ### 1.6 Chiusura riflessiva e transitiva
 
-- def. 1.11: $\Box^n$ ($\Diamond^n$), applicare $\Box$ ($\Diamond$) $n$ volte
-  (pag. 10);
+- def. 1.11: $\Box^n$ ($\Diamond^n$), applicare $\Diamond$ ($\Diamond$) $n$
+  volte (pag. 10);
 - def. 1.12: $\mathcal{R}^n$, poter accedere tramite $\mathcal{R}$ in
   esattamente $n$ passi (pag.10);
 - def. 1.13: $\mathcal{R}*$, chiusura riflessiva e transitiva di $\mathcal{R}$

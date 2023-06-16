@@ -8,7 +8,7 @@ durante le ultime lezioni. Riportiamo qui di seguito le domande non a scelta.
 Mattina:
 
 - definizione di p-morfismo;
-- Lemma del p-morfismo fra modelli;
+- lemma del p-morfismo fra modelli;
 - dimostrazione proprietà non esprimibile;
 - dimostrazione ammissibilità della regola di sostituzione;
 - teorema di validità del calcolo assiomatico;

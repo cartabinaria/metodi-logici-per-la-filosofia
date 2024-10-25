@@ -13,11 +13,5 @@ La versione cartacea è presente gratuitamente presso:
   (sola consultazione interna);
 - la biblioteca Universitaria in via Zamboni 35 (non prelevabile).
 
-Informazioni più aggiornate sono **[disponibili
+Informazioni potenzialmente più aggiornate sono **[disponibili
 qui](https://almastart.unibo.it/permalink/f/1t3j152/39UBO_SEBINA_DSUBO5632990)**.
-
-## Versione digitale
-
-Se accedi con il tuo profilo Unibo, puoi **[leggere gratuitamente l'intero libro
-in formato digitale
-qui](https://almastart.unibo.it/permalink/f/1t3j152/39UBO_ALMAE_DS5157808720007041)**.

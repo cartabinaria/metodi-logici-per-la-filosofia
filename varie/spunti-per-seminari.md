@@ -8,7 +8,7 @@ questa iniziativa dà accesso a un orale di molto semplificato rispetto a quello
 tradizionale. Seguono alcuni spunti per argomenti proposti dagli studenti (da
 confermare con il docente), alcuni dei quali provenienti dagli anni scorsi. Si
 può consultare bibliografia da
-**[csunibo.github.io/metodi-logici-per-la-filosofia/libri](https://csunibo.github.io/metodi-logici-per-la-filosofia/libri)**
+**[https://dynamik.vercel.app/metodi-logici-per-la-filosofia/libri](https://dynamik.vercel.app/metodi-logici-per-la-filosofia/libri)**
 
 ## Logica
 

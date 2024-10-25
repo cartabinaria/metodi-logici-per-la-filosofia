@@ -2,9 +2,9 @@
 
 Appunti di **[Foxy](https://foxyseta.github.io)** (Stefano Volpe) per l'a.a.
 2022-23: se trovi qualcosa di sbagliato, non esitare a **[caricare la
-correzione](https://github.com/csunibo/metodi-logici-per-la-filosofia)**. Questi
-appunti coprono solo le prime lezioni del prof., pensate per chi non ha mai
-seguito un corso di logica di base.
+correzione](https://github.com/cartabinaria/metodi-logici-per-la-filosofia)**.
+Questi appunti coprono solo le prime lezioni del prof., pensate per chi non ha
+mai seguito un corso di logica di base.
 
 ## 01-30. Presentazione del corso
 
@@ -12,7 +12,7 @@ seguito un corso di logica di base.
 
 - Libro: il primo titolo in bibliografia funge da manuale del corso. Non serve
   acquistarlo: il prof invia copie gratuite in PDF a chi lo richiede. Puoi
-  trovarlo fra i **[libri](https://csunibo.github.io/metodi-logici-per-la-filosofia/libri)**.
+  trovarlo fra i **[libri](https://dynamik.vercel.app/metodi-logici-per-la-filosofia/libri)**.
 - Notazioni: capita che il prof. le usi in modo inconsistente, ma noi dobbiamo
   consistentemente usare lo stile del manuale.
 - Orari: si comincia ai 15, si finisce ai 45.
@@ -310,5 +310,5 @@ aula).
 ## Conclusione
 
 Qui si conlude la parte di prerequisiti per un corso di logica modale. Gli
-appunti sulla logica modale in sé sono coperti dagli **[appunti di altri
-autori](https://csunibo.github.io/metodi-logici-per-la-filosofia/appunti)**.
+appunti sulla logica modale in sé sono coperti dagli **[appunti di altre
+persone](https://dynamik.vercel.app/metodi-logici-per-la-filosofia/appunti)**.

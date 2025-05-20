@@ -1,11 +1,11 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage[italian]{babel} %per documenti in italiano
 \usepackage{fontspec} %permette di usare Times New Roman, ma solo con XeLaTeX (!!!)
-	%\setmainfont{Times New Roman}
-	%\newfontfamily\latinmodern{Latin Modern Roman}
+	\setmainfont{Times New Roman}
+	\newfontfamily\latinmodern{Latin Modern Roman}
 	% Per permettere a Overleaf di usare i font, vanno disabilitati i due comandi precedenti e abilitati i due successivi:
-	\setmainfont[Path = ./fonts/, Extension = .ttf, UprightFont = TIMES, BoldFont = TIMESBD, ItalicFont = TIMESI, BoldItalicFont = TIMESBI]{Times New Roman}
-	\newfontfamily\latinmodern{lmroman10-regular.otf}
+	%\setmainfont[Path = ./fonts/, Extension = .ttf, UprightFont = TIMES, BoldFont = TIMESBD, ItalicFont = TIMESI, BoldItalicFont = TIMESBI]{Times New Roman}
+	%\newfontfamily\latinmodern{lmroman10-regular.otf}
 	\newcommand{\latinmath}[1]{\text{\latinmodern{#1}}} %definisce il comando \latinmath{} che applica font Latin Modern Roman al testo nell'argomento
 	\addto\captionsitalian{\renewcommand{\contentsname}{\textbf{\scshape Indice}}}
 \usepackage{microtype} %migliora spaziatura del font

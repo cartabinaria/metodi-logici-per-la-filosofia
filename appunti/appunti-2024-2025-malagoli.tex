@@ -1,19 +1,15 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage[italian]{babel} %per documenti in italiano
 \usepackage{fontspec} %permette di usare Times New Roman, ma solo con XeLaTeX (!!!)
-
 	% Per compilazione locale con font installati:
-
 	% \setmainfont{Times New Roman}
 	% \newfontfamily\latinmodern{Latin Modern Roman}
 
   % Per compilazione su Overleaf con font in cartella locale ./fonts/
-
   % \setmainfont[Path = ./fonts/, Extension = .ttf, UprightFont = TIMES, BoldFont = TIMESBD, ItalicFont = TIMESI, BoldItalicFont = TIMESBI]{Times New Roman}
 	% \newfontfamily\latinmodern{lmroman10-regular.otf}
 
   % Per compilazione locale senza font:
-
   \newcommand{\latinmodern}[1]{\text{#1}}
 
 	\newcommand{\latinmath}[1]{\text{\latinmodern{#1}}} %definisce il comando \latinmath{} che applica font Latin Modern Roman al testo nell'argomento
